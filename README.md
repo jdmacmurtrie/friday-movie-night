@@ -1,4 +1,4 @@
-![Build Status](https://codeship.com/projects/friday-movie-night/status?branch=master)
+![Build Status](https://codeship.com/projects/ae969e10-3c08-0135-76f0-46ceed86863a/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/jdmacmurtrie/friday-movie-night.png)
 ![Coverage Status](https://coveralls.io/repos/jdmacmurtrie/friday-movie-night/badge.png)
 # README
