@@ -10,9 +10,9 @@ class SuggestionsController < ApplicationController
         @toppings << Topping.find_by(name: topping)
       end
     end
-    all_suggestions = @toppings.map{ |topping| topping.genres }
+    all_suggestions = @toppings.map { |topping| topping.genres }
     one_suggestion = all_suggestions.inject(:&)
-    unless one_suggestion.empty?
+    if !one_suggestion.empty?
       @genre_suggestion = one_suggestion[0]
       if one_suggestion.length > 1
         @genre_suggestion = one_suggestion.sample
@@ -32,9 +32,9 @@ class SuggestionsController < ApplicationController
     movies = HTTParty.get("https://api.themoviedb.org/3/genre/#{genre_id}/movies?api_key=#{key}&language=en-US&include_adult=false&sort_by=created_at.asc")
     movies.parsed_response['results'].sample(5).each do |movie|
       @movie_suggestions << Movie.create(
-      title: movie['title'],
-      description: movie['overview'],
-      poster: movie['poster_path']
+        title: movie['title'],
+        description: movie['overview'],
+        poster: movie['poster_path']
       )
     end
   end
