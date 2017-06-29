@@ -4,9 +4,9 @@ gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0'
-gem 'sass-rails', '~> 5.0'
 gem 'dotenv-rails'
 gem 'httparty'
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
@@ -18,7 +18,6 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'coveralls', require: false
-  gem 'simplecov'
   gem 'factory_girl_rails'
   gem 'launchy', require: false
   gem 'pry-rails'
@@ -26,6 +25,7 @@ group :development, :test do
   gem 'shoulda'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
+  gem 'simplecov'
 end
 
 group :production do
