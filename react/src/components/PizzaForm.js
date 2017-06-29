@@ -60,7 +60,7 @@ const PizzaForm = props => {
         className="checkbox"
         onChange={props.handleChange}/>
 
-      <label>Olive</label>
+      <label>Olives</label>
       <input type="checkbox"
         value="Olive"
         name="Olive"
