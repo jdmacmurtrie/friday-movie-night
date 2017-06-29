@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :genre do
-    name 'action'
+    name 'Comedy'
   end
 end
