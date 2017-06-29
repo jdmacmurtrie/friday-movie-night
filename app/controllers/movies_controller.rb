@@ -3,5 +3,6 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
 
-  def create, end
+  def create
+  end
 end

@@ -1,3 +1,4 @@
 class Topping < ApplicationRecord
-  belongs_to :pizza
+  has_many :suggestions
+  has_many :genres, through: :suggestions
 end

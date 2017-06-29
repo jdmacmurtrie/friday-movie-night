@@ -3,5 +3,6 @@ class PizzasController < ApplicationController
     @pizza = Pizza.new
   end
 
-  def create, end
+  def create
+  end
 end

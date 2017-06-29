@@ -5,7 +5,7 @@ feature 'User chooses which method' do
     visit root_path
     click_button 'I need a pizza!'
 
-    expect(page.current_path).to eq(new_pizza_path)
+    expect(page.current_path).to eq(new_topping_path)
   end
 
   scenario 'user chooses to create movie' do
