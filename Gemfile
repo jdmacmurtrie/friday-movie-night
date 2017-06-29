@@ -4,8 +4,8 @@ gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0'
-gem 'sass-rails', '~> 5.0'
 gem 'dotenv-rails'
+gem 'sass-rails', '~> 5.0'
 gem 'httparty'
 gem 'uglifier', '>= 1.3.0'
 
@@ -18,8 +18,8 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'coveralls', require: false
-  gem 'simplecov'
   gem 'factory_girl_rails'
+  gem 'simplecov'
   gem 'launchy', require: false
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
