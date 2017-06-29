@@ -5,8 +5,8 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0'
 gem 'dotenv-rails'
-gem 'sass-rails', '~> 5.0'
 gem 'httparty'
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
@@ -19,10 +19,10 @@ group :development, :test do
   gem 'capybara'
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
-  gem 'simplecov'
   gem 'launchy', require: false
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
+  gem 'simplecov'
   gem 'shoulda'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
