@@ -51,6 +51,14 @@ module.exports = function(config) {
             exclude: /(node_modules|test)/,
             loader: 'isparta'
           }
+          {
+            test: /\.json$/,
+            include: [
+              /node_modules/,
+              path.resolve(__dirname, '..')
+            ],
+            loader: 'json-loader'
+          }
         ]
       },
 
