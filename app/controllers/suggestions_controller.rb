@@ -1,6 +1,3 @@
-require 'HTTParty'
-require 'dotenv-rails'
-
 class SuggestionsController < ApplicationController
   def show
     toppings = params[:id].split(',')
