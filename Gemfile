@@ -18,7 +18,7 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'coveralls', require: false
-  gem 'simple_cov'
+  gem 'simplecov'
   gem 'factory_girl_rails'
   gem 'launchy', require: false
   gem 'pry-rails'
