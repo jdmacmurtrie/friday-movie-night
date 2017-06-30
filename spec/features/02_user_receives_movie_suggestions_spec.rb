@@ -9,19 +9,19 @@ feature 'user receives suggestions for movies' do
   let!(:suggstion3) { FactoryGirl.create(:suggestion, genre: music, topping: pepperoni) }
 
   scenario 'user picks one topping' do
-    visit 'suggestions/,Ham'
+    visit 'toppings/,Ham'
 
     expect(page).to have_selector('li', count: 5)
   end
 
   scenario 'user picks two toppings with no intersection' do
-    visit 'suggestions/Pineapple,Ham'
+    visit 'toppings/Pineapple,Ham'
 
     expect(page).to have_selector('li', count: 5)
   end
 
   scenario 'user picks two toppings that intersect' do
-    visit 'suggestions/Pineapple,Pepperoni'
+    visit 'toppings/Pineapple,Pepperoni'
 
     expect(page).to have_selector('li', count: 5)
   end
