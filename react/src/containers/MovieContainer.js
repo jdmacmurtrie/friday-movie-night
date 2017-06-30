@@ -11,7 +11,7 @@ class MovieContainer extends React.Component {
       genre: 'none',
       movie: '',
       queryString: ''
-    }
+    };
     this.handleChangeText = this.handleChangeText.bind(this);
     this.handleChangeDropdown = this.handleChangeDropdown.bind(this);
     this.handleChangeSearch = this.handleChangeSearch.bind(this);
@@ -33,7 +33,7 @@ class MovieContainer extends React.Component {
     this.setState({ movie: event.target.value });
     if (event.target.value.trim() !== '') {
       this.setState({ queryString: "title," + event.target.value })
-    };
+    }
   }
 
   handleChangeDropdown(event) {
