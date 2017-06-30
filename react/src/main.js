@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PizzaContainer from './containers/PizzaContainer'
+import MovieContainer from './containers/MovieContainer'
 
 $(function () {
   let toppingChoices = document.getElementById('topping_choices')

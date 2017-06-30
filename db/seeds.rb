@@ -1,7 +1,7 @@
 
 toppings = ['Extra Cheese', 'Pepperoni', 'Sausage', 'Ham', 'Pineapple', 'Green Pepper', 'Mushroom', 'Grilled Chicken', 'Bacon', 'Olive']
 genres = ['Action', 'Comedy', 'Drama', 'Family', 'War', 'Horror',
-'Music', 'Sci Fi', 'Fantasy', 'Romance', 'Mystery',
+'Music', 'Science Fiction', 'Fantasy', 'Romance', 'Mystery',
 'Western', 'History', 'Documentary', 'Animation', 'Thriller']
 
 
@@ -33,8 +33,8 @@ Suggestion.create(genre: Genre.find_by(name: 'War'), topping: Topping.find_by(na
 Suggestion.create(genre: Genre.find_by(name: 'War'), topping: Topping.find_by(name: 'Olive'), order_number: 12)
 Suggestion.create(genre: Genre.find_by(name: 'Music'), topping: Topping.find_by(name: 'Ham'), order_number: 13)
 Suggestion.create(genre: Genre.find_by(name: 'Music'), topping: Topping.find_by(name: 'Pineapple'), order_number: 13)
-Suggestion.create(genre: Genre.find_by(name: 'Sci Fi'), topping: Topping.find_by(name: 'Sausage'), order_number: 14)
-Suggestion.create(genre: Genre.find_by(name: 'Sci Fi'), topping: Topping.find_by(name: 'Mushroom'), order_number: 14)
+Suggestion.create(genre: Genre.find_by(name: 'Science Fiction'), topping: Topping.find_by(name: 'Sausage'), order_number: 14)
+Suggestion.create(genre: Genre.find_by(name: 'Science Fiction'), topping: Topping.find_by(name: 'Mushroom'), order_number: 14)
 Suggestion.create(genre: Genre.find_by(name: 'Fantasy'), topping: Topping.find_by(name: 'Bacon'), order_number: 15)
 Suggestion.create(genre: Genre.find_by(name: 'Fantasy'), topping: Topping.find_by(name: 'Sausage'), order_number: 15)
 Suggestion.create(genre: Genre.find_by(name: 'History'), topping: Topping.find_by(name: 'Olive'), order_number: 16)

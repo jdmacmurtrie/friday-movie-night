@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PizzaForm from '../components/PizzaForm'
 import Topping from '../components/Topping'
 
-class PizzaContainer extends Component {
+class PizzaContainer extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -38,7 +38,7 @@ class PizzaContainer extends Component {
         <PizzaForm handleChange={this.handleChange}/>
         <h2>Your toppings:</h2>
         <Topping toppings={this.state.toppings}/>
-        <button><a href={`/suggestions/${this.state.queryString}`}>Get my suggestions!</a></button>
+        <button><a href={`/toppings/${this.state.queryString}`}>Get my suggestions!</a></button>
       </div>
     );
   }
