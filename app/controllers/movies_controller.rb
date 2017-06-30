@@ -19,7 +19,6 @@ class MoviesController < ApplicationController
             @genre = Genre.find_by(name: genre["name"])
           end
         end
-
       end
     end
 

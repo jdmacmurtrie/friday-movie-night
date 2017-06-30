@@ -5,11 +5,13 @@ feature 'user receives suggestions for movies' do
   let!(:pineapple) { FactoryGirl.create(:topping, name: 'Pineapple') }
   let!(:pepperoni) { FactoryGirl.create(:topping, name: 'Pepperoni') }
   let!(:music) { FactoryGirl.create(:genre, name: 'Music') }
+  let!(:comedy) { FactoryGirl.create(:genre, name: 'Comedy') }
   let!(:suggstion2) { FactoryGirl.create(:suggestion, genre: music, topping: pineapple) }
   let!(:suggstion3) { FactoryGirl.create(:suggestion, genre: music, topping: pepperoni) }
+  let!(:suggstion4) { FactoryGirl.create(:suggestion, genre: comedy, topping: pineapple) }
 
   scenario 'user picks one topping' do
-    visit 'toppings/,Ham'
+    visit 'toppings/,Pineapple'
 
     expect(page).to have_selector('li', count: 5)
   end
