@@ -19,25 +19,18 @@ class MoviesController < ApplicationController
             @genre = Genre.find_by(name: genre["name"])
           end
         end
-
-
         if !@genre
           render :new
-          flash[:alert]="I didn't recognize that movie."
+          flash[:alert] = "I didn't recognize that movie."
         end
-
-
-
       end
-
       if search.first == 'genre'
-      @genre = Genre.find_by(name: search.last)
-
-      if @title
-        @message = "Based on your choice of #{@title}, I recommend these toppings:"
-      else
-        @message = "Here are the toppings recommended for #{@genre.name} movies:"
+        @genre = Genre.find_by(name: search.last)
+        if @title
+          @message = "Based on your choice of #{@title}, I recommend these toppings:"
+        else
+          @message = "Here are the toppings recommended for #{@genre.name} movies:"
+        end
       end
     end
   end
-end
