@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
       key = ENV["TMDB_KEY"]
       movies = HTTParty.get("https://api.themoviedb.org/3/search/movie?api_key=#{key}&language=en-US&query=#{search.last}&page=1&include_adult=false")
       if movies.parsed_response['results'].empty? || movies.parsed_response['results'][0]['genre_ids'].empty?
-        flash[:alert]="I didn't recognize that movie."
+        flash[:alert] = "I didn't recognize that movie."
         redirect_to new_movie_path
         return
       else
