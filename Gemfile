@@ -1,7 +1,7 @@
 source 'https://rubygems.org/'
 
-gem 'jquery-rails'
 gem 'httparty'
+gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'dotenv-rails'

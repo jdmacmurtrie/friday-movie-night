@@ -7,14 +7,11 @@ feature 'user receives suggestions for movies' do
   let!(:animation) { FactoryGirl.create(:genre, name: 'Animation') }
   let!(:suggestion) { FactoryGirl.create(:suggestion) }
   let!(:minion1) { FactoryGirl.create(
-  :suggestion, genre: family, topping: cheese
-  ) }
+    :suggestion, genre: family, topping: cheese) }
   let!(:minion2) { FactoryGirl.create(
-  :suggestion, genre: adventure, topping: cheese
-  ) }
+    :suggestion, genre: adventure, topping: cheese) }
   let!(:minion3) { FactoryGirl.create(
-  :suggestion, genre: animation, topping: cheese
-  ) }
+    :suggestion, genre: animation, topping: cheese) }
 
   scenario 'user inputs a genre' do
     visit 'movies/genre,Comedy'
