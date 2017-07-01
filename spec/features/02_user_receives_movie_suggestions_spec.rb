@@ -6,12 +6,12 @@ feature 'user receives suggestions for movies' do
   let!(:pepperoni) { FactoryGirl.create(:topping, name: 'Pepperoni') }
   let!(:music) { FactoryGirl.create(:genre, name: 'Music') }
   let!(:comedy) { FactoryGirl.create(:genre, name: 'Comedy') }
-  let!(:suggestion2) {
-    FactoryGirl.create(:suggestion, genre: music, topping: pineapple) }
-  let!(:suggestion3) {
-    FactoryGirl.create(:suggestion, genre: music, topping: pepperoni) }
-  let!(:suggestion4) {
-    FactoryGirl.create(:suggestion, genre: comedy, topping: pineapple) }
+  let!(:suggestion2)
+  { FactoryGirl.create(:suggestion, genre: music, topping: pineapple) }
+  let!(:suggestion3)
+  { FactoryGirl.create(:suggestion, genre: music, topping: pepperoni) }
+  let!(:suggestion4)
+  { FactoryGirl.create(:suggestion, genre: comedy, topping: pineapple) }
 
   scenario 'user picks one topping' do
     visit 'toppings/,Pineapple'

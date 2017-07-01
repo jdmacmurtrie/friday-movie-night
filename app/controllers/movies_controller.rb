@@ -6,9 +6,9 @@ class MoviesController < ApplicationController
     if search.first == 'title'
       key = ENV["TMDB_KEY"]
       movies = HTTParty.get(
-      "https://api.themoviedb.org/3/search/movie?api_key=#{key}&language=en-US&query=#{search.last}&page=1&include_adult=false")
+        "https://api.themoviedb.org/3/search/movie?api_key=#{key}&language=en-US&query=#{search.last}&page=1&include_adult=false")
       if movies.parsed_response['results'].empty? ||
-        movies.parsed_response['results'][0]['genre_ids'].empty?
+          movies.parsed_response['results'][0]['genre_ids'].empty?
         flash[:alert] = "I didn't recognize that movie."
         redirect_to new_movie_path
         return
@@ -16,7 +16,8 @@ class MoviesController < ApplicationController
         @title = movies.parsed_response['results'].first['title']
         genre_id = movies.parsed_response['results'].first['genre_ids'].sample
         genres = HTTParty.get(
-        "https://api.themoviedb.org/3/genre/movie/list?api_key=#{key}")
+          "https://api.themoviedb.org/3/genre/movie/list?api_key=#{key}"
+        )
         genres.parsed_response['genres'].each do |genre|
           if genre["id"] == genre_id
             @genre = Genre.find_by(name: genre["name"])
