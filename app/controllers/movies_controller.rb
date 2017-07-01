@@ -6,7 +6,8 @@ class MoviesController < ApplicationController
     if search.first == 'title'
       key = ENV["TMDB_KEY"]
       movies = HTTParty.get(
-        "https://api.themoviedb.org/3/search/movie?api_key=#{key}&language=en-US&query=#{search.last}&page=1&include_adult=false")
+        "https://api.themoviedb.org/3/search/movie?api_key=#{key}&language=en-US&query=#{search.last}&page=1&include_adult=false"
+      )
       if movies.parsed_response['results'].empty? ||
           movies.parsed_response['results'][0]['genre_ids'].empty?
         flash[:alert] = "I didn't recognize that movie."
