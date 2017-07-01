@@ -21,7 +21,9 @@ class ToppingsController < ApplicationController
     end
     genre_id = 0
     key = ENV["TMDB_KEY"]
-    genres = HTTParty.get("https://api.themoviedb.org/3/genre/movie/list?api_key=#{key}")
+    genres = HTTParty.get(
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=#{key}"
+    )
     genres.parsed_response['genres'].each do |genre|
       if genre['name'] == @genre_suggestion.name
         genre_id = genre['id']

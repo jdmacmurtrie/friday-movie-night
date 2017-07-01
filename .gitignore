@@ -23,3 +23,6 @@
 /app/assets/javascripts/bundle.js
 /react/coverage
 /maybe_eventually
+Rakefile
+/bin
+/public/assets
