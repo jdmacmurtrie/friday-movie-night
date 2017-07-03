@@ -51,16 +51,20 @@ class MovieContainer extends React.Component {
       movieDropdown = <MovieDropdown handleChangeDropdown={this.handleChangeDropdown} />
     }
     if (this.state.queryString !== '' && this.state.queryString != 'none') {
-      button = <button><a href={`/movies/${this.state.queryString}`}>Get my suggestions!</a></button>
+      button = <a href={`/movies/${this.state.queryString}`} className="small-12 columns button" id="get-topping-button">Get my suggestions!</a>
     }
 
     return (
       <div>
-        <h1>Search by {this.state.selection}:</h1>
+        <div className="top-bar select">
+          Please select a genre or a title
+        </div>
+        <div className="movie-panal">
         <SearchBy handleChangeSearch={this.handleChangeSearch}/>
-        {movieForm}
-        {movieDropdown}
-        {button}
+          {movieForm}
+          {movieDropdown}
+          {button}
+        </div>
       </div>
     );
   }

@@ -4,10 +4,9 @@ const MovieDropdown = props => {
   // because History by itself is a no-no
 let history = "History"
   return (
-    <div>
-      <h2>Please select a preferred genre: </h2>
+    <div className="movie-field">
       <select name="genres" onChange={props.handleChangeDropdown}>
-        <option value="none">(none selected)</option>
+        <option value="none">(select a genre)</option>
         <option value="Action">Action</option>
         <option value="Comedy">Comedy</option>
         <option value="Family">Family</option>
@@ -15,6 +14,7 @@ let history = "History"
         <option value="Romance">Romance</option>
         <option value="Mystery">Mystery</option>
         <option value="Western">Western</option>
+        <option value="Adventure">Adventure</option>
         <option value="Documentary">Documentary</option>
         <option value="Animation">Animation</option>
         <option value="Thriller">Thriller</option>

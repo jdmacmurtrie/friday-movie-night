@@ -1,8 +1,8 @@
 
-toppings = ['Extra Cheese', 'Pepperoni', 'Sausage', 'Ham', 'Pineapple', 'Green Pepper', 'Mushroom', 'Grilled Chicken', 'Bacon', 'Olive']
+toppings = ['Extra Cheese', 'Pepperoni', 'Sausage', 'Ham', 'Pineapple', 'Green Pepper', 'Mushroom', 'Grilled Chicken', 'Bacon', 'Olives']
 genres = ['Action', 'Comedy', 'Drama', 'Family', 'War', 'Horror',
 'Music', 'Science Fiction', 'Fantasy', 'Romance', 'Mystery',
-'Western', 'History', 'Documentary', 'Animation', 'Thriller']
+'Western', 'History', 'Documentary', 'Animation', 'Thriller', 'Adventure']
 
 
 Topping.destroy_all
@@ -24,21 +24,23 @@ Suggestion.create(genre: Genre.find_by(name: 'Horror'), topping: Topping.find_by
 Suggestion.create(genre: Genre.find_by(name: 'Romance'), topping: Topping.find_by(name: 'Mushroom'), order_number: 5)
 Suggestion.create(genre: Genre.find_by(name: 'Mystery'), topping: Topping.find_by(name: 'Green Pepper'), order_number: 6)
 Suggestion.create(genre: Genre.find_by(name: 'Western'), topping: Topping.find_by(name: 'Grilled Chicken'), order_number: 7)
-Suggestion.create(genre: Genre.find_by(name: 'Documentary'), topping: Topping.find_by(name: 'Olive'), order_number: 8)
+Suggestion.create(genre: Genre.find_by(name: 'Documentary'), topping: Topping.find_by(name: 'Olives'), order_number: 8)
 Suggestion.create(genre: Genre.find_by(name: 'Animation'), topping: Topping.find_by(name: 'Pineapple'), order_number: 9)
 Suggestion.create(genre: Genre.find_by(name: 'Thriller'), topping: Topping.find_by(name: 'Bacon'), order_number: 10)
 Suggestion.create(genre: Genre.find_by(name: 'Drama'), topping: Topping.find_by(name: 'Extra Cheese'), order_number: 11)
 Suggestion.create(genre: Genre.find_by(name: 'Drama'), topping: Topping.find_by(name: 'Pepperoni'), order_number: 11)
 Suggestion.create(genre: Genre.find_by(name: 'War'), topping: Topping.find_by(name: 'Grilled Chicken'), order_number: 12)
-Suggestion.create(genre: Genre.find_by(name: 'War'), topping: Topping.find_by(name: 'Olive'), order_number: 12)
+Suggestion.create(genre: Genre.find_by(name: 'War'), topping: Topping.find_by(name: 'Olives'), order_number: 12)
 Suggestion.create(genre: Genre.find_by(name: 'Music'), topping: Topping.find_by(name: 'Ham'), order_number: 13)
 Suggestion.create(genre: Genre.find_by(name: 'Music'), topping: Topping.find_by(name: 'Pineapple'), order_number: 13)
 Suggestion.create(genre: Genre.find_by(name: 'Science Fiction'), topping: Topping.find_by(name: 'Sausage'), order_number: 14)
 Suggestion.create(genre: Genre.find_by(name: 'Science Fiction'), topping: Topping.find_by(name: 'Mushroom'), order_number: 14)
 Suggestion.create(genre: Genre.find_by(name: 'Fantasy'), topping: Topping.find_by(name: 'Bacon'), order_number: 15)
 Suggestion.create(genre: Genre.find_by(name: 'Fantasy'), topping: Topping.find_by(name: 'Sausage'), order_number: 15)
-Suggestion.create(genre: Genre.find_by(name: 'History'), topping: Topping.find_by(name: 'Olive'), order_number: 16)
+Suggestion.create(genre: Genre.find_by(name: 'History'), topping: Topping.find_by(name: 'Olives'), order_number: 16)
 Suggestion.create(genre: Genre.find_by(name: 'History'), topping: Topping.find_by(name: 'Green Pepper'), order_number: 16)
+Suggestion.create(genre: Genre.find_by(name: 'Adventure'), topping: Topping.find_by(name: 'Bacon'), order_number: 17)
+Suggestion.create(genre: Genre.find_by(name: 'Adventure'), topping: Topping.find_by(name: 'Grilled Chicken'), order_number: 17)
 
 
 # genre_id = 0
