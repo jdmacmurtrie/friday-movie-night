@@ -1,5 +1,6 @@
 source 'https://rubygems.org/'
 
+ruby '2.3.3'
 gem 'devise'
 gem 'httparty'
 gem 'jquery-rails'
