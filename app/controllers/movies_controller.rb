@@ -29,8 +29,10 @@ class MoviesController < ApplicationController
 
     if @title
       @message = "Your pizza recommendation, based on #{@title}"
+      return @message
     else
       @message = "Your topping recommendations"
+      return @message
     end
   end
 end
