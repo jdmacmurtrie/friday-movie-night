@@ -1,3 +1,17 @@
-Lets get started!
-<%= button_to 'I need a pizza!', new_topping_path, method: :get %>
-<%= button_to 'I need a movie!', new_movie_path, method: :get %>
+<div class="top-bar get-started">
+  <div>Let's get started!</div>
+</div>
+<div class="choice-panal">
+  <div class="choice">
+    What would you like me to recommend?
+  </div>
+  <div class="choice-buttons">
+    <div class="small-6 columns">
+    <a href="toppings/new" class="alert button">I need a movie!</a><br/>
+  </div>
+
+  <div class="small-6 columns">
+    <a href="movies/new" class="button">I need a pizza!</a><br/>
+  </div>
+  </div>
+</div>

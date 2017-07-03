@@ -4,75 +4,105 @@ const PizzaForm = props => {
 
   return (
     <form>
-      <label>Extra Cheese</label>
-      <input type="checkbox"
-        value="Extra Cheese"
-        name="Extra Cheese"
-        className="checkbox"
-        onChange={props.handleChange}/>
+      <div className="small-3 columns">
+        <label>Extra Cheese</label>
+      </div>
+      <div className="small-3 columns">
+        <input type="checkbox"
+          value="Extra Cheese"
+          name="Extra Cheese"
+          onChange={props.handleChange}/>
+      </div>
 
-      <label>Pepperoni</label>
-      <input type="checkbox"
-        value="Pepperoni"
-        name="Pepperoni"
-        className="checkbox"
-        onChange={props.handleChange}/>
+      <div className="small-3 columns">
+        <label>Pepperoni</label>
+      </div>
+      <div className="small-3 columns">
+        <input type="checkbox"
+          value="Pepperoni"
+          name="Pepperoni"
+          onChange={props.handleChange}/>
+      </div>
 
-      <label>Sausage</label>
-      <input type="checkbox"
-        value="Sausage"
-        name="Sausage"
-        className="checkbox"
-        onChange={props.handleChange}/>
+      <div className="small-3 columns">
+        <label>Sausage</label>
+      </div>
+      <div className="small-3 columns">
+        <input type="checkbox"
+          value="Sausage"
+          name="Sausage"
+          onChange={props.handleChange}/>
+      </div>
 
-      <label>Ham</label>
-      <input type="checkbox"
-        value="Ham"
-        name="Ham"
-        className="checkbox"
-        onChange={props.handleChange}/>
+      <div className="small-3 columns">
+        <label>Ham</label>
+      </div>
+      <div className="small-3 columns">
+        <input type="checkbox"
+          value="Ham"
+          name="Ham"
+          onChange={props.handleChange}/>
+      </div>
 
-      <label>Pineapple</label>
-      <input type="checkbox"
-        value="Pineapple"
-        name="Pineapple"
-        className="checkbox"
-        onChange={props.handleChange}/>
+      <div className="small-3 columns">
+        <label>Pineapple</label>
+      </div>
+      <div className="small-3 columns">
+        <input type="checkbox"
+          value="Pineapple"
+          name="Pineapple"
+          onChange={props.handleChange}/>
+      </div>
 
-      <label>Green Pepper</label>
-      <input type="checkbox"
-        value="Green Pepper"
-        name="Green Pepper"
-        className="checkbox"
-        onChange={props.handleChange}/>
+      <div className="small-3 columns">
+        <label>Green Pepper</label>
+      </div>
+      <div className="small-3 columns">
+        <input type="checkbox"
+          value="Green Pepper"
+          name="Green Pepper"
+          onChange={props.handleChange}/>
+      </div>
 
-      <label>Mushroom</label>
-      <input type="checkbox"
-        value="Mushroom"
-        name="Mushroom"
-        className="checkbox"
-        onChange={props.handleChange}/>
+      <div className="small-3 columns">
+        <label>Mushroom</label>
+      </div>
+      <div className="small-3 columns">
+        <input type="checkbox"
+          value="Mushroom"
+          name="Mushroom"
+          onChange={props.handleChange}/>
+      </div>
 
-      <label>Grilled Chicken</label>
-      <input type="checkbox"
-        value="Grilled Chicken"
-        name="Grilled Chicken"
-        className="checkbox"
-        onChange={props.handleChange}/>
+      <div className="small-3 columns">
+        <label>Grilled Chicken</label>
+      </div>
+      <div className="small-3 columns">
+        <input type="checkbox"
+          value="Grilled Chicken"
+          name="Grilled Chicken"
+          onChange={props.handleChange}/>
+      </div>
 
-      <label>Olives</label>
-      <input type="checkbox"
-        value="Olive"
-        name="Olive"
-        className="checkbox"
-        onChange={props.handleChange}/>
+      <div className="small-3 columns">
+        <label>Olives</label>
+      </div>
+      <div className="small-3 columns">
+        <input type="checkbox"
+          value="Olives"
+          name="Olives"
+          onChange={props.handleChange}/>
+      </div>
 
-      <label>Bacon</label>
-      <input type="checkbox"
-        value="Bacon"
-        name="Bacon"
-        className="checkbox"
-        onChange={props.handleChange}/>
+      <div className="small-3 columns">
+        <label>Bacon</label>
+      </div>
+      <div className="small-3 columns">
+        <input type="checkbox"
+          value="Bacon"
+          name="Bacon"
+          onChange={props.handleChange}/>
+      </div>
     </form>
   );
 }

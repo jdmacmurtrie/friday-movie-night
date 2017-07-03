@@ -1,4 +1,14 @@
-<%= @message %>
-<% @genre.toppings.each do |topping| %>
-<div><%= topping.name %></div>
-<% end %>
+<div class="top-bar recommended">
+  <%= @message %>
+</div>
+<div class="background">
+  <div class="topping-list">
+    <div class="separation">
+    </div>
+    <% @genre.toppings.each do |topping| %>
+    <div class="topping-name">
+      <%= topping.name %>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>FridayMovieNight</title>
-    <%= csrf_meta_tags %>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+  <title><%= content_for?(:title) ? yield(:title) : "Friday Movie Night" %></title>
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Alegreya+SC:900|Luckiest+Guy" rel="stylesheet">
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
-    <% flash.each do |key, value| %>
-      <%= value %>
-    <% end %>
-    <%= yield %>
-  </body>
+<body>
+  <% flash.each do |key, value| %>
+    <%= value %>
+  <% end %>
+  <%= yield %>
+
+</body>
 </html>

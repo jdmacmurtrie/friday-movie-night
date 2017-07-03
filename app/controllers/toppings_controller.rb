@@ -31,7 +31,7 @@ class ToppingsController < ApplicationController
     end
     @movie_suggestions = []
     movies = HTTParty.get("https://api.themoviedb.org/3/genre/#{genre_id}/movies?api_key=#{key}&language=en-US&include_adult=false&sort_by=created_at.asc")
-    movies.parsed_response['results'].sample(5).each do |movie|
+    movies.parsed_response['results'].sample(4).each do |movie|
       @movie_suggestions << Movie.create(
         title: movie['title'],
         description: movie['overview'],

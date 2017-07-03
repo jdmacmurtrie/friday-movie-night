@@ -16,13 +16,13 @@ feature 'user receives suggestions for movies' do
   scenario 'user inputs a genre' do
     visit 'movies/genre,Comedy'
 
-    expect(page).to have_selector('div', count: 1)
+    expect(page.find(:css, ".topping-name", count: 1))
   end
 
   scenario 'user inputs a movie title' do
     visit 'movies/title,Minions'
 
-    expect(page).to have_selector('div', count: 1)
+    expect(page.find(:css, ".topping-name", count: 1))
   end
 
   scenario 'user choice of title is not a title' do

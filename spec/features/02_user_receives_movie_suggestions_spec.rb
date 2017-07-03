@@ -16,18 +16,18 @@ feature 'user receives suggestions for movies' do
   scenario 'user picks one topping' do
     visit 'toppings/,Pineapple'
 
-    expect(page).to have_selector('li', count: 5)
+    expect(page).to have_selector('img', count: 4)
   end
 
   scenario 'user picks two toppings with no intersection' do
     visit 'toppings/Pineapple,Ham'
 
-    expect(page).to have_selector('li', count: 5)
+    expect(page).to have_selector('img', count: 4)
   end
 
   scenario 'user picks two toppings that intersect' do
     visit 'toppings/Pineapple,Pepperoni'
 
-    expect(page).to have_selector('li', count: 5)
+    expect(page).to have_selector('img', count: 4)
   end
 end
