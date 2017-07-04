@@ -15,26 +15,26 @@
   <div class="top-bar-left">
     <ul>
       <% if user_signed_in? %>
-        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
       <% else %>
         <% unless current_page?(new_user_registration_path)%>
           <li><%= link_to "Create Account", new_user_registration_path%></li>
-        <%end %>
+      <%end %>
         <% unless current_page?(new_user_session_path)%>
-        <li><%= link_to "Sign In", new_user_session_path%></li>
-      <% end %>
+          <li><%= link_to "Sign In", new_user_session_path%></li>
+        <% end %>
       <% end %>
     </ul>
-</div>
-<div class="top-bar-right">
-  <% unless current_page?(new_suggestion_path) %>
-    <%= link_to "Make my own combo", new_suggestion_path %>
+  </div>
+  <div class="top-bar-right">
+    <% if user_signed_in? && !current_page?(new_suggestion_path) %>
+      <%= link_to "Make my own combo", new_suggestion_path %>
+    <% end %>
+  </div>
+  <% flash.each do |key, value| %>
+    <%= value %>
   <% end %>
-</div>
-<% flash.each do |key, value| %>
-<%= value %>
-<% end %>
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

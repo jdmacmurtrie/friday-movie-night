@@ -1,17 +1,18 @@
 require 'rails_helper'
 
 feature 'user receives suggestions for movies' do
-  let!(:suggestion) { FactoryGirl.create(:suggestion) }
+  let!(:user) { FactoryGirl.create(:user) }
+  let!(:suggestion) { FactoryGirl.create(:suggestion, user: user) }
   let!(:pineapple) { FactoryGirl.create(:topping, name: 'Pineapple') }
   let!(:pepperoni) { FactoryGirl.create(:topping, name: 'Pepperoni') }
   let!(:music) { FactoryGirl.create(:genre, name: 'Music') }
   let!(:comedy) { FactoryGirl.create(:genre, name: 'Comedy') }
   let!(:suggestion2) { FactoryGirl.create(
-    :suggestion, genre: music, topping: pineapple) }
+    :suggestion, genre: music, topping: pineapple, user: user) }
   let!(:suggestion3) { FactoryGirl.create(
-    :suggestion, genre: music, topping: pepperoni) }
+    :suggestion, genre: music, topping: pepperoni, user: user) }
   let!(:suggestion4) { FactoryGirl.create(
-    :suggestion, genre: comedy, topping: pineapple) }
+    :suggestion, genre: comedy, topping: pineapple, user: user) }
 
   scenario 'user picks one topping' do
     visit 'toppings/,Pineapple'

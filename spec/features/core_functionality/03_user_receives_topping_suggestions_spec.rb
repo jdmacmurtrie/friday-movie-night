@@ -5,13 +5,14 @@ feature 'user receives suggestions for movies' do
   let!(:family) { FactoryGirl.create(:genre, name: 'Family') }
   let!(:adventure) { FactoryGirl.create(:genre, name: 'Adventure') }
   let!(:animation) { FactoryGirl.create(:genre, name: 'Animation') }
-  let!(:suggestion) { FactoryGirl.create(:suggestion) }
+  let!(:user) { FactoryGirl.create(:user) }
+  let!(:suggestion) { FactoryGirl.create(:suggestion, user: user) }
   let!(:minion1) { FactoryGirl.create(
-    :suggestion, genre: family, topping: cheese) }
+    :suggestion, genre: family, topping: cheese, user: user) }
   let!(:minion2) { FactoryGirl.create(
-    :suggestion, genre: adventure, topping: cheese) }
+    :suggestion, genre: adventure, topping: cheese, user: user) }
   let!(:minion3) { FactoryGirl.create(
-    :suggestion, genre: animation, topping: cheese) }
+    :suggestion, genre: animation, topping: cheese, user: user) }
 
   scenario 'user inputs a genre' do
     visit 'movies/genre,Comedy'
