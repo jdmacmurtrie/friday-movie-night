@@ -22,6 +22,7 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'coveralls', require: false
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'launchy', require: false
   gem 'pry-rails'

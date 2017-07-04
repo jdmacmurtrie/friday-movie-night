@@ -9,8 +9,4 @@ RSpec.describe Suggestion, type: :model do
 
   it { should have_valid(:topping_id).when("Cheese") }
   it { should_not have_valid(:topping_id).when(nil, "") }
-
-  it { should have_valid(:order_number).when(1) }
-  it { should_not have_valid(:order_number).when(nil, "") }
-
 end
