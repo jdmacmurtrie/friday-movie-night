@@ -17,13 +17,20 @@
       <% if user_signed_in? %>
         <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to "Create Account", new_user_registration_path%></li>
+        <% unless current_page?(new_user_registration_path)%>
+          <li><%= link_to "Create Account", new_user_registration_path%></li>
+        <%end %>
+        <% unless current_page?(new_user_session_path)%>
         <li><%= link_to "Sign In", new_user_session_path%></li>
       <% end %>
+      <% end %>
     </ul>
-  </ul>
 </div>
-
+<div class="top-bar-right">
+  <% unless current_page?(new_suggestion_path) %>
+    <%= link_to "Make my own combo", new_suggestion_path %>
+  <% end %>
+</div>
 <% flash.each do |key, value| %>
 <%= value %>
 <% end %>

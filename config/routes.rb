@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :choices, only: [:index]
   resources :toppings
   resources :movies
+  resources :suggestions
 end

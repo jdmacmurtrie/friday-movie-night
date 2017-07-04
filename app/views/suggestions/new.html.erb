@@ -1,0 +1,32 @@
+<%= form_for [@suggestion] do |f| %>
+  <% if @suggestion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@suggestion.errors.count, "error") %> prohibited this suggestion from being saved:</h2>
+
+      <ul>
+      <% @suggestion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :topping_1, "First Topping" %>
+    <%= f.select :topping, ['Extra Cheese', 'Pepperoni', 'Sausage', 'Ham', 'Pineapple', 'Green Pepper', 'Mushroom', 'Grilled Chicken', 'Bacon', 'Olives']%>
+  </div>
+<% binding.pry %>
+  <div>
+    <%= f.label :topping_2, "Second Topping (optional)" %>
+    <%= f.select :topping, ['Extra Cheese', 'Pepperoni', 'Sausage', 'Ham', 'Pineapple', 'Green Pepper', 'Mushroom', 'Grilled Chicken', 'Bacon', 'Olives']%>
+  </div>
+
+  <div>
+    <%= f.label :genre %>
+    <%= f.select :genre, ['Action', 'Comedy', 'Drama', 'Family', 'War', 'Horror',
+                          'Music', 'Science Fiction', 'Fantasy', 'Romance', 'Mystery',
+                          'Western', 'History', 'Documentary', 'Animation', 'Thriller', 'Adventure']%>
+  </div>
+
+  <%= f.submit %>
+<% end %>
