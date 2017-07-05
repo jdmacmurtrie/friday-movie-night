@@ -9,16 +9,28 @@ class ToppingsController < ApplicationController
         @toppings << Topping.find_by(name: topping)
       end
     end
-    all_suggestions = @toppings.map { |topping| topping.genres }
-    one_suggestion = all_suggestions.inject(:&)
-    if !one_suggestion.empty?
-      @genre_suggestion = one_suggestion[0]
-      if one_suggestion.length > 1
-        @genre_suggestion = one_suggestion.sample
+
+    if current_user
+      user_genres = []
+      current_user.suggestions.each do |sugg|
+        user_genres << sugg.genre if @toppings.include?(sugg.topping)
       end
-    else
-      @genre_suggestion = all_suggestions.flatten.sample
+      @genre_suggestion = user_genres.sample
     end
+
+    if current_user.nil? || !@genre_suggestion
+      all_suggestions = @toppings.map { |topping| topping.genres }
+      one_suggestion = all_suggestions.inject(:&)
+      if !one_suggestion.empty?
+        @genre_suggestion = one_suggestion[0]
+        if one_suggestion.length > 1
+          @genre_suggestion = one_suggestion.sample
+        end
+      else
+        @genre_suggestion = all_suggestions.flatten.sample
+      end
+    end
+
     genre_id = 0
     key = ENV["TMDB_KEY"]
     genres = HTTParty.get(
@@ -35,7 +47,8 @@ class ToppingsController < ApplicationController
       @movie_suggestions << Movie.create(
         title: movie['title'],
         description: movie['overview'],
-        poster: movie['poster_path']
+        poster: movie['poster_path'],
+        genre: @genre_suggestion
       )
     end
   end

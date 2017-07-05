@@ -30,7 +30,3 @@ feature 'user adds suggestion' do
     expect(user.suggestions.length).to eq(2)
   end
 end
-
-# user does not select one field
-# user selects 2 toppings
-# user adds new combo for existing genre
