@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
 
   def show
     search = params[:id].split(',')
+    @selected_genre = nil
     if search.first == 'title'
       key = ENV["TMDB_KEY"]
       movies = HTTParty.get(
@@ -21,31 +22,34 @@ class MoviesController < ApplicationController
         )
         genres.parsed_response['genres'].each do |genre|
           if genre["id"] == genre_id
-            @genre = Genre.find_by(name: genre["name"])
+            @selected_genre = Genre.find_by(name: genre["name"])
           end
         end
       end
     end
 
     if search.first == 'genre'
-      @toppings = []
-      selected_genre = Genre.find_by(name: search.last)
+      @selected_genre = Genre.find_by(name: search.last)
+    end
+
+    @toppings = []
+    if current_user
       current_user.suggestions.each do |sugg|
-        if sugg.genre == selected_genre
+        if sugg.genre == @selected_genre
           @toppings << sugg.topping
         end
       end
-      if @toppings.empty?
-        selected_genre.toppings.each do |topping|
-          @toppings << topping if Suggestion.find_by(topping: topping).user.nil?
-        end
-      end
-      if @title
-        @message = "Your pizza recommendation, based on #{@title}"
-      else
-        @message = "Your topping recommendations"
-      end
-      return @message
     end
+    if @toppings.empty?
+      @selected_genre.toppings.each do |topping|
+        @toppings << topping if Suggestion.find_by(topping: topping).user.nil?
+      end
+    end
+    if @title
+      @message = "Your pizza recommendation, based on #{@title}"
+    else
+      @message = "Your topping recommendations"
+    end
+    return @message
   end
 end

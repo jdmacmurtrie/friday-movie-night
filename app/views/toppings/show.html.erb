@@ -4,12 +4,15 @@
 
 <div class="movie-choices">
   <div class="movie-panal">
-  <div class="row">
-    <div class="3-small columns" id="movie">
-      <% @movie_suggestions.each do |movie|%>
-      <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2<%=movie.poster%>" alt="<%= movie.title %>" class="poster"></img>
-      <% end %>
-    </div>
+    <div class="row">
+      <div class="3-small columns" id="movie">
+        <% @movie_suggestions.each do |movie|%>
+          <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2<%=movie.poster%>"
+            alt="<%= movie.title %>"
+            class="poster">
+          </img>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
