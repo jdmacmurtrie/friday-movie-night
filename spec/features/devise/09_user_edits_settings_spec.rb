@@ -6,7 +6,8 @@ feature 'user interacts with user page' do
   let!(:pepperoni) { FactoryGirl.create(:topping, name: 'Pepperoni') }
   let!(:suggestion1) { FactoryGirl.create(:suggestion, user: user) }
   let!(:suggestion2) { FactoryGirl.create(
-    :suggestion, user: user, genre: war, topping: pepperoni) }
+  :suggestion, user: user, genre: war, topping: pepperoni
+  ) }
 
   scenario 'user visits user page' do
     sign_in_as(user)
