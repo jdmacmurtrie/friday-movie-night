@@ -8,7 +8,7 @@ feature 'user signs out' do
     sign_in_as(user)
     click_link 'Sign Out'
 
-    expect(page).to have_content('Signed out successfully.')
+    expect(page).to have_content('Signed out. Peace!')
     expect(page).to have_content('Sign In')
     expect(page).to have_content('Create Account')
   end

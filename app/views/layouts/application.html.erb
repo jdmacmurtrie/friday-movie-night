@@ -27,8 +27,13 @@
     </ul>
   </div>
   <div class="top-bar-right">
-    <% if user_signed_in? && !current_page?(new_suggestion_path) %>
+    <% if user_signed_in?
+        unless current_page?(new_suggestion_path) %>
       <%= link_to "Make my own combo", new_suggestion_path %>
+    <% end %>
+      <% unless current_page?(user_path(current_user)) %>
+      <%= link_to "My Stuff", user_path(current_user) %>
+      <% end %>
     <% end %>
   </div>
   <% flash.each do |key, value| %>
