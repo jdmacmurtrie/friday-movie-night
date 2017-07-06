@@ -19,4 +19,9 @@ class SuggestionsController < ApplicationController
     end
     redirect_to root_path
   end
+
+  def destroy
+    Suggestion.find(params[:id]).destroy
+    redirect_to user_path(current_user)
+  end
 end

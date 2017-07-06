@@ -41,19 +41,3 @@ Suggestion.create(genre: Genre.find_by(name: 'History'), topping: Topping.find_b
 Suggestion.create(genre: Genre.find_by(name: 'History'), topping: Topping.find_by(name: 'Green Pepper'))
 Suggestion.create(genre: Genre.find_by(name: 'Adventure'), topping: Topping.find_by(name: 'Bacon'))
 Suggestion.create(genre: Genre.find_by(name: 'Adventure'), topping: Topping.find_by(name: 'Grilled Chicken'))
-
-
-# genre_id = 0
-# key = ENV["TMDB_KEY"]
-# # all genres:
-# genres = HTTParty.get("https://api.themoviedb.org/3/genre/movie/list?api_key=#{key}")
-# # movie by genre:
-# #genre ids of first adventure movie:
-# # movies.parsed_response["results"][0]['genre_ids']
-# genres.parsed_response['genres'].each do |genre|
-#   if genre['name'] == 'Action'
-#     genre_id = genre['id']
-#   end
-# end
-# movies = HTTParty.get("https://api.themoviedb.org/3/genre/#{genre_id}/movies?api_key=#{key}&language=en-US&include_adult=false&sort_by=created_at.asc")
-# binding.pry

@@ -1,0 +1,12 @@
+<%= @user.first_name %>'s Stuff
+<%= @user.email %>
+<%= link_to 'Edit My Stuff', edit_user_registration_path(@user) %>
+<%= button_to "Cancel My Stuff", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete %></p>
+Your Combos:
+<ul>
+
+<% @user.suggestions.each do |sugg| %>
+<li><%= sugg.genre.name %> -> <%= sugg.topping.name %></li>
+<%= link_to 'Delete This Combo', suggestion_path(sugg), method: :delete %>
+<% end %>
+</ul>
