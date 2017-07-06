@@ -2,6 +2,7 @@ import React from 'react'
 import MovieForm from '../components/MovieForm'
 import MovieDropdown from '../components/MovieDropdown'
 import SearchBy from '../components/SearchBy'
+import { browserHistory } from 'react-router'
 
 class MovieContainer extends React.Component {
   constructor (props) {
@@ -17,7 +18,6 @@ class MovieContainer extends React.Component {
     this.handleChangeSearch = this.handleChangeSearch.bind(this);
     this.handleSearchClear = this.handleSearchClear.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
   handleChangeSearch(event) {
@@ -45,11 +45,8 @@ class MovieContainer extends React.Component {
 
   handleFormSubmit(event) {
     event.preventDefault()
-    handleButtonClick()
-  }
-
-  handleButtonClick(event) {
-    event.preventDefault()
+    let queryString = this.state.queryString
+    browserHistory.push(`/movies/recommendations/${queryString}`)
   }
 
   render () {
@@ -64,7 +61,9 @@ class MovieContainer extends React.Component {
       movieDropdown = <MovieDropdown handleChangeDropdown={this.handleChangeDropdown} />
     }
     if (this.state.queryString !== '' && this.state.queryString != 'none') {
-      button = <button onClick={handleButtonClick}><a href={`/movies/${this.state.queryString}`} className="small-12 columns button" id="get-topping-button">Get my suggestions!</a></button>
+      button = <button type='submit' onClick={this.handleFormSubmit} className="small-12 columns button" id="get-topping-button">
+                Get my suggestions!
+              </button>
     }
 
     return (
