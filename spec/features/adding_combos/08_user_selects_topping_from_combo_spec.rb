@@ -7,9 +7,13 @@ feature 'user selects own combos' do
   let!(:topping) { FactoryGirl.create(:topping) }
   let!(:chicken) { FactoryGirl.create(:topping, name: 'Grilled Chicken') }
   let!(:suggestion2) { FactoryGirl.create(
-    :suggestion, user: nil, genre: romance, topping: topping) }
+    :suggestion, user: nil, genre: romance, topping: topping
+    )
+  }
   let!(:suggestion3) { FactoryGirl.create(
-    :suggestion, user: nil, topping: chicken, genre: genre) }
+    :suggestion, user: nil, topping: chicken, genre: genre
+    )
+  }
 
   scenario 'user selects topping from newly created combo' do
     visit 'toppings/,Ham'

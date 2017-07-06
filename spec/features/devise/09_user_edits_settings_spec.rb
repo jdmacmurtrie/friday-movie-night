@@ -6,8 +6,9 @@ feature 'user interacts with user page' do
   let!(:pepperoni) { FactoryGirl.create(:topping, name: 'Pepperoni') }
   let!(:suggestion1) { FactoryGirl.create(:suggestion, user: user) }
   let!(:suggestion2) { FactoryGirl.create(
-  :suggestion, user: user, genre: war, topping: pepperoni
-  ) }
+    :suggestion, user: user, genre: war, topping: pepperoni
+  )
+  }
 
   scenario 'user visits user page' do
     sign_in_as(user)
@@ -22,7 +23,9 @@ feature 'user interacts with user page' do
     expect(page).to have_content(suggestion1.topping.name)
     expect(page).to have_content(suggestion2.genre.name)
     expect(page).to have_content(suggestion2.topping.name)
-    expect(page).to have_link("Delete This Combo", count: user.suggestions.length)
+    expect(page).to have_link(
+      "Delete This Combo", count: user.suggestions.length
+    )
   end
 
   scenario 'unauthorized user does not see link to profile' do
