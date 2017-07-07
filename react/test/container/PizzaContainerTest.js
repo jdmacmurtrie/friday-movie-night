@@ -1,5 +1,5 @@
 import PizzaContainer from '../../src/containers/PizzaContainer';
-import Topping from '../../src/components/Topping';
+import ChosenToppings from '../../src/components/ChosenToppings';
 import PizzaForm from '../../src/components/PizzaForm';
 
 describe('PizzaContainer', () => {
@@ -13,18 +13,18 @@ describe('PizzaContainer', () => {
       expect(wrapper.state()).toEqual({ toppings: [], queryString: '' });
     });
 
-    it('should render a Topping Component when a topping is selected', () => {
+    it('should render a ChosenToppings Component when a topping is selected', () => {
     wrapper.setState({ toppings: ["Mushroom"] });
-    expect(wrapper.find(Topping)).toBePresent();
+    expect(wrapper.find(ChosenToppings)).toBePresent();
   });
 
     it('should render a PizzaForm Component', () => {
     expect(wrapper.find(PizzaForm)).toBePresent();
   });
 
-  it('should render the Topping Component an array of toppings when toppings are selected', () => {
+  it('should render the ChosenToppings Component an array of toppings when toppings are selected', () => {
       wrapper.setState({ toppings: ["Mushroom"] });
-      expect(wrapper.find(Topping).props()).toEqual({
+      expect(wrapper.find(ChosenToppings).props()).toEqual({
         toppings: ["Mushroom"]
       });
     });
