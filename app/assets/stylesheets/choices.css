@@ -9,6 +9,7 @@ body {
   height: 75px;
   font-size: 30px;
   text-align: center;
+  overflow: break-word;
 }
 
 .choice-panal {
@@ -18,6 +19,7 @@ body {
   background: white;
   margin: 50px;
   margin-top: 0;
+  height: 150%;
 }
 .choice {
   font-family: 'Alfa Slab One', cursive;
@@ -27,4 +29,15 @@ body {
 .choice-buttons {
   text-align: center;
   padding: 10%;
+}
+
+.user-perks {
+  text-align: right;
+  padding: 5px;
+  float: right;
+}
+
+.account-commands {
+  padding: 5px;
+  float:left;
 }

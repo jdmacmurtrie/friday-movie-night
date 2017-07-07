@@ -63,9 +63,11 @@ class PizzaContainer extends React.Component {
           <p>Please select up to two toppings</p>
         </div>
         <div className="topping-form">
+        <div className="checkbox-panal">
           <PizzaForm handleChange={this.handleChange}/>
           {yourToppings}
           {button}
+        </div>
         </div>
       </div>
     );

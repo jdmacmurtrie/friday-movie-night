@@ -5,9 +5,11 @@ const SuggestionForm = props => {
 let history = "History"
 
   return (
-    <div>
+    <div className="combo-selections small-12 columns">
     <div>Select a Genre</div>
-      <select name="genres" onChange={props.handleChangeGenre}>
+      <select name="genres"
+        onChange={props.handleChangeGenre}
+        className="select-box">
         <option value="none">(select a genre)</option>
         <option value="Action">Action</option>
         <option value="Comedy">Comedy</option>
@@ -29,7 +31,9 @@ let history = "History"
       </select>
 
       <div>Select a Topping</div>
-      <select name="genres" onChange={props.handleChangeTopping1}>
+      <select name="toppings"
+        onChange={props.handleChangeTopping1}
+        className="select-box">
         <option value="none">(select a genre)</option>
         <option value="Extra Cheese">Extra Cheese</option>
         <option value="Pepperoni">Pepperoni</option>
@@ -44,7 +48,9 @@ let history = "History"
       </select>
 
       <div>Select a  Second Topping (optional)</div>
-      <select name="genres" onChange={props.handleChangeTopping2}>
+      <select name="toppings"
+        onChange={props.handleChangeTopping1}
+        className="select-box">
         <option value="none">(select a genre)</option>
         <option value="Extra Cheese">Extra Cheese</option>
         <option value="Pepperoni">Pepperoni</option>

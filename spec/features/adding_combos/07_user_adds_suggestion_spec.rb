@@ -11,11 +11,6 @@ feature 'user adds suggestion' do
     expect(page).to have_link("Make my own combo")
   end
 
-  scenario 'unauthorized user cannot see link' do
-    visit root_path
-    expect(page).to_not have_link("Make my own combo")
-  end
-
   scenario 'user creates combo with one topping' do
     sign_in_as(user)
     visit 'suggestions/Comedy,Ham,none'

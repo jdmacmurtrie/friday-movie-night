@@ -34,10 +34,18 @@ class SuggestionContainer extends React.Component {
   render () {
     let button
     if (this.state.genre != 'none' && this.state.topping_1 != 'none') {
-      button = <a href={`/suggestions/${this.state.queryString}`} className="button">Submit my combo!</a>
+      button =
+        <div className="">
+          <a href={`/suggestions/${this.state.queryString}`} className="small-12 columns button">
+            Submit my combo!
+          </a>
+      </div>
     }
     return (
       <div>
+      <div className="top-bar combo-header">
+        Combo Time
+      </div>
       <SuggestionForm
         handleChangeGenre={this.handleChangeGenre}
         handleChangeTopping1={this.handleChangeTopping1}
