@@ -1,12 +1,12 @@
-import Topping from '../../src/components/Topping';
+import ChosenToppings from '../../src/components/ChosenToppings';
 
-describe('Topping', () => {
+describe('ChosenToppings', () => {
   let topping,
       wrapper;
 
   beforeEach(() => {
     wrapper = mount(
-      <Topping
+      <ChosenToppings
       toppings={["Mushroom"]}
       />
     );

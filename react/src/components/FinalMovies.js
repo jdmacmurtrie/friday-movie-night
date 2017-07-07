@@ -4,7 +4,6 @@ const FinalMovies = props => {
   let movies
 
   if(props.movies) {
-    debugger
     movies= props.movies.map(movie => {
       return(
         <li>

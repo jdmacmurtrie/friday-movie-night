@@ -32,7 +32,7 @@ class Api::V1::ToppingsController < ApplicationController
     genre_id = 0
     key = ENV["TMDB_KEY"]
     genres = HTTParty.get(
-    "https://api.themoviedb.org/3/genre/movie/list?api_key=#{key}"
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=#{key}"
     )
     genres.parsed_response['genres'].each do |genre|
       if genre['name'] == @genre_suggestion.name
@@ -43,10 +43,10 @@ class Api::V1::ToppingsController < ApplicationController
     movies = HTTParty.get("https://api.themoviedb.org/3/genre/#{genre_id}/movies?api_key=#{key}&language=en-US&include_adult=false&sort_by=created_at.asc")
     movies.parsed_response['results'].sample(4).each do |movie|
       @movie_suggestions << Movie.create(
-      title: movie['title'],
-      description: movie['overview'],
-      poster: movie['poster_path'],
-      genre: @genre_suggestion
+        title: movie['title'],
+        description: movie['overview'],
+        poster: movie['poster_path'],
+        genre: @genre_suggestion
       )
     end
     render json: { movies: @movie_suggestions }

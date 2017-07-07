@@ -10,9 +10,9 @@ class PizzaContainer extends React.Component {
       toppings: [],
       queryString: ''
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleFormSubmit = this.handleFormSubmit.bind(this)
-  }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  };
 
 
   handleChange(event) {
@@ -30,13 +30,13 @@ class PizzaContainer extends React.Component {
       alert("You may only choose two toppings!")
     }
     this.setState({ queryString: `${this.state.toppings},${newTopping}`})
-  }
+  };
 
   handleFormSubmit(event) {
     event.preventDefault()
     let queryString = this.state.queryString
     browserHistory.push(`/toppings/recommendations/${queryString}`)
-  }
+  };
 
   render () {
     let button;

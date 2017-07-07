@@ -43,11 +43,6 @@ class Api::V1::MoviesController < ApplicationController
         @toppings << topping if Suggestion.find_by(topping: topping).user.nil?
       end
     end
-    if @title
-      @message = "Your pizza recommendation, based on #{@title}"
-    else
-      @message = "Your topping recommendations"
-    end
-    render json: { toppings: @toppings } 
+    render json: { toppings: @toppings }
   end
 end

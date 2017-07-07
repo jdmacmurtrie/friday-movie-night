@@ -41,7 +41,8 @@ describe('MovieContainer', () => {
   it('should render the MovieForm Component an onChange function', () => {
     wrapper.setState({ selection: 'title' });
     expect(wrapper.find(MovieForm).props()).toEqual({
-      handleChangeText: jasmine.any(Function)
+      handleChangeText: jasmine.any(Function),
+      handleFormSubmit: jasmine.any(Function)
     });
   });
 
