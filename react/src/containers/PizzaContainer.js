@@ -1,6 +1,7 @@
 import React from 'react'
 import PizzaForm from '../components/PizzaForm'
-import Topping from '../components/Topping'
+import ChosenToppings from '../components/ChosenToppings'
+import { browserHistory } from 'react-router'
 
 class PizzaContainer extends React.Component {
   constructor (props) {
@@ -10,6 +11,7 @@ class PizzaContainer extends React.Component {
       queryString: ''
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
 
@@ -30,19 +32,27 @@ class PizzaContainer extends React.Component {
     this.setState({ queryString: `${this.state.toppings},${newTopping}`})
   }
 
+  handleFormSubmit(event) {
+    event.preventDefault()
+    let queryString = this.state.queryString
+    browserHistory.push(`/toppings/recommendations/${queryString}`)
+  }
+
   render () {
     let button;
     let yourToppings;
     if (this.state.toppings.length >= 1) {
       button = <div className="small-6 large-6 columns">
                 <div className="get-movies">
-                  <a href={`/toppings/${this.state.queryString}`} className="button">Get my suggestions!</a>
+                  <button type='submit' onClick={this.handleFormSubmit} className="small-12 columns button" id="get-movie-button">
+                  Get my suggestions!
+                </button>
                 </div>
               </div>
       yourToppings = <div className="small-6 large-6 columns">
                       <div>Your toppings:</div>
                       <div className="topping-box">
-                        <Topping toppings={this.state.toppings}/>
+                        <ChosenToppings toppings={this.state.toppings}/>
                       </div>
                     </div>
     }

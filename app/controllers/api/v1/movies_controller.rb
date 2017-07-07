@@ -1,7 +1,6 @@
-class Api::V1::MoviesController < ApiController
-  def show
-    binding.pry
-    search = params[:id].split(',')
+class Api::V1::MoviesController < ApplicationController
+  def index
+    search = params[:params].split(',')
     @selected_genre = nil
     if search.first == 'title'
       key = ENV["TMDB_KEY"]
@@ -49,6 +48,6 @@ class Api::V1::MoviesController < ApiController
     else
       @message = "Your topping recommendations"
     end
-    return @message
+    render json: { toppings: @toppings } 
   end
 end

@@ -2,9 +2,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      binding.pry
-      resources :movies, only: [:show]
-      resources :toppings, only: [:show]
+      resources :movies, only: [:index]
+      resources :toppings, only: [:index]
     end
   end
 
