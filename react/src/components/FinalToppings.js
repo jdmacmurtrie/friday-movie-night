@@ -5,7 +5,7 @@ const FinalToppings = props => {
   if(props.toppings) {
    toppings= props.toppings.map(topping => {
     return(
-      <li>
+      <li className="topping-name">
         {topping.name}
       </li>
     )

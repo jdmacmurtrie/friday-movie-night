@@ -1,43 +1,37 @@
-<h2>Edit My Stuff</h2>
+<h2 class="top-bar form-header">Edit My Stuff</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+  <div class="row form">
+    <div class="field small-5 columns">
+      <%= f.label :first_name, "First Name" %>
+      <%= f.text_field :first_name, autofocus: true %>
+    </div>
 
-  <div class="field small-3 columns">
-    <%= f.label :first_name, "First Name" %>
-  </div>
-  <div class="field small-8 columns">
-  <%= f.text_field :first_name, autofocus: true %>
-  </div>
+    <div class="field small-7 columns">
+      <%= f.label :last_name, "Last Name" %>
+      <%= f.text_field :last_name, autofocus: true %>
+    </div>
 
-  <div class="field small-3 columns">
-    <%= f.label :last_name, "Last Name" %>
-  </div>
-  <div class="field small-8 columns">
-  <%= f.text_field :last_name, autofocus: true %>
-  </div>
+    <div class="field small-12 columns">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %> <br />
+  <div class="field small-6 columns">
+    <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password, "Confirm Password" %> <br />
+  <div class="field small-6 columns">
+    <%= f.label :current_password, "Confirm Password" %>
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update!" %>
-  </div>
+  <div class="actions button alert" type="submit">
+    <button class="create-button small-12 offset-6 columns">
+    Update!
+  </button>
+</div>
 <% end %>
-
+</div>
 <%= link_to "Back", user_path(resource) %>

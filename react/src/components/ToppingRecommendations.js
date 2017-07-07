@@ -43,15 +43,15 @@ class ToppingRecommendations extends React.Component {
       message = "Your pizza recommendations"
     }
     return (
+      <div>
       <div className="top-bar recommended">
-       {message}
-    <div className="background">
+      {message}
+      </div>
       <div className="topping-list">
         <div className="separation">
         </div>
          <FinalToppings toppings={this.state.toppings}/>
       </div>
-    </div>
      button_to 'Choose a Different Movie or Genre', new_movie_path, method: :get
      button_to 'Back to the Beginning', root_path, method: :get
       </div>

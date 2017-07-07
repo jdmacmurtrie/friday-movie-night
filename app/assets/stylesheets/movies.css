@@ -1,34 +1,3 @@
-.background {
-  height: 450px;
-  background: url(https://userscontent2.emaze.com/images/6e9a7840-21be-447e-aa4a-837d2c63f85b/57e1a405-eeea-40eb-9afe-f07226fa74ba.png) no-repeat top center;
-  background-size: 400px 470px;
-  background-attachment: fixed;
-}
-
-.topping-list {
-  border-left: 5px solid #32324e;
-  border-bottom: 5px solid #32324e;
-  border-right: 5px solid #32324e;
-  padding-bottom: 200px;
-  margin-left: 15%;
-  margin-right: 15%;
-}
-
-.topping-name {
-  text-align: center;
-  color: yellow;
-  text-shadow:
-  -2px -1.5px 0 #000,
-  2px -1.5px 0 #000,
-  -2px 1.5px 0 #000,
-  2px 1.5px 0 #000;
-  font-size: 50px;
-}
-
-.separation {
-  padding-bottom: 110px;
-}
-
 .search-by {
   text-align: center;
 }
@@ -61,4 +30,35 @@
 
 #get-topping-button {
   text-align: center;
+}
+
+.separation {
+  padding-bottom: 75px;
+}
+
+.topping-list {
+  height: 100%;
+  width: 75%;
+  background: url(https://userscontent2.emaze.com/images/6e9a7840-21be-447e-aa4a-837d2c63f85b/57e1a405-eeea-40eb-9afe-f07226fa74ba.png) no-repeat top center;
+  background-size: 400px 470px;
+  background-attachment: fixed;
+  border-left: 5px solid #32324e;
+  border-bottom: 5px solid #32324e;
+  border-right: 5px solid #32324e;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  padding-bottom: 50px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.topping-name {
+  text-align: center;
+  color: yellow;
+  text-shadow:
+  -2px -1.5px 0 #000,
+  2px -1.5px 0 #000,
+  -2px 1.5px 0 #000,
+  2px 1.5px 0 #000;
+  font-size: 6.1vw;
 }
