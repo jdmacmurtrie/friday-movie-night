@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router'
+import { browserHistory, Link } from 'react-router'
 import FinalToppings from './FinalToppings'
 
 class ToppingRecommendations extends React.Component {
@@ -52,8 +52,12 @@ class ToppingRecommendations extends React.Component {
         </div>
          <FinalToppings toppings={this.state.toppings}/>
       </div>
-     button_to 'Choose a Different Movie or Genre', new_movie_path, method: :get
-     button_to 'Back to the Beginning', root_path, method: :get
+      <Link to='/movies/new' className="small-12 columns button">
+      Select Different Genre
+      </Link>
+      <a href={'/'} className="small-12 columns button">
+        Back to the Beginning!
+      </a>
       </div>
     );
   }

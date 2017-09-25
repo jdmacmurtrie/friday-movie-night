@@ -44,8 +44,12 @@ class MovieRecommendations extends React.Component {
           </div>
         </div>
       </div>
-      button_to 'Back to the Beginning', root_path, method: :get
-      button_to 'Choose Different Toppings', new_topping_path, method: :get
+      <a href={'/toppings/new'} className="small-12 columns button">
+      Select Different Toppings
+      </a>
+      <a href={'/'} className="small-12 columns button">
+        Back to the Beginning!
+      </a>
       </div>
     );
   }
