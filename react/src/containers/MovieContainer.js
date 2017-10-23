@@ -24,7 +24,7 @@ class MovieContainer extends React.Component {
     this.setState({ selection: event.target.value });
     this.handleSearchClear();
   }
-
+jk
   handleSearchClear() {
     this.setState({
       genre: 'none',
