@@ -2,7 +2,7 @@ import React from 'react'
 import MovieForm from '../components/MovieForm'
 import MovieDropdown from '../components/MovieDropdown'
 import SearchBy from '../components/SearchBy'
-import { browserHistory } from 'react-router'
+import { browserHistory, Link } from 'react-router'
 
 class MovieContainer extends React.Component {
   constructor (props) {
@@ -24,11 +24,13 @@ class MovieContainer extends React.Component {
     this.setState({ selection: event.target.value });
     this.handleSearchClear();
   }
-
+jk
   handleSearchClear() {
-    this.setState({ genre: 'none' });
-    this.setState({ movie: '' });
-    this.setState({ queryString: '' });
+    this.setState({
+      genre: 'none',
+      movie: '',
+      queryString: ''
+     });
   }
 
   handleChangeText(event) {
@@ -39,8 +41,10 @@ class MovieContainer extends React.Component {
   }
 
   handleChangeDropdown(event) {
-    this.setState({ genre: event.target.value });
-    this.setState({ queryString: "genre," + event.target.value });
+    this.setState({
+      genre: event.target.value,
+      queryString: "genre," + event.target.value
+     });
   }
 
   handleFormSubmit(event) {
@@ -56,7 +60,8 @@ class MovieContainer extends React.Component {
     if (this.state.selection == 'title') {
       movieForm = <MovieForm
                     handleChangeText={this.handleChangeText}
-                    handleFormSubmit={this.handleFormSubmit}/>
+                    handleFormSubmit={this.handleFormSubmit}
+                  />
     } else if (this.state.selection == 'genre') {
       movieDropdown = <MovieDropdown handleChangeDropdown={this.handleChangeDropdown} />
     }
