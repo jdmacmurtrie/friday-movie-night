@@ -40,7 +40,6 @@ class Api::V1::ToppingsController < ApplicationController
       end
     end
     @movie_suggestions = []
-    binding.pry
     movies = HTTParty.get("https://api.themoviedb.org/3/genre/#{genre_id}/movies?api_key=#{key}&language=en-US&include_adult=false&sort_by=created_at.asc&page=#{random_number}")
     movies.parsed_response['results'].sample(4).each do |movie|
       @movie_suggestions << Movie.create(
@@ -54,7 +53,6 @@ class Api::V1::ToppingsController < ApplicationController
   end
 
   def random_number
-    binding.pry
     rand(10)+1
   end
 end
