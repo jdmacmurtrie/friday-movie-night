@@ -8,7 +8,8 @@ class ToppingRecommendations extends React.Component {
     this.state = {
       toppings: [],
       searchType: '',
-      title: ''
+      title: '',
+      titleResult: ''
     }
   }
   componentDidMount() {
@@ -25,7 +26,7 @@ class ToppingRecommendations extends React.Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ toppings: body.toppings })
+      this.setState({ toppings: body.toppings, titleResult: body.title })
       let type = this.props.params.params.split(",")[0]
       this.setState({ searchType: type })
       if(type = 'title') {
@@ -38,7 +39,7 @@ class ToppingRecommendations extends React.Component {
   render() {
     let message
     if(this.state.searchType == 'title') {
-      message = `Your pizza recommendation, based on ${this.state.title}`
+      message = `Your pizza recommendation, based on ${this.state.titleResult}`
     } else {
       message = "Your pizza recommendations"
     }

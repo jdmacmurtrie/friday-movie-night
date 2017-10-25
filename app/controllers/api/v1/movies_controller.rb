@@ -10,6 +10,7 @@ class Api::V1::MoviesController < ApplicationController
       # flash alert is not flashing, nor is it redirecting to the movie path.
       if movies.parsed_response['results'].empty? ||
           movies.parsed_response['results'][0]['genre_ids'].empty?
+          binding.pry
         flash[:alert] = "I didn't recognize that movie."
         redirect_to new_movie_path
         return
@@ -44,6 +45,6 @@ class Api::V1::MoviesController < ApplicationController
         @toppings << topping if Suggestion.find_by(topping: topping).user.nil?
       end
     end
-    render json: { toppings: @toppings }
+    render json: { toppings: @toppings, title: @title }
   end
 end
