@@ -60,7 +60,6 @@ class Api::V1::ToppingsController < ApplicationController
   def pick_genre_suggestion
     all_suggestions = @toppings.map { |topping| topping.genres }
     simplified_suggestion = all_suggestions.inject(:&)
-    binding.pry
     if !simplified_suggestion.empty?
       @genre_suggestion = simplified_suggestion[0]
       how_many_suggestions(simplified_suggestion)
