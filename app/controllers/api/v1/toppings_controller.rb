@@ -26,14 +26,14 @@ class Api::V1::ToppingsController < ApplicationController
     render json: { movies: @movie_suggestions }
   end
 
-	private
+		private
 
 	def get_genre_id(genres)
 		genres.parsed_response['genres'].each do |genre|
       if genre['name'] == @genre_suggestion.name
         @genre_id = genre['id']
       end
-    end
+		end
 	end
 
 	def determine_toppings
