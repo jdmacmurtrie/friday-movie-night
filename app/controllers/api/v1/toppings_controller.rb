@@ -1,12 +1,6 @@
 class Api::V1::ToppingsController < ApplicationController
   def index
-    selected_toppings = params[:params].split(',')
-		@toppings = []
-    selected_toppings.each do |topping|
-      unless topping.blank?
-        @toppings << Topping.find_by(name: topping)
-      end
-    end
+		determine_toppings
 
     if current_user
       pick_user_combo
@@ -17,6 +11,7 @@ class Api::V1::ToppingsController < ApplicationController
     key = ENV["TMDB_KEY"]
     genres = HTTParty.get("https://api.themoviedb.org/3/genre/movie/list?api_key=#{key}")
 		get_genre_id(genres)
+
     movies = HTTParty.get("https://api.themoviedb.org/3/genre/#{@genre_id}/movies?api_key=#{key}&page=#{random_number}")
 		four_movies = movies.parsed_response['results'].sample(4)
 
@@ -41,6 +36,16 @@ class Api::V1::ToppingsController < ApplicationController
     end
 	end
 
+	def determine_toppings
+		selected_toppings = params[:params].split(',')
+		@toppings = []
+		selected_toppings.each do |topping|
+			unless topping.blank?
+				@toppings << Topping.find_by(name: topping)
+			end
+		end
+	end
+
   def random_number
     rand(10)+1
   end
@@ -53,16 +58,19 @@ class Api::V1::ToppingsController < ApplicationController
   end
 
 	def pick_genre_suggestion
-		all_suggestions = @toppings.map { |topping|
-			topping.genres }
+		all_suggestions = @toppings.map { |topping| topping.genres }
 		one_suggestion = all_suggestions.inject(:&)
 		if !one_suggestion.empty?
 			@genre_suggestion = one_suggestion[0]
-			if one_suggestion.length > 1
-				@genre_suggestion = one_suggestion.sample
-			end
+			how_many_suggestions
 		else
 			@genre_suggestion = all_suggestions.flatten.sample
+		end
+	end
+
+	def how_many_suggestions
+		if one_suggestion.length > 1
+			@genre_suggestion = one_suggestion.sample
 		end
 	end
 end
