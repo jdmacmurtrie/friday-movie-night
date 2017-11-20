@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user creates account' do
-  let!(:user) { FactoryGirl.create(:user) }
+  let!(:user) { FactoryBot.create(:user) }
 
   scenario 'correct information is given' do
     visit root_path

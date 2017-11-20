@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 feature 'user adds suggestion' do
-  let!(:user) { FactoryGirl.create(:user) }
-  let!(:topping) { FactoryGirl.create(:topping) }
-  let!(:sausage) { FactoryGirl.create(:topping, name: 'Sausage') }
-  let!(:genre) { FactoryGirl.create(:genre) }
+  let!(:user) { FactoryBot.create(:user) }
+  let!(:topping) { FactoryBot.create(:topping) }
+  let!(:sausage) { FactoryBot.create(:topping, name: 'Sausage') }
+  let!(:genre) { FactoryBot.create(:genre) }
   scenario 'user adds new suggestion with one topping' do
     sign_in_as(user)
 
