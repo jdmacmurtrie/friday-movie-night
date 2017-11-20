@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user signs out' do
-  let!(:user) { FactoryGirl.create(:user, email: 'dfsjlfsdjlfds@gmail.com') }
+  let!(:user) { FactoryBot.create(:user, email: 'dfsjlfsdjlfds@gmail.com') }
 
   scenario 'user successfully signs out' do
     visit root_path

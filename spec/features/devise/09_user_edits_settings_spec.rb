@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 feature 'user interacts with user page' do
-  let!(:user) { FactoryGirl.create(:user) }
-  let!(:war) { FactoryGirl.create(:genre, name: 'War') }
-  let!(:pepperoni) { FactoryGirl.create(:topping, name: 'Pepperoni') }
-  let!(:suggestion1) { FactoryGirl.create(
+  let!(:user) { FactoryBot.create(:user) }
+  let!(:war) { FactoryBot.create(:genre, name: 'War') }
+  let!(:pepperoni) { FactoryBot.create(:topping, name: 'Pepperoni') }
+  let!(:suggestion1) { FactoryBot.create(
     :suggestion, user: user) }
-  let!(:suggestion2) { FactoryGirl.create(
+  let!(:suggestion2) { FactoryBot.create(
     :suggestion, user: user, genre: war, topping: pepperoni
   ) }
 
