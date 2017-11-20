@@ -28,3 +28,5 @@ Rakefile
 /public/assets
 foundation_basics.html
 .env
+Gemfile.lock
+package-lock.json
