@@ -22,7 +22,7 @@ class Api::V1::MoviesController < ApplicationController
 		if @toppings
 			render json: { toppings: @toppings, title: @title }
 		else
-			render status: 422
+			render status: 422, json: { error: "Not a real movie!" }.as_json
 		end
 	end
 
