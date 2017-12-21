@@ -13,8 +13,7 @@ class ToppingRecommendations extends React.Component {
     }
   }
   componentDidMount() {
-    fetch(`/api/v1/movies?params=${this.props.params.params}`, {
-    })
+    fetch(`/api/v1/movies?params=${this.props.params.params}`)
     .then(response => {
       if (response.ok) {
         return response;
@@ -33,7 +32,16 @@ class ToppingRecommendations extends React.Component {
         this.setState({ title: this.props.params.params.split(",")[1] })
       }
     })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+    .catch(error =>
+      {
+        if (error.message.includes(422)) {
+          browserHistory.push('/movies/new');
+          alert('Not a real movie!');
+        } else {
+          console.error(`Error in fetch: ${error.message}`);
+        }
+      }
+    );
   }
 
   render() {
