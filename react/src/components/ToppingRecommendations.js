@@ -35,10 +35,10 @@ class ToppingRecommendations extends React.Component {
     .catch(error =>
       {
         if (error.message.includes(422)) {
-          browserHistory.push('/movies/new')
-          alert('Not a real movie!')
+          browserHistory.push('/movies/new');
+          alert('Not a real movie!');
         } else {
-          console.error(`Error in fetch: ${error.message}`)
+          console.error(`Error in fetch: ${error.message}`);
         }
       }
     );
