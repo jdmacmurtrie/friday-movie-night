@@ -13,12 +13,17 @@ class Api::V1::MoviesController < ApplicationController
 				suggestion if suggestion.genre == @selected_genre
 				@toppings = all_toppings.sample(2)
 			end
-		else
+		elsif @selected_genre
 			@toppings = @selected_genre.toppings.map do |topping|
 				topping if Suggestion.find_by(topping: topping).user.nil?
 			end
 		end
-		render json: { toppings: @toppings, title: @title }
+
+		if @toppings
+			render json: { toppings: @toppings, title: @title }
+		else
+			render status: 422, json: { error: "Not a real movie!" }.as_json
+		end
 	end
 
 	private
@@ -28,10 +33,7 @@ class Api::V1::MoviesController < ApplicationController
 		movies = HTTParty.get(
 			"https://api.themoviedb.org/3/search/movie?api_key=#{key}&query=#{searched.last}&page=1"
 		)
-		# flash alert is not flashing, nor is it redirecting to the movie path.
 		if bad_search(movies)
-			flash[:alert] = "I didn't recognize that movie."
-			redirect_to new_movie_path
 			return
 		else
 			@title = movies.parsed_response['results'].first['title']
