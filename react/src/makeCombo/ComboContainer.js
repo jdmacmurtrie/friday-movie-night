@@ -1,7 +1,7 @@
 import React from 'react'
-import SuggestionForm from '../components/SuggestionForm'
+import ComboForm from './ComboForm'
 
-class SuggestionContainer extends React.Component {
+class ComboContainer extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -46,7 +46,7 @@ class SuggestionContainer extends React.Component {
       <div className="top-bar combo-header">
         Combo Time
       </div>
-      <SuggestionForm
+      <ComboForm
         handleChangeGenre={this.handleChangeGenre}
         handleChangeTopping1={this.handleChangeTopping1}
         handleChangeTopping2={this.handleChangeTopping2}
@@ -57,4 +57,4 @@ class SuggestionContainer extends React.Component {
   }
 }
 
-export default SuggestionContainer
+export default ComboContainer

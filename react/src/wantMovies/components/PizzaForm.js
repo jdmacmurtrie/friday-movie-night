@@ -1,8 +1,6 @@
 import React from 'react';
 
-const PizzaForm = props => {
-
-  return (
+const PizzaForm = props => (
     <form className="checkbox-panal">
       <div className="small-6 medium-3 columns">
         <label>Extra Cheese</label>
@@ -11,7 +9,8 @@ const PizzaForm = props => {
         <input type="checkbox"
           value="Extra Cheese"
           name="Extra Cheese"
-          onChange={props.handleChange}/>
+          onChange={props.handleChange}
+        />
       </div>
 
       <div className="small-6 medium-3 columns">
@@ -21,7 +20,8 @@ const PizzaForm = props => {
         <input type="checkbox"
           value="Pepperoni"
           name="Pepperoni"
-          onChange={props.handleChange}/>
+          onChange={props.handleChange}
+        />
       </div>
 
       <div className="small-6 medium-3 columns">
@@ -31,7 +31,8 @@ const PizzaForm = props => {
         <input type="checkbox"
           value="Sausage"
           name="Sausage"
-          onChange={props.handleChange}/>
+          onChange={props.handleChange}
+        />
       </div>
 
       <div className="small-6 medium-3 columns">
@@ -41,7 +42,8 @@ const PizzaForm = props => {
         <input type="checkbox"
           value="Ham"
           name="Ham"
-          onChange={props.handleChange}/>
+          onChange={props.handleChange}
+        />
       </div>
 
       <div className="small-6 medium-3 columns">
@@ -51,7 +53,8 @@ const PizzaForm = props => {
         <input type="checkbox"
           value="Pineapple"
           name="Pineapple"
-          onChange={props.handleChange}/>
+          onChange={props.handleChange}
+        />
       </div>
 
       <div className="small-6 medium-3 columns">
@@ -61,7 +64,8 @@ const PizzaForm = props => {
         <input type="checkbox"
           value="Green Pepper"
           name="Green Pepper"
-          onChange={props.handleChange}/>
+          onChange={props.handleChange}
+        />
       </div>
 
       <div className="small-6 medium-3 columns">
@@ -71,7 +75,8 @@ const PizzaForm = props => {
         <input type="checkbox"
           value="Mushroom"
           name="Mushroom"
-          onChange={props.handleChange}/>
+          onChange={props.handleChange}
+        />
       </div>
 
       <div className="small-6 medium-3 columns">
@@ -81,7 +86,8 @@ const PizzaForm = props => {
         <input type="checkbox"
           value="Grilled Chicken"
           name="Grilled Chicken"
-          onChange={props.handleChange}/>
+          onChange={props.handleChange}
+        />
       </div>
 
       <div className="small-6 medium-3 columns">
@@ -91,7 +97,8 @@ const PizzaForm = props => {
         <input type="checkbox"
           value="Olives"
           name="Olives"
-          onChange={props.handleChange}/>
+          onChange={props.handleChange}
+        />
       </div>
 
       <div className="small-6 medium-3 columns">
@@ -101,10 +108,10 @@ const PizzaForm = props => {
         <input type="checkbox"
           value="Bacon"
           name="Bacon"
-          onChange={props.handleChange}/>
+          onChange={props.handleChange}
+        />
       </div>
     </form>
   );
-}
 
 export default PizzaForm

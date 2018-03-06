@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  root 'static_pages#index'
+  get "/static_pages/:static_page" => "static_pages#index"
+
   namespace :api do
     namespace :v1 do
       resources :movies, only: [:index]
@@ -11,11 +14,11 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-
+  get 'movies/new' => "static_pages#index"
+  get 'toppings/new' => "static_pages#index"
   get 'users/sign_out' => "devise/sessions#destroy"
   get 'movies/recommendations/:params' => "movies#index"
   get 'toppings/recommendations/:params' => "toppings#index"
-  root 'choices#index'
 
   resources :users, except: [:index, :new, :create]
   resources :choices, only: [:index]
