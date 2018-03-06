@@ -1,8 +1,7 @@
 import React from 'react'
 import ComboForm from './ComboForm'
 
-class ComboContainer
- extends React.Component {
+class ComboContainer extends React.Component {
   constructor (props) {
     super(props);
     this.state = {

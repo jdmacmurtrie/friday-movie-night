@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React from 'react';
 import { browserHistory } from 'react-router'
 import FinalMovies from '../components/FinalMovies'
 

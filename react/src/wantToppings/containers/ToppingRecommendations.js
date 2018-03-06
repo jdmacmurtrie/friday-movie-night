@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React from 'react';
 import { browserHistory, Link } from 'react-router'
 
 import FinalToppings from '../components/FinalToppings'

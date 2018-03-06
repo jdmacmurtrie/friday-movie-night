@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { browserHistory, Link } from 'react-router'
 
 import MovieForm from '../components/MovieForm'
