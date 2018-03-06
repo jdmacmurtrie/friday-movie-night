@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 const ChosenToppings = props => {
   let toppings = props.toppings.map(topping => {

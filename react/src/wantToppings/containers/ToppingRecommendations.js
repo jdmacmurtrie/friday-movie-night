@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { browserHistory, Link } from 'react-router'
-import FinalToppings from './FinalToppings'
+
+import FinalToppings from '../components/FinalToppings'
 
 class ToppingRecommendations extends React.Component {
   constructor (props) {
@@ -12,6 +13,7 @@ class ToppingRecommendations extends React.Component {
       titleResult: ''
     }
   }
+
   componentDidMount() {
     fetch(`/api/v1/movies?params=${this.props.params.params}`)
     .then(response => {
@@ -53,20 +55,20 @@ class ToppingRecommendations extends React.Component {
     }
     return (
       <div>
-      <div className="top-bar recommended">
-      {message}
-      </div>
-      <div className="topping-list">
-        <div className="separation">
+        <div className="top-bar recommended">
+          {message}
         </div>
-         <FinalToppings toppings={this.state.toppings}/>
-      </div>
-      <Link to='/movies/new' className="small-12 columns button">
-      Select Different Genre
-      </Link>
-      <a href={'/'} className="small-12 columns button">
-        Back to the Beginning!
-      </a>
+        <div className="topping-list">
+          <div className="separation">
+          </div>
+           <FinalToppings toppings={this.state.toppings}/>
+        </div>
+        <Link to='/movies/new' className="small-12 columns button">
+          Select Different Genre
+        </Link>
+        <a href={'/'} className="small-12 columns button">
+          Back to the Beginning!
+        </a>
       </div>
     );
   }
