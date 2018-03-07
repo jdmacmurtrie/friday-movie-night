@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ChosenToppings = props => {
+const ChosenTopping = props => {
+  debugger
   let toppings = props.toppings.map(topping => {
     return(
       <li>
@@ -15,4 +16,4 @@ const ChosenToppings = props => {
   );
 }
 
-export default ChosenToppings
+export default ChosenTopping
