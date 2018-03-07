@@ -1,13 +1,13 @@
-import MovieContainer from '../../src/containers/MovieContainer';
-import MovieDropdown from '../../src/components/MovieDropdown';
-import MovieForm from '../../src/components/MovieForm';
-import SearchBy from '../../src/components/SearchBy';
+import MovieFormContainer from '../../src/wantToppings/containers/MovieFormContainer';
+import MovieDropdown from '../../src/wantToppings/components/MovieDropdown';
+import MovieForm from '../../src/wantToppings/components/MovieForm';
+import SearchBy from '../../src/wantToppings/components/SearchBy';
 
-describe('MovieContainer', () => {
+describe('MovieFormContainer', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<MovieContainer />);
+    wrapper = mount(<MovieFormContainer />);
   });
 
   it('should should have the specified inital state', () => {

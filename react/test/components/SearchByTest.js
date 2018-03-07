@@ -1,4 +1,4 @@
-import SearchBy from '../../src/components/SearchBy';
+import SearchBy from '../../src/wantToppings/components/SearchBy';
 
 describe('SearchBy', () => {
   let handleChangeSearch,

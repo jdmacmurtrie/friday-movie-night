@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { browserHistory, Link } from 'react-router'
+
 import MovieForm from '../components/MovieForm'
 import MovieDropdown from '../components/MovieDropdown'
 import SearchBy from '../components/SearchBy'
-import { browserHistory, Link } from 'react-router'
 
-class MovieContainer extends React.Component {
+class MovieFormContainer extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -87,4 +88,4 @@ jk
   }
 }
 
-export default MovieContainer
+export default MovieFormContainer

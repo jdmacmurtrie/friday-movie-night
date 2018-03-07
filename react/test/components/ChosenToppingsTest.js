@@ -1,4 +1,4 @@
-import ChosenToppings from '../../src/components/ChosenToppings';
+import ChosenToppings from '../../src/wantMovies/components/ChosenToppings';
 
 describe('ChosenToppings', () => {
   let topping,

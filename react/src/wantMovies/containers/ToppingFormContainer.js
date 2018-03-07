@@ -1,9 +1,10 @@
 import React from 'react'
-import PizzaForm from '../components/PizzaForm'
-import ChosenToppings from '../components/ChosenToppings'
 import { browserHistory } from 'react-router'
 
-class PizzaContainer extends React.Component {
+import PizzaForm from '../components/PizzaForm'
+import ChosenToppings from '../components/ChosenToppings'
+
+class ToppingFormContainer extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -74,4 +75,4 @@ class PizzaContainer extends React.Component {
   }
 }
 
-export default PizzaContainer
+export default ToppingFormContainer
