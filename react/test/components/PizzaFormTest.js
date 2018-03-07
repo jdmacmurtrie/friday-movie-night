@@ -1,5 +1,5 @@
-import PizzaForm from '../../src/components/PizzaForm';
-import PizzaContainer from '../../src/containers/PizzaContainer';
+import PizzaForm from '../../src/wantMovies/components/PizzaForm';
+import ToppingFormContainer from '../../src/wantMovies/containers/ToppingFormContainer';
 
 describe('PizzaForm', () => {
   let handleChange,
@@ -25,9 +25,9 @@ describe('PizzaForm', () => {
   it('should render 10 label tags', () => {
     expect(wrapperForm.find('label').length).toEqual(10);
   });
-  // 
+  //
   // it('should simulate clicking a topping', () => {
-  //   wrapperContainer = mount(<PizzaContainer />)
+  //   wrapperContainer = mount(<ToppingFormContainer />)
   //   wrapperForm.find('Ham').simulate('click');
   //   expect(wrapperContainer.state()).toEqual({ toppings: ['Pepperoni'], queryString: ',Pepperoni' });
   // });

@@ -1,12 +1,12 @@
-import PizzaContainer from '../../src/containers/PizzaContainer';
-import ChosenToppings from '../../src/components/ChosenToppings';
-import PizzaForm from '../../src/components/PizzaForm';
+import ToppingFormContainer from '../../src/wantMovies/containers/ToppingFormContainer';
+import ChosenToppings from '../../src/wantMovies/components/ChosenToppings';
+import PizzaForm from '../../src/wantMovies/components/PizzaForm';
 
-describe('PizzaContainer', () => {
+describe('ToppingFormContainer', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<PizzaContainer />);
+    wrapper = mount(<ToppingFormContainer />);
   });
 
   it('should should have the specified inital state', () => {

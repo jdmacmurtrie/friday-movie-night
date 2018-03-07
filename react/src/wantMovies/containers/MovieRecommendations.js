@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { browserHistory } from 'react-router'
-import FinalMovies from './FinalMovies'
+import FinalMovies from '../components/FinalMovies'
 
 class MovieRecommendations extends React.Component {
   constructor (props) {

@@ -1,4 +1,4 @@
-import MovieDropdown from '../../src/components/MovieDropdown';
+import MovieDropdown from '../../src/wantToppings/components/MovieDropdown';
 
 describe('MovieDropdown', () => {
   let handleChangeDropdown,

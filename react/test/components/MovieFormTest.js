@@ -1,4 +1,4 @@
-import MovieForm from '../../src/components/MovieForm';
+import MovieForm from '../../src/wantToppings/components/MovieForm';
 
 describe('MovieForm', () => {
   let handleChangeText,

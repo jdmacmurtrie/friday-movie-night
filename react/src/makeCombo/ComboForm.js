@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SuggestionForm = props => {
+const ComboForm = props => {
   // because History by itself is a no-no
 let history = "History"
 
@@ -67,4 +67,4 @@ let history = "History"
   );
 }
 
-export default SuggestionForm
+export default ComboForm
