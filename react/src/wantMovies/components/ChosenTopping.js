@@ -1,19 +1,10 @@
 import React from 'react';
 
-const ChosenTopping = props => {
-  debugger
-  let toppings = props.toppings.map(topping => {
-    return(
-      <li>
-        {topping}
-      </li>
-    )
-  })
-  return (
-    <ul>
-      {toppings}
-    </ul>
-  );
-}
+const ChosenTopping = props => (
+  <li>
+    {props.topping}
+  </li>
+);
+
 
 export default ChosenTopping
