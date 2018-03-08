@@ -1,4 +1,4 @@
-$pale-yellow: #F5D9A7;
+$pale-yellow: #EBCF90;
 $light-orange: #E27E30;
 $orange-red: #AE4725;
 $reddish: #9A241E;
@@ -6,46 +6,46 @@ $tree-black: #192122;
 @import url('https://fonts.googleapis.com/css?family=Chewy|Mina');
 
 .choices {
-  width: 100%;
   text-align: center;
-  padding: 0;
-  margin: 0;
 }
 
 .need-movie {
-  background-color: #EFD575;
+  font-size: 35px;
+  color: $tree-black;
+  font-weight: bold;
+  background-color: $pale-yellow;
   float: left;
-  height: 100vh;
-  padding-left: 0;
-  margin-left: 0;
-  padding-top: 40%;
-  padding-bottom: 60%;
+  width: 50%;
+  height: 80vh;
+  margin: 0;
+  padding-top: 30%;
+  // padding-bottom: 65%;
   font-family: 'Mina', sans-serif;
 }
 
+a:hover .need-movie {
+  background-color: #F1DDAF;
+  color: $orange-red
+}
+
 .need-pizza {
+  font-size: 40px;
+  color: $tree-black;
   float: right;
+  width: 50%;
   background-color: $orange-red;
-  height: 100vh;
-  padding-right: 0;
-  margin-right: 0;
-  padding-top: 40%;
-  padding-bottom: 60%;
+  height: 80vh;
+  margin: 0;
+  padding-top: 28%;
+  padding-bottom: 2%;
   font-family: 'Chewy', cursive;
 }
 
-a:hover .need-movie {
-  background-color: $pale-yellow;
-}
-
 a:hover .need-pizza {
-  background-color: #BB6144;
+  background-color: #BB3F22;
+  color: $pale-yellow;
 }
 
-/* .choice-buttons {
-  text-align: center;
-  padding: 10%;
-} */
 
 .user-perks {
   text-align: right;
