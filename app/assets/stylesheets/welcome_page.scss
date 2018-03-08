@@ -1,56 +1,45 @@
-$light-orange: #F9A402
-/* body {
-  background-color: #32324e
-} */
-
-/* .get-started {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: #000022;
-  height: 75px;
-  font-size: 30px;
-  text-align: center;
-  overflow: break-word;
-} */
-
-/* .choice-panal {
-   border-left: 5px solid #32324e;
-  border-bottom: 5px solid #32324e;
-  border-right: 5px solid #32324e;
-   background: white;
-  margin: 50px;
-  margin-top: 0;
-  height: 150%;
- } */
+$pale-yellow: #F5D9A7;
+$light-orange: #E27E30;
+$orange-red: #AE4725;
+$reddish: #9A241E;
+$tree-black: #192122;
+@import url('https://fonts.googleapis.com/css?family=Chewy|Mina');
 
 .choices {
   width: 100%;
   text-align: center;
   padding: 0;
   margin: 0;
-
 }
 
 .need-movie {
-  background-color: $light-orange;
+  background-color: #EFD575;
   float: left;
   height: 100vh;
-
-
-}
-
-a:hover .need-movie {
-    background-color: #546dff;
-}
-
-a:hover .need-pizza {
-    background-color: #546dff;
+  padding-left: 0;
+  margin-left: 0;
+  padding-top: 40%;
+  padding-bottom: 60%;
+  font-family: 'Mina', sans-serif;
 }
 
 .need-pizza {
   float: right;
-  background-color: red;
+  background-color: $orange-red;
   height: 100vh;
+  padding-right: 0;
+  margin-right: 0;
+  padding-top: 40%;
+  padding-bottom: 60%;
+  font-family: 'Chewy', cursive;
+}
+
+a:hover .need-movie {
+  background-color: $pale-yellow;
+}
+
+a:hover .need-pizza {
+  background-color: #BB6144;
 }
 
 /* .choice-buttons {
@@ -68,3 +57,27 @@ a:hover .need-pizza {
   padding: 5px;
   float:left;
 }
+
+/* body {
+background-color: #32324e
+} */
+
+/* .get-started {
+padding-top: 20px;
+padding-bottom: 20px;
+background: #000022;
+height: 75px;
+font-size: 30px;
+text-align: center;
+overflow: break-word;
+} */
+
+/* .choice-panal {
+border-left: 5px solid #32324e;
+border-bottom: 5px solid #32324e;
+border-right: 5px solid #32324e;
+background: white;
+margin: 50px;
+margin-top: 0;
+height: 150%;
+} */

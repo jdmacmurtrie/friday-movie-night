@@ -3,24 +3,30 @@ import { browserHistory, Link } from 'react-router'
 
 const WelcomeComponent = (props) => {
   return(
-    <div className="choice-panal">
-      <div className="choice">
-        What would you like me to recommend?
-      </div>
-      <div className="choice-buttons row">
-        <div className="small-6 columns">
-          <Link to='/toppings/new' className="small-12 columns button">
-            Recommend a movie based on my pizza
-          </Link>
-        </div>
-        <div className="small-6 columns">
-          <Link to='/movies/new' className="small-12 columns button">
-            Recommend a pizza based on a movie
-          </Link>
-        </div>
+    <div>
+      <div className="choices row">
+        <Link to='/toppings/new'>
+          <div className="need-movie small-6 columns">
+            Recommend a movie
+            <br/>
+            based on my pizza
+          </div>
+        </Link>
+        <Link to='/movies/new'>
+          <div className="need-pizza small-6 columns">
+            Recommend a pizza
+            <br/>
+            based on a movie
+          </div>
+        </Link>
       </div>
     </div>
   )
 }
 
 export default WelcomeComponent
+
+// 
+// <div className="top-bar get-started">
+// <div>Friday Movie Night</div>
+// </div>
