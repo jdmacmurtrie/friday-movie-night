@@ -1,6 +1,6 @@
 import React from 'react';
 import { browserHistory } from 'react-router'
-import FinalMovies from '../components/FinalMovies'
+import FinalMovie from '../components/FinalMovie'
 
 class MovieRecommendations extends React.Component {
   constructor (props) {
@@ -29,6 +29,16 @@ class MovieRecommendations extends React.Component {
   }
 
   render() {
+    let recommendations = this.state.movies
+    let finalMovies = recommendations.map(movie => {
+      return(
+        <FinalMovie
+          key={movie.id}
+          movie={movie}
+        />
+      )
+    })
+
     return (
       <div>
       <div className="top-bar recommended">
@@ -39,7 +49,9 @@ class MovieRecommendations extends React.Component {
         <div className="movie-panal">
           <div className="row">
             <div className="3-small columns" id="movie">
-            <FinalMovies movies={this.state.movies}/>
+              <ul>
+                {finalMovies}
+              </ul>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { browserHistory } from 'react-router'
 
 import PizzaForm from '../components/PizzaForm'
-import ChosenToppings from '../components/ChosenToppings'
+import ChosenTopping from '../components/ChosenTopping'
 
 class ToppingFormContainer extends React.Component {
   constructor (props) {
@@ -41,22 +41,31 @@ class ToppingFormContainer extends React.Component {
 
   render () {
     let button;
-    let yourToppings;
+    let chosenToppings;
     if (this.state.toppings.length >= 1) {
       button = <div className="small-6 large-6 columns">
                 <div className="get-movies">
                   <button type='submit' onClick={this.handleFormSubmit} className="small-12 columns button" id="get-movie-button">
-                  Get my suggestions!
-                </button>
+                    Get my suggestions!
+                  </button>
                 </div>
               </div>
-      yourToppings = <div className="small-6 large-6 columns">
-                      <div>Your toppings:</div>
-                      <div className="topping-box">
-                        <ChosenToppings toppings={this.state.toppings}/>
-                      </div>
-                    </div>
+      let chosenToppings = this.state.toppings
+      let toppings = chosenToppings.map(topping => {
+        let randomNumber = Math.floor(Math.random() * 1000)
+        let firstLetter = topping[0]
+        let toppingKey = firstLetter + randomNumber
+        return(
+          <ul>
+            <ChosenTopping
+              key={toppingKey}
+              topping={topping}
+            />
+          </ul>
+        )
+      })
     }
+
 
     return (
       <div>
@@ -66,7 +75,7 @@ class ToppingFormContainer extends React.Component {
         <div className="topping-form">
         <div className="checkbox-panal">
           <PizzaForm handleChange={this.handleChange}/>
-          {yourToppings}
+          {chosenToppings}
           {button}
         </div>
         </div>
