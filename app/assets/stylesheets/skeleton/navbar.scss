@@ -1,0 +1,30 @@
+.nav-bar {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $tree-black;
+    height: 52px;
+    position: relative;
+    width: 100%;
+  }
+
+  li {
+    margin: 0, 10px;
+    float: right;
+  }
+
+
+  li a {
+    display: block;
+    color: $pale-yellow;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: black;
+  }
+}

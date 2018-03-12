@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'static_pages#index'
+  root to: 'static_pages#index'
   get "/static_pages/:static_page" => "static_pages#index"
 
   namespace :api do
