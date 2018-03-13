@@ -1,0 +1,78 @@
+.devise-form {
+  height: 96.6vh;
+  background: $reddish;
+  padding: 5% 25% 30% 25%;
+  border-top: 5px solid $light-orange;
+  color: $reddish;
+
+  hr {
+    width: 40%;
+    border-color: $light-orange;
+  }
+}
+
+.headline {
+  color: $tree-black;
+}
+
+.form-wrapper {
+  background: $pale-yellow;
+  text-align: center;
+  padding-top: 10%;
+  border: 5px solid $tree-black;
+  border-radius: 7%;
+
+  input[type="submit"] {
+    border-color: $light-orange;
+    color: $tree-black;
+  }
+
+  input[type="submit"]:hover {
+    border-color: $reddish;
+    color: $reddish;
+  }
+
+  input[type="submit"]:focus {
+    border-color: $reddish;
+    color: $reddish;
+
+    a {
+      border-color: $reddish;
+      color: $reddish;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.field {
+  display: inline-block;
+
+  input {
+    background-color: $orange-red;
+    width: inherit;
+    border-color: $reddish;
+    color: $light-orange;
+  }
+
+  input:focus {
+    border-color: $reddish;
+    background-color: $pale-yellow;
+  }
+}
+
+.nevermind {
+  text-align: center;
+  padding: 10px;
+
+  input[type="submit"] {
+    background-color: $pale-yellow;
+    color: $tree-black;
+    border-color: $tree-black;
+  }
+
+  input[type="submit"]:hover {
+    border-color: $reddish;
+    color: $reddish;
+  }
+}

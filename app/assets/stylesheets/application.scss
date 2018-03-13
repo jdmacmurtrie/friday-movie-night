@@ -16,12 +16,8 @@
  *= require_self
 
  */
- ul {
-   list-style-type: none;
- }
+ @import "skeleton/skeleton";
 
-.top-bar {
-  font-family: 'Luckiest Guy', cursive;
-  color: #FEFFFF;
-  font-size: 30px;
-}
+ @import "components/welcome_page";
+ @import "components/navbar";
+ @import "components/form";

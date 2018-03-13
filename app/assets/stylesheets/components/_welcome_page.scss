@@ -15,12 +15,12 @@ $tree-black: #192122;
   font-weight: bold;
   background-color: $pale-yellow;
   float: left;
-  width: 50%;
+  width: 49.8%;
   height: 80vh;
   margin: 0;
-  padding-top: 30%;
-  // padding-bottom: 65%;
+  padding-top: 16%;
   font-family: 'Mina', sans-serif;
+  border-right: 2px solid $reddish;
 }
 
 a:hover .need-movie {
@@ -32,20 +32,20 @@ a:hover .need-movie {
   font-size: 40px;
   color: $tree-black;
   float: right;
-  width: 50%;
+  width: 49.8%;
   background-color: $orange-red;
   height: 80vh;
   margin: 0;
-  padding-top: 28%;
+  padding-top: 14%;
   padding-bottom: 2%;
   font-family: 'Chewy', cursive;
+  border-left: 2px solid $reddish;
 }
 
 a:hover .need-pizza {
   background-color: #BB3F22;
   color: $pale-yellow;
 }
-
 
 .user-perks {
   text-align: right;
@@ -57,27 +57,3 @@ a:hover .need-pizza {
   padding: 5px;
   float:left;
 }
-
-/* body {
-background-color: #32324e
-} */
-
-/* .get-started {
-padding-top: 20px;
-padding-bottom: 20px;
-background: #000022;
-height: 75px;
-font-size: 30px;
-text-align: center;
-overflow: break-word;
-} */
-
-/* .choice-panal {
-border-left: 5px solid #32324e;
-border-bottom: 5px solid #32324e;
-border-right: 5px solid #32324e;
-background: white;
-margin: 50px;
-margin-top: 0;
-height: 150%;
-} */
