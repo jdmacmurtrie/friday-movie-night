@@ -7,6 +7,11 @@ $tree-black: #192122;
 
 .choices {
   text-align: center;
+
+  img {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+  }
 }
 
 .need-movie {
@@ -15,36 +20,38 @@ $tree-black: #192122;
   font-weight: bold;
   background-color: $pale-yellow;
   float: left;
-  width: 49.8%;
+  width: 50%;
   height: 80vh;
   margin: 0;
   padding-top: 16%;
   font-family: 'Mina', sans-serif;
-  border-right: 2px solid $reddish;
 }
 
-a:hover .need-movie {
-  background-color: #F1DDAF;
-  color: $orange-red
+.need-movie:hover {
+  .substance-wrapper {
+    transform: scale(1.1);
+    color: $orange-red;
+  }
 }
 
 .need-pizza {
   font-size: 40px;
   color: $tree-black;
   float: right;
-  width: 49.8%;
+  width: 50%;
   background-color: $orange-red;
   height: 80vh;
   margin: 0;
   padding-top: 14%;
   padding-bottom: 2%;
   font-family: 'Chewy', cursive;
-  border-left: 2px solid $reddish;
 }
 
-a:hover .need-pizza {
-  background-color: #BB3F22;
-  color: $pale-yellow;
+.need-pizza:hover {
+  .substance-wrapper {
+    transform: scale(1.1);
+    color: $pale-yellow;
+  }
 }
 
 .user-perks {

@@ -29,7 +29,7 @@ class Api::V1::ToppingsController < ApplicationController
   private
 
   def get_genre_id(genres)
-    genres.parsed_response['genres'].each do |genre|
+    genres['genres'].each do |genre|
       if genre['name'] == @genre_suggestion.name
         @genre_id = genre['id']
       end

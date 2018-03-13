@@ -21,6 +21,7 @@
   padding-top: 10%;
   border: 5px solid $tree-black;
   border-radius: 7%;
+  box-shadow: 5px 5px 100px $tree-black;
 
   input[type="submit"] {
     border-color: $light-orange;
@@ -30,11 +31,13 @@
   input[type="submit"]:hover {
     border-color: $reddish;
     color: $reddish;
+    box-shadow: 2px 2px 5px $reddish;
   }
 
   input[type="submit"]:focus {
     border-color: $reddish;
     color: $reddish;
+    box-shadow: 2px 2px 5px $reddish;
 
     a {
       border-color: $reddish;
@@ -42,7 +45,6 @@
       text-decoration: none;
     }
   }
-
 }
 
 .field {
@@ -58,17 +60,19 @@
   input:focus {
     border-color: $reddish;
     background-color: $pale-yellow;
+    box-shadow: 2px 2px 5px $reddish;
   }
 }
 
 .nevermind {
   text-align: center;
-  padding: 10px;
+  padding: 15px;
 
   input[type="submit"] {
     background-color: $pale-yellow;
     color: $tree-black;
     border-color: $tree-black;
+    box-shadow: 2px 2px 5px $tree-black;
   }
 
   input[type="submit"]:hover {

@@ -2,7 +2,7 @@ import React from 'react'
 import { browserHistory } from 'react-router'
 
 import PizzaForm from '../components/PizzaForm'
-import ChosenToppings from '../components/ChosenToppings'
+import SubmitToppingsButton from '../components/SubmitToppingsButton'
 
 class ToppingFormContainer extends React.Component {
   constructor (props) {
@@ -15,22 +15,18 @@ class ToppingFormContainer extends React.Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   };
 
-
   handleChange(event) {
     let newTopping = event.target.value
-    let newToppingBox = document.getElementsByName(newTopping)
-    let newToppingIndex = this.state.toppings.indexOf(newTopping)
     if (this.state.toppings.includes(newTopping)) {
-      this.state.toppings.splice(newToppingIndex, 1)
-      this.setState({ toppings: this.state.toppings })
-      newToppingBox.checked = false
-    } else if (this.state.toppings.length < 2) {
-      this.setState({ toppings: this.state.toppings.concat(newTopping) })
+      this.removeTopping(newTopping)
     } else {
-      document.getElementsByName(newTopping)[0].checked = false
-      alert("You may only choose two toppings!")
+      let allToppings = this.state.toppings.concat(newTopping)
+      this.setState({ toppings: allToppings })
+      this.getQueryString(allToppings)
+      this.setState({
+        toppings: allToppings,
+      })
     }
-    this.setState({ queryString: `${this.state.toppings},${newTopping}`})
   };
 
   handleFormSubmit(event) {
@@ -39,37 +35,37 @@ class ToppingFormContainer extends React.Component {
     browserHistory.push(`/toppings/recommendations/${queryString}`)
   };
 
+  getQueryString(toppings) {
+    let newQueryString = ``
+    toppings.forEach(topping => {
+        newQueryString += `${topping},`
+    })
+    this.setState({ queryString: newQueryString })
+  }
+
+  removeTopping(newTopping) {
+    let newToppingCheckBox = document.getElementsByName(newTopping)
+    let currentlySelected = this.state.toppings
+    let newToppingIndex = currentlySelected.indexOf(newTopping)
+    currentlySelected.splice(newToppingIndex, 1)
+    this.setState({ toppings: currentlySelected })
+    newToppingCheckBox.checked = false
+    this.getQueryString(currentlySelected)
+  }
+
   render () {
+    console.log(this.state)
     let button;
     let yourToppings;
     if (this.state.toppings.length >= 1) {
-      button = <div className="small-6 large-6 columns">
-                <div className="get-movies">
-                  <button type='submit' onClick={this.handleFormSubmit} className="small-12 columns button" id="get-movie-button">
-                  Get my suggestions!
-                </button>
-                </div>
-              </div>
-      yourToppings = <div className="small-6 large-6 columns">
-                      <div>Your toppings:</div>
-                      <div className="topping-box">
-                        <ChosenToppings toppings={this.state.toppings}/>
-                      </div>
-                    </div>
+      button = <SubmitToppingsButton handleFormSubmit={this.handleFormSubmit} />
     }
 
     return (
       <div>
-        <div className="top-bar select">
-          <p>Please select up to two toppings</p>
-        </div>
-        <div className="topping-form">
-        <div className="checkbox-panal">
-          <PizzaForm handleChange={this.handleChange}/>
-          {yourToppings}
-          {button}
-        </div>
-        </div>
+        <p>Please select up to two toppings</p>
+        <PizzaForm handleChange={this.handleChange}/>
+        {button}
       </div>
     );
   }

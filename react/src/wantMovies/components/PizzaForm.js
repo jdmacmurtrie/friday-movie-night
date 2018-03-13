@@ -1,11 +1,11 @@
 import React from 'react';
 
 const PizzaForm = props => (
-    <form className="checkbox-panal">
-      <div className="small-6 medium-3 columns">
+    <form>
+      <div className="">
         <label>Extra Cheese</label>
       </div>
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <input type="checkbox"
           value="Extra Cheese"
           name="Extra Cheese"
@@ -13,10 +13,10 @@ const PizzaForm = props => (
         />
       </div>
 
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <label>Pepperoni</label>
       </div>
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <input type="checkbox"
           value="Pepperoni"
           name="Pepperoni"
@@ -24,10 +24,10 @@ const PizzaForm = props => (
         />
       </div>
 
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <label>Sausage</label>
       </div>
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <input type="checkbox"
           value="Sausage"
           name="Sausage"
@@ -35,10 +35,10 @@ const PizzaForm = props => (
         />
       </div>
 
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <label>Ham</label>
       </div>
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <input type="checkbox"
           value="Ham"
           name="Ham"
@@ -46,10 +46,10 @@ const PizzaForm = props => (
         />
       </div>
 
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <label>Pineapple</label>
       </div>
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <input type="checkbox"
           value="Pineapple"
           name="Pineapple"
@@ -57,10 +57,10 @@ const PizzaForm = props => (
         />
       </div>
 
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <label>Green Pepper</label>
       </div>
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <input type="checkbox"
           value="Green Pepper"
           name="Green Pepper"
@@ -68,10 +68,10 @@ const PizzaForm = props => (
         />
       </div>
 
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <label>Mushroom</label>
       </div>
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <input type="checkbox"
           value="Mushroom"
           name="Mushroom"
@@ -79,10 +79,10 @@ const PizzaForm = props => (
         />
       </div>
 
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <label>Grilled Chicken</label>
       </div>
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <input type="checkbox"
           value="Grilled Chicken"
           name="Grilled Chicken"
@@ -90,10 +90,10 @@ const PizzaForm = props => (
         />
       </div>
 
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <label>Olives</label>
       </div>
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <input type="checkbox"
           value="Olives"
           name="Olives"
@@ -101,10 +101,10 @@ const PizzaForm = props => (
         />
       </div>
 
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <label>Bacon</label>
       </div>
-      <div className="small-6 medium-3 columns">
+      <div className="">
         <input type="checkbox"
           value="Bacon"
           name="Bacon"
