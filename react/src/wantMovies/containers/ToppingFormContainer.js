@@ -1,7 +1,7 @@
 import React from 'react'
 import { browserHistory } from 'react-router'
 
-import PizzaForm from '../components/PizzaForm'
+import ToppingForm from '../components/ToppingForm'
 import SubmitToppingsButton from '../components/SubmitToppingsButton'
 
 class ToppingFormContainer extends React.Component {
@@ -54,7 +54,6 @@ class ToppingFormContainer extends React.Component {
   }
 
   render () {
-    console.log(this.state)
     let button;
     let yourToppings;
     if (this.state.toppings.length >= 1) {
@@ -62,10 +61,16 @@ class ToppingFormContainer extends React.Component {
     }
 
     return (
-      <div>
-        <p>Please select up to two toppings</p>
-        <PizzaForm handleChange={this.handleChange}/>
-        {button}
+      <div className="toppings-form-page">
+        <div className="toppings-wrapper">
+          <div className="instructions">
+            <h1>Which toppings are on your pizza?</h1>
+            <img src='/assets/pizza-slice-combo-clipart' alt="pizza" height="150" width="150"/>
+            <hr/>
+          </div>
+          <ToppingForm handleChange={this.handleChange}/>
+          {button}
+        </div>
       </div>
     );
   }

@@ -1,0 +1,45 @@
+.toppings-form-page {
+  background-color: $pale-yellow;
+  height: 100vh;
+  padding-top: 6%;
+}
+
+.toppings-wrapper {
+  background-color: $light-orange;
+  margin: 0 15%;
+
+  hr {
+    width: 60%;
+    border-color: $reddish;
+  }
+}
+
+.instructions {
+  text-align: center;
+  padding: 2%;
+  display: block;
+}
+
+.checkbox-panal {
+  // padding-left: 25%;
+  // padding-right: 25%;
+  // display: block;
+// }
+
+// // .checkbox-field {
+//   label {
+//     display: inline-block;
+//     float: left;
+//     padding-right: 10px;
+//     padding-left: 10px;
+//     white-space: nowrap;
+//
+//   //   span {
+//   //     vertical-align: bottom;
+//   //   }
+//   }
+//   input {
+//     // vertical-align: middle;
+//     margin-right: 10px;
+//   }
+}
