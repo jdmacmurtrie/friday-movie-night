@@ -21,7 +21,6 @@ class ToppingFormContainer extends React.Component {
       this.removeTopping(newTopping)
     } else {
       let allToppings = this.state.toppings.concat(newTopping)
-      this.setState({ toppings: allToppings })
       this.getQueryString(allToppings)
       this.setState({
         toppings: allToppings,
@@ -57,7 +56,7 @@ class ToppingFormContainer extends React.Component {
     let button;
 
     if (this.state.toppings.length >= 1) {
-      button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="movies"/>
+      button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="get-movies-button"/>
     }
 
     return (
