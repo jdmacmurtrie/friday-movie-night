@@ -2,8 +2,9 @@ import React from 'react';
 
 const ToppingForm = props => (
   <form>
-  <div className="row">
-    <label className="one-third column">
+  <div className="container">
+  <div className="row checkbox-panal">
+    <label className="one-third column check-box">
       <input type="checkbox"
         value="Extra Cheese"
         name="Extra Cheese"
@@ -12,7 +13,7 @@ const ToppingForm = props => (
       <span>Extra Cheese</span>
     </label>
 
-    <label className="one-third column">
+    <label className="one-third column check-box">
       <input type="checkbox"
         value="Pepperoni"
         name="Pepperoni"
@@ -21,7 +22,7 @@ const ToppingForm = props => (
       <span>Pepperoni</span>
     </label>
 
-    <label className="one-third column">
+    <label className="one-third column check-box">
       <input type="checkbox"
         value="Sausage"
         name="Sausage"
@@ -30,7 +31,7 @@ const ToppingForm = props => (
       <span>Sausage</span>
     </label>
 
-    <label className="one-third column">
+    <label className="one-third column check-box">
       <input type="checkbox"
         value="Ham"
         name="Ham"
@@ -39,7 +40,7 @@ const ToppingForm = props => (
       <span>Ham</span>
     </label>
 
-    <label className="one-third column">
+    <label className="one-third column check-box">
       <input type="checkbox"
         value="Pineapple"
         name="Pineapple"
@@ -48,7 +49,7 @@ const ToppingForm = props => (
       <span>Pineapple</span>
     </label>
 
-    <label className="one-third column">
+    <label className="one-third column check-box">
       <input type="checkbox"
         value="Green Pepper"
         name="Green Pepper"
@@ -57,7 +58,7 @@ const ToppingForm = props => (
       <span>Green Pepper</span>
     </label>
 
-    <label className="one-third column">
+    <label className="one-third column check-box">
       <input type="checkbox"
         value="Mushroom"
         name="Mushroom"
@@ -66,7 +67,7 @@ const ToppingForm = props => (
       <span>Mushroom</span>
     </label>
 
-    <label className="one-third column">
+    <label className="one-third column check-box">
       <input type="checkbox"
         value="Grilled Chicken"
         name="Grilled Chicken"
@@ -75,7 +76,7 @@ const ToppingForm = props => (
       <span>Grilled Chicken</span>
     </label>
 
-    <label className="one-third column">
+    <label className="one-third column check-box">
       <input type="checkbox"
         value="Olives"
         name="Olives"
@@ -83,6 +84,7 @@ const ToppingForm = props => (
       />
       <span>Olives</span>
     </label>
+    </div>
     </div>
   </form>
 );

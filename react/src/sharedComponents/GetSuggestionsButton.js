@@ -1,7 +1,7 @@
 import React from 'react';
 
-const SubmitToppingsButton = props =>  (
-  <div>
+const GetSuggestionsButton = props =>  (
+  <div className={props.className}>
     <button type='submit' onClick={props.handleFormSubmit}>
       Get my suggestions!
     </button>
@@ -9,4 +9,4 @@ const SubmitToppingsButton = props =>  (
 );
 
 
-export default SubmitToppingsButton
+export default GetSuggestionsButton

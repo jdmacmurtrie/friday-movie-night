@@ -2,13 +2,14 @@ import React from 'react';
 
 const MovieForm = props => {
   return (
-    <div>
+    <div className="movie-input-wrapper">
       <form onSubmit={props.handleFormSubmit}>
         <input
           className="movie-field title"
           type="text"
           onChange={props.handleChangeText}
-          placeholder="Movie Title"
+          autoFocus
+          placeholder="How about Pirates of the Caribbean?"
         />
       </form>
     </div>

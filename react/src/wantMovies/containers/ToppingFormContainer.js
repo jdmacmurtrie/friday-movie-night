@@ -2,7 +2,7 @@ import React from 'react'
 import { browserHistory } from 'react-router'
 
 import ToppingForm from '../components/ToppingForm'
-import SubmitToppingsButton from '../components/SubmitToppingsButton'
+import GetSuggestionsButton from '../../sharedComponents/GetSuggestionsButton'
 
 class ToppingFormContainer extends React.Component {
   constructor (props) {
@@ -55,22 +55,22 @@ class ToppingFormContainer extends React.Component {
 
   render () {
     let button;
-    let yourToppings;
+
     if (this.state.toppings.length >= 1) {
-      button = <SubmitToppingsButton handleFormSubmit={this.handleFormSubmit} />
+      button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="movies"/>
     }
 
     return (
       <div className="toppings-form-page">
         <div className="toppings-wrapper">
-          <div className="instructions">
+          <div className="topping-headline">
             <h1>Which toppings are on your pizza?</h1>
             <img src='/assets/pizza-slice-combo-clipart' alt="pizza" height="150" width="150"/>
             <hr/>
           </div>
           <ToppingForm handleChange={this.handleChange}/>
-          {button}
         </div>
+        {button}
       </div>
     );
   }

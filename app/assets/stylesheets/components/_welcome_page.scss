@@ -7,11 +7,6 @@ $tree-black: #192122;
 
 .choices {
   text-align: center;
-
-  img {
-    -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter: drop-shadow(5px 5px 5px #222);
-  }
 }
 
 .need-movie {
@@ -25,6 +20,11 @@ $tree-black: #192122;
   margin: 0;
   padding-top: 16%;
   font-family: 'Mina', sans-serif;
+
+  img {
+    -webkit-filter: drop-shadow(5px 5px 5px #444444);
+    filter: drop-shadow(5px 5px 5px #444444);
+  }
 }
 
 .need-movie:hover {
@@ -45,6 +45,11 @@ $tree-black: #192122;
   padding-top: 14%;
   padding-bottom: 2%;
   font-family: 'Chewy', cursive;
+
+  img {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+  }
 }
 
 .need-pizza:hover {
@@ -52,15 +57,4 @@ $tree-black: #192122;
     transform: scale(1.1);
     color: $pale-yellow;
   }
-}
-
-.user-perks {
-  text-align: right;
-  padding: 5px;
-  float: right;
-}
-
-.account-commands {
-  padding: 5px;
-  float:left;
 }
