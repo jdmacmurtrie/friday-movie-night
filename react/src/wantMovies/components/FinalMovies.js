@@ -5,18 +5,19 @@ const FinalMovies = props => {
 
   if(props.movies) {
     movies= props.movies.map(movie => {
+      let altText = `${movie.title}: ${movie.description}`
       return(
-        <li>
+        <li className="movie-poster">
           <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster}`}
-            alt={`${movie.title}: ${movie.description}`}
-            className="poster">
+            title={altText}>
           </img>
         </li>
       )
     })
   }
+
   return (
-    <ul>
+    <ul className="movie-recommendations-wrapper">
       {movies}
     </ul>
   );

@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     resources :recommendations
   end
   resources :movies, only: [:new, :show] do
-    resources :recommendations
+    resources :recommendations, only: :show
   end
   resources :suggestions
 end

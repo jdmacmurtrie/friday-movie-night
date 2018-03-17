@@ -1,0 +1,54 @@
+.movie-recommendations-container {
+  background-color: $pale-yellow;
+  height: 80vh;
+
+  .headline {
+    text-align: center;
+    background-color: $orange-red;
+    padding-top: 1%;
+    margin-bottom: 1%;
+    border-bottom: 2px solid $reddish;
+  }
+}
+
+.movie-back-buttons {
+  text-align: center;
+  margin: 2% 0;
+
+  button {
+    margin: 0% 10%;
+    background-color: $tree-black;
+    border: 2px solid $orange-red;
+
+    a {
+      text-decoration: none;
+      color: $light-orange;
+    }
+  }
+
+  button:hover {
+    border-color: $tree-black;
+    background-color: $pale-yellow;
+
+    a {
+      color: $tree-black
+    }
+  }
+}
+
+.movie-recommendations-wrapper {
+  list-style-type: none;
+  text-align: center;
+}
+
+.movie-poster {
+  display: inline-block;
+  margin: 1px;
+  font-size: 0;
+  line-height: 0;
+  border: 2px solid $tree-black;
+}
+
+.movie-poster:hover {
+  transform: scale(1.075);
+}

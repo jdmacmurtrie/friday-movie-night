@@ -13,9 +13,9 @@ class Api::V1::ToppingsController < ApplicationController
     get_genre_id(genres)
 
     movies = HTTParty.get("https://api.themoviedb.org/3/genre/#{@genre_id}/movies?api_key=#{key}&page=#{random_number}")
-    four_movies = movies.parsed_response['results'].sample(4)
+    twelve_movies = movies.parsed_response['results'].sample(12)
 
-    @movie_suggestions = four_movies.map do |movie|
+    @movie_suggestions = twelve_movies.map do |movie|
       Movie.create(
         title: movie['title'],
         description: movie['overview'],
@@ -23,18 +23,10 @@ class Api::V1::ToppingsController < ApplicationController
         genre: @genre_suggestion
       )
     end
-    render json: { movies: @movie_suggestions }
+    render json: { movies: @movie_suggestions, genre: @genre_suggestion }
   end
 
   private
-
-  def get_genre_id(genres)
-    genres['genres'].each do |genre|
-      if genre['name'] == @genre_suggestion.name
-        @genre_id = genre['id']
-      end
-    end
-  end
 
   def determine_toppings
     selected_toppings = params[:params].split(',')
@@ -71,6 +63,14 @@ class Api::V1::ToppingsController < ApplicationController
   def how_many_suggestions(simplified_suggestion)
     if simplified_suggestion.length > 1
       @genre_suggestion = simplified_suggestion.sample
+    end
+  end
+
+  def get_genre_id(genres)
+    genres['genres'].each do |genre|
+      if genre['name'] == @genre_suggestion.name
+        @genre_id = genre['id']
+      end
     end
   end
 end

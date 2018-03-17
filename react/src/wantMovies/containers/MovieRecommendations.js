@@ -6,7 +6,8 @@ class MovieRecommendations extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      movies: []
+      movies: [],
+      genre: ''
     }
   }
   componentDidMount() {
@@ -23,7 +24,10 @@ class MovieRecommendations extends React.Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ movies: body.movies })
+      this.setState({
+        movies: body.movies,
+        genre: body.genre.name
+      })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -31,25 +35,20 @@ class MovieRecommendations extends React.Component {
   render() {
     return (
       <div>
-      <div className="top-bar recommended">
-        Your movie recommendations
-      </div>
-
-      <div className="movie-choices">
-        <div className="movie-panal">
-          <div className="row">
-            <div className="3-small columns" id="movie">
-            <FinalMovies movies={this.state.movies}/>
-            </div>
+        <div className="movie-recommendations-container">
+          <div className="headline">
+            <h1>Based on your toppings, <br/> how about some {this.state.genre} movies?</h1>
           </div>
+          <div className="movie-back-buttons">
+            <span className="back-button">
+              <button><a href={'/toppings/new'}>Select Different Toppings</a></button>
+            </span>
+            <span className="back-button">
+              <button><a href={'/'}>Back to the Beginning!</a></button>
+            </span>
+          </div>
+          <FinalMovies movies={this.state.movies}/>
         </div>
-      </div>
-      <a href={'/toppings/new'} className="small-12 columns button">
-      Select Different Toppings
-      </a>
-      <a href={'/'} className="small-12 columns button">
-        Back to the Beginning!
-      </a>
       </div>
     );
   }
