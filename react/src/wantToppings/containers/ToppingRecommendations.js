@@ -30,7 +30,7 @@ class ToppingRecommendations extends React.Component {
       this.setState({ toppings: body.toppings, titleResult: body.title })
       let type = this.props.params.params.split(",")[0]
       this.setState({ searchType: type })
-      if(type = 'title') {
+      if (type = 'title') {
         this.setState({ title: this.props.params.params.split(",")[1] })
       }
     })
@@ -47,26 +47,25 @@ class ToppingRecommendations extends React.Component {
   }
 
   render() {
-    let message
+    let headline
     if(this.state.searchType == 'title') {
-      message = `Your pizza recommendation, based on ${this.state.titleResult}`
+      headline = `Your topping recommendations, based on ${this.state.titleResult}`
     } else {
-      message = "Your pizza recommendations"
+      headline = "Your topping recommendations"
     }
+
     return (
-      <div>
-        <div className="top-bar recommended">
-          {message}
+      <div className="topping-recommendations-container">
+        <div className="headline">
+          <h1>{headline}</h1>
         </div>
         <div className="topping-list">
-          <div className="separation">
-          </div>
            <FinalToppings toppings={this.state.toppings}/>
         </div>
-        <Link to='/movies/new' className="small-12 columns button">
+        <Link to='/movies/new' className="">
           Select Different Genre
         </Link>
-        <a href={'/'} className="small-12 columns button">
+        <a href='/' className="">
           Back to the Beginning!
         </a>
       </div>

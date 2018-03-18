@@ -1,0 +1,12 @@
+.topping-recommendations-container {
+  background-color: $reddish;
+  height: 100vh;
+
+  .headline {
+    text-align: center;
+    background-color: $orange-red;
+    padding-top: 1%;
+    margin-bottom: 1%;
+    border-bottom: 2px solid $pale-yellow;
+  }
+}

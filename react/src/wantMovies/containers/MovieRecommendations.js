@@ -41,10 +41,10 @@ class MovieRecommendations extends React.Component {
           </div>
           <div className="movie-back-buttons">
             <span className="back-button">
-              <button><a href={'/toppings/new'}>Select Different Toppings</a></button>
+              <button><a href='/toppings/new'>Select Different Toppings</a></button>
             </span>
             <span className="back-button">
-              <button><a href={'/'}>Back to the Beginning!</a></button>
+              <button><a href='/'>Back to the Beginning!</a></button>
             </span>
           </div>
           <FinalMovies movies={this.state.movies}/>
