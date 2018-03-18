@@ -12,7 +12,11 @@ const WelcomeComponent = (props) => {
               <br/>
               based on my pizza
               <br/>
-              <img src='/assets/icons8-film-reel-filled-100' alt="film reel" height="150" width="150"/>
+              <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png'
+                   alt="film reel"
+                   height="150"
+                   width="150"
+              />
             </div>
           </div>
         </Link>
@@ -23,7 +27,11 @@ const WelcomeComponent = (props) => {
               <br/>
               based on a movie
               <br/>
-              <img src='/assets/pizza-slice-combo-clipart' alt="pizza" height="150" width="150"/>
+              <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pizza-slice-combo-clipart.png'
+                   alt="pizza"
+                   height="150"
+                   width="150"
+              />
             </div>
           </div>
         </Link>

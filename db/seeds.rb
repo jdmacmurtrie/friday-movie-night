@@ -1,17 +1,30 @@
-
-toppings = ['Extra Cheese', 'Pepperoni', 'Sausage', 'Ham', 'Pineapple', 'Green Pepper', 'Mushroom', 'Grilled Chicken', 'Bacon', 'Olives']
-genres = ['Action', 'Comedy', 'Drama', 'Family', 'War', 'Horror',
-'Music', 'Science Fiction', 'Fantasy', 'Romance', 'Mystery',
-'Western', 'History', 'Documentary', 'Animation', 'Thriller', 'Adventure']
-
-
 Topping.destroy_all
 Genre.destroy_all
 Suggestion.destroy_all
 
-toppings.each do |topping|
-  Topping.create(name: topping)
+genres = [
+  'Action', 'Comedy', 'Drama', 'Family', 'War', 'Horror',
+  'Music', 'Science Fiction', 'Fantasy', 'Romance', 'Mystery',
+  'Western', 'History', 'Documentary', 'Animation', 'Thriller', 'Adventure'
+]
+
+toppings = {
+  'Extra Cheese' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-cheese-50.png',
+  'Pepperoni' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pepperoni-cliparts-16.jpg',
+  'Sausage' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/ham-clipart-16.jpg',
+  'Ham' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pineapple-vector-13.jpg',
+  'Pineapple' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/mekonee-29-vegetables-set-11.svg',
+  'Green Pepper' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-mushroom-50.png',
+  'Mushroom' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/chicken-leg-clipart-2.jpg',
+  'Grilled Chicken' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/bacon-png-7.jpg',
+  'Bacon' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/bacon-png-7.jpg',
+  'Olives' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-olive-50.png'
+}
+
+toppings.each do |name, image|
+  Topping.create(name: name, image: image)
 end
+binding.pry
 
 genres.each do |genre|
   Genre.create(name: genre)

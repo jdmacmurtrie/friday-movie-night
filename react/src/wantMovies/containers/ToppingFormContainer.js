@@ -64,7 +64,7 @@ class ToppingFormContainer extends React.Component {
         <div className="toppings-wrapper">
           <div className="topping-headline">
             <h1>Which toppings are on your pizza?</h1>
-            <img src='/assets/pizza-slice-combo-clipart' alt="pizza" height="150" width="150"/>
+            <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pizza-slice-combo-clipart.png' alt="pizza" height="150" width="150"/>
             <hr/>
           </div>
           <ToppingForm handleChange={this.handleChange}/>

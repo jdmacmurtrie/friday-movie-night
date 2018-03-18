@@ -5,9 +5,7 @@ const FinalToppings = props => {
   if(props.toppings) {
    toppings= props.toppings.map(topping => {
     return(
-      <li className="topping-name">
-        {topping.name}
-      </li>
+      <img className="topping-name" src={topping.image}></img>
     )
   })
 }

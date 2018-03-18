@@ -80,7 +80,7 @@ jk
         <div className="movie-wrapper">
           <div className="movie-headline">
             <h2>{headline}</h2>
-            <img src='/assets/icons8-film-reel-filled-100' alt="film reel" height="150" width="150"/>
+            <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png' alt="film reel" height="150" width="150"/>
             <hr/>
           </div>
           <SearchBy handleChangeSearch={this.handleChangeSearch}/>
