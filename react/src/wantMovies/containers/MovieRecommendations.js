@@ -10,9 +10,9 @@ class MovieRecommendations extends React.Component {
       genre: ''
     }
   }
+
   componentDidMount() {
-    fetch(`/api/v1/toppings?params=${this.props.params.params}`, {
-    })
+    fetch(`/api/v1/toppings?params=${this.props.params.params}`)
     .then(response => {
       if (response.ok) {
         return response;

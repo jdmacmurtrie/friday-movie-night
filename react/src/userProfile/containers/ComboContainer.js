@@ -1,5 +1,5 @@
 import React from 'react'
-import ComboForm from './ComboForm'
+import ComboForm from '../components/ComboForm'
 
 class ComboContainer extends React.Component {
   constructor (props) {

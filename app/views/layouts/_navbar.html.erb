@@ -14,9 +14,9 @@
       <% unless current_page?(user_path(current_user)) %>
         <li><%= link_to "My Stuff", user_path(current_user) %></li>
       <% end %>
-      <% unless current_page?(new_suggestion_path) %>
-        <li><%= link_to "Make My Own Combo", new_suggestion_path %></li>
-      <% end %>
+    <% end %>
+    <% unless current_page?(new_combo_path) %>
+      <li><%= link_to "Make My Own Combo", new_combo_path %></li>
     <% end %>
   </ul>
 </div>

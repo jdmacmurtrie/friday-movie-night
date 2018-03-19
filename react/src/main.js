@@ -8,7 +8,8 @@ import ToppingFormContainer from './wantMovies/containers/ToppingFormContainer'
 import MovieRecommendations from './wantMovies/containers/MovieRecommendations'
 import MovieFormContainer from './wantToppings/containers/MovieFormContainer'
 import ToppingRecommendations from './wantToppings/containers/ToppingRecommendations'
-import ComboContainer from './makeCombo/ComboContainer'
+import UserProfileContainer from './userProfile/containers/UserProfileContainer'
+// import ComboContainer from './makeCombo/ComboContainer'
 
 $(function () {
   let goReact = document.getElementById('react-app')
@@ -20,9 +21,12 @@ $(function () {
         <Route path='/toppings/recommendations/:params' component={MovieRecommendations} />
         <Route path='/movies/new' component={MovieFormContainer} />
         <Route path='/movies/recommendations/:params' component={ToppingRecommendations} />
-        <Route path='/suggestions/new' component={ComboContainer} />
+        <Route path='/users/:id' component={UserProfileContainer} />
       </Router>,
       goReact
     );
   }
 })
+
+
+// <Route path='/combos/new' component={ComboContainer} />
