@@ -33,6 +33,16 @@ class MovieRecommendations extends React.Component {
   }
 
   render() {
+    let recommendations = this.state.movies
+    let finalMovies = recommendations.map(movie => {
+      return(
+        <FinalMovie
+          key={movie.id}
+          movie={movie}
+        />
+      )
+    })
+
     return (
       <div>
         <div className="movie-recommendations-container">

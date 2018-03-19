@@ -7,6 +7,7 @@
   <title><%= content_for?(:title) ? yield(:title) : "Friday Movie Night" %></title>
   <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Alegreya+SC:900|Luckiest+Guy" rel="stylesheet">
   <%= stylesheet_link_tag    "application" %>
+  <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>

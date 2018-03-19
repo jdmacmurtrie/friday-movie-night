@@ -1,5 +1,5 @@
 import ToppingFormContainer from '../../src/wantMovies/containers/ToppingFormContainer';
-import ChosenToppings from '../../src/wantMovies/components/ChosenToppings';
+import ChosenTopping from '../../src/wantMovies/components/ChosenTopping';
 import PizzaForm from '../../src/wantMovies/components/PizzaForm';
 
 describe('ToppingFormContainer', () => {
@@ -10,28 +10,16 @@ describe('ToppingFormContainer', () => {
   });
 
   it('should should have the specified inital state', () => {
-      expect(wrapper.state()).toEqual({ toppings: [], queryString: '' });
-    });
-
-    it('should render a ChosenToppings Component when a topping is selected', () => {
-    wrapper.setState({ toppings: ["Mushroom"] });
-    expect(wrapper.find(ChosenToppings)).toBePresent();
+    expect(wrapper.state()).toEqual({ toppings: [], queryString: '' });
   });
 
-    it('should render a PizzaForm Component', () => {
+  it('should render a PizzaForm Component', () => {
     expect(wrapper.find(PizzaForm)).toBePresent();
   });
 
-  it('should render the ChosenToppings Component an array of toppings when toppings are selected', () => {
-      wrapper.setState({ toppings: ["Mushroom"] });
-      expect(wrapper.find(ChosenToppings).props()).toEqual({
-        toppings: ["Mushroom"]
-      });
-    });
-
   it('should render the PizzaForm Component an onChange function', () => {
-      expect(wrapper.find(PizzaForm).props()).toEqual({
-        handleChange: jasmine.any(Function)
-      });
+    expect(wrapper.find(PizzaForm).props()).toEqual({
+      handleChange: jasmine.any(Function)
     });
   });
+});
