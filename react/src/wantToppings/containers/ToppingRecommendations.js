@@ -59,15 +59,15 @@ class ToppingRecommendations extends React.Component {
         <div className="headline">
           <h1>{headline}</h1>
         </div>
-        <div className="topping-list">
-           <FinalToppings toppings={this.state.toppings}/>
+        <div className="topping-back-buttons">
+          <span className="back-button">
+            <button><Link to='/movies/new'>Select Different Genre</Link></button>
+          </span>
+          <span className="back-button">
+            <button><Link to='/'>Back to the Beginning!</Link></button>
+          </span>
         </div>
-        <Link to='/movies/new' className="">
-          Select Different Genre
-        </Link>
-        <a href='/' className="">
-          Back to the Beginning!
-        </a>
+        <FinalToppings toppings={this.state.toppings}/>
       </div>
     );
   }

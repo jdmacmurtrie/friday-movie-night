@@ -10,7 +10,7 @@ const WelcomeComponent = (props) => {
             <div className="substance-wrapper">
               Find me a movie
               <br/>
-              based on my pizza
+              based on my toppings
               <br/>
               <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png'
                    alt="film reel"
@@ -23,7 +23,7 @@ const WelcomeComponent = (props) => {
         <Link to='/movies/new'>
           <div className="need-pizza">
             <div className="substance-wrapper">
-              Find me a pizza
+              Find me pizza toppings
               <br/>
               based on a movie
               <br/>

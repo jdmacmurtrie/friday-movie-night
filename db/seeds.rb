@@ -10,21 +10,20 @@ genres = [
 
 toppings = {
   'Extra Cheese' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-cheese-50.png',
-  'Pepperoni' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pepperoni-cliparts-16.jpg',
-  'Sausage' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/ham-clipart-16.jpg',
-  'Ham' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pineapple-vector-13.jpg',
-  'Pineapple' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/mekonee-29-vegetables-set-11.svg',
-  'Green Pepper' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-mushroom-50.png',
-  'Mushroom' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/chicken-leg-clipart-2.jpg',
-  'Grilled Chicken' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/bacon-png-7.jpg',
-  'Bacon' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/bacon-png-7.jpg',
+  'Pepperoni' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/Pepperoni.png',
+  'Sausage' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-sausage-50.png',
+  'Ham' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/Ham_PNG_Clip_Art_Image-1267.png',
+  'Pineapple' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/14-pineapple-png-image-download.png',
+  'Green Pepper' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/mekonee-29-vegetables-set-11.svg',
+  'Mushroom' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-mushroom-50.png',
+  'Grilled Chicken' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/chicken.png',
+  'Bacon' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/22507-5-bacon-transparent-background.png',
   'Olives' => 'https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-olive-50.png'
 }
 
 toppings.each do |name, image|
   Topping.create(name: name, image: image)
 end
-binding.pry
 
 genres.each do |genre|
   Genre.create(name: genre)

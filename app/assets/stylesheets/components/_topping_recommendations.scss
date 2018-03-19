@@ -10,3 +10,48 @@
     border-bottom: 2px solid $pale-yellow;
   }
 }
+
+.toppings-list-container {
+  text-align: center;
+  background-color: $light-orange;
+  color: $pale-yellow;
+  margin: 0 20%;
+  list-style-type: none;
+  border: 3px solid $orange-red;
+  box-shadow: 2px 2px 40px $pale-yellow;
+  padding: 3% 0;
+
+  img {
+    height: 125px;
+    width: 125px;
+  }
+}
+
+.topping {
+  display: inline-block;
+}
+
+.topping-back-buttons {
+  text-align: center;
+  margin: 2% 0;
+
+  button {
+    margin: 0% 10%;
+    background-color: $tree-black;
+    border: 2px solid $orange-red;
+
+    a {
+      text-decoration: none;
+      color: $orange-red;
+    }
+  }
+
+  button:hover {
+    border-color: $tree-black;
+    background-color: $pale-yellow;
+
+    a {
+      color: $tree-black
+    }
+  }
+}

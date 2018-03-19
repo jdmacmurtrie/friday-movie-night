@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory } from 'react-router'
+import { browserHistory, Link } from 'react-router'
 import FinalMovies from '../components/FinalMovies'
 
 class MovieRecommendations extends React.Component {
@@ -41,10 +41,10 @@ class MovieRecommendations extends React.Component {
           </div>
           <div className="movie-back-buttons">
             <span className="back-button">
-              <button><a href='/toppings/new'>Select Different Toppings</a></button>
+              <button><Link to='/toppings/new'>Select Different Toppings</Link></button>
             </span>
             <span className="back-button">
-              <button><a href='/'>Back to the Beginning!</a></button>
+              <button><Link to='/'>Back to the Beginning!</Link></button>
             </span>
           </div>
           <FinalMovies movies={this.state.movies}/>
