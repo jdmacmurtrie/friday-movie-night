@@ -46,7 +46,11 @@ class Api::V1::ToppingsController < ApplicationController
     user_genres = current_user.suggestions.map do |suggestion|
       suggestion.genre if @toppings.include?(suggestion.topping)
     end
-    @genre_suggestion = user_genres.sample
+    if user_genres.first.nil?
+      pick_genre_suggestion
+    else
+      @genre_suggestion = user_genres.sample
+    end
   end
 
   def pick_genre_suggestion

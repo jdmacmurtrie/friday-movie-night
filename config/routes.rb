@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#index'
   get "/static_pages/:static_page" => "static_pages#index"
-  get "/users/:id" => "static_pages#index"
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -14,6 +13,8 @@ Rails.application.routes.draw do
   get 'users/sign_out' => "devise/sessions#destroy"
   get 'movies/recommendations/:params' => "movies#index"
   get 'toppings/recommendations/:params' => "toppings#index"
+  get "/users/sign_in" => "users/sessions#new"
+  get "/users/:id" => "static_pages#index"
 
   namespace :api do
     namespace :v1 do

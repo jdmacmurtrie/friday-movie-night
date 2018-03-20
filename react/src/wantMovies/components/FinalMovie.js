@@ -1,12 +1,12 @@
 import React from 'react';
 
 const FinalMovie = props => {
+  let altText = `${props.movie.title}: ${props.movie.description}`
   return (
-    <li>
+    <li className="movie-poster">
       <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${props.movie.poster}`}
-        alt={`${props.movie.title}: ${props.movie.description}`}
-        className="poster">
-      </img>
+        alt={altText}
+      />
     </li>
   );
 }

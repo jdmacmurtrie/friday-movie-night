@@ -59,7 +59,6 @@ class ToppingFormContainer extends React.Component {
       button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="get-movies-button"/>
     }
 
-
     return (
       <div className="toppings-form-page">
         <div className="toppings-wrapper">

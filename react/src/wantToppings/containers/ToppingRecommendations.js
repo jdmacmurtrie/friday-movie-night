@@ -1,7 +1,7 @@
 import React from 'react';
 import { browserHistory, Link } from 'react-router'
 
-import FinalToppings from '../components/FinalToppings'
+import FinalTopping from '../components/FinalTopping'
 
 class ToppingRecommendations extends React.Component {
   constructor (props) {
@@ -15,7 +15,9 @@ class ToppingRecommendations extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`/api/v1/movies?params=${this.props.params.params}`)
+    fetch(`/api/v1/movies?params=${this.props.params.params}`, {
+      credentials: 'same-origin'
+    })
     .then(response => {
       if (response.ok) {
         return response;
@@ -54,6 +56,19 @@ class ToppingRecommendations extends React.Component {
       headline = "Your topping recommendations"
     }
 
+    let recommendations = this.state.toppings
+    let finalToppings = recommendations.map(topping => {
+      let randomNumber = Math.floor(Math.random() * 999)
+      let firstLetter = topping[0]
+      let toppingKey = firstLetter + randomNumber
+      return(
+        <FinalTopping
+          key={toppingKey}
+          topping={topping}
+        />
+      )
+    })
+
     return (
       <div className="topping-recommendations-container">
         <div className="headline">
@@ -67,7 +82,9 @@ class ToppingRecommendations extends React.Component {
             <button><Link to='/'>Back to the Beginning!</Link></button>
           </span>
         </div>
-        <FinalToppings toppings={this.state.toppings}/>
+        <ul className="toppings-list-container">
+          {finalToppings}
+        </ul>
       </div>
     );
   }

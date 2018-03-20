@@ -1,6 +1,6 @@
 import React from 'react';
 import { browserHistory, Link } from 'react-router'
-import FinalMovies from '../components/FinalMovies'
+import FinalMovie from '../components/FinalMovie'
 
 class MovieRecommendations extends React.Component {
   constructor (props) {
@@ -12,7 +12,9 @@ class MovieRecommendations extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`/api/v1/toppings?params=${this.props.params.params}`)
+    fetch(`/api/v1/toppings?params=${this.props.params.params}`, {
+      credentials: 'same-origin'
+    })
     .then(response => {
       if (response.ok) {
         return response;
@@ -57,7 +59,9 @@ class MovieRecommendations extends React.Component {
               <button><Link to='/'>Back to the Beginning!</Link></button>
             </span>
           </div>
-          <FinalMovies movies={this.state.movies}/>
+          <ul className="movie-recommendations-wrapper">
+            {finalMovies}
+          </ul>
         </div>
       </div>
     );
