@@ -49,7 +49,7 @@ class Api::V1::MoviesController < ApplicationController
 	end
 
 	def pick_user_combo
-		user_toppings = current_user.suggestions.map do |suggestion|
+		user_toppings = current_user.combos.map do |suggestion|
 			suggestion if suggestion.genre == @selected_genre
 		end
 		if user_toppings.first.nil?
@@ -61,7 +61,7 @@ class Api::V1::MoviesController < ApplicationController
 
 	def pick_topping_suggestion
 		@toppings = @selected_genre.toppings.map do |topping|
-			topping if Suggestion.find_by(topping: topping).user.nil?
+			topping if Combo.find_by(topping: topping).user.nil?
 		end
 	end
 end

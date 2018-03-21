@@ -1,4 +1,7 @@
-class Suggestion < ApplicationRecord
+class Combo < ApplicationRecord
+  extend ActiveModel::Naming
+  include ActiveModel::Conversion
+
   belongs_to :genre
   belongs_to :topping
   belongs_to :user

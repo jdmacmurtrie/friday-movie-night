@@ -43,7 +43,7 @@ class Api::V1::ToppingsController < ApplicationController
   end
 
   def pick_user_combo
-    user_genres = current_user.suggestions.map do |suggestion|
+    user_genres = current_user.combos.map do |suggestion|
       suggestion.genre if @toppings.include?(suggestion.topping)
     end
     if user_genres.first.nil?
