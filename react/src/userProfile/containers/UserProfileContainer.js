@@ -1,7 +1,8 @@
 import React from 'react'
 
+import ComboFormContainer from './ComboFormContainer'
 import UserInfoComponent from '../components/UserInfoComponent'
-import ComboContainer from './ComboContainer'
+import ComboComponent from '../components/ComboComponent'
 
 class UserProfileContainer extends React.Component {
   constructor (props) {
@@ -59,15 +60,60 @@ class UserProfileContainer extends React.Component {
     .then(response => response.json())
     .then(body => {
       let moreCombos = [...this.state.combos, ...body.combos]
-      debugger
       this.setState({ combos: moreCombos })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
+
+  deleteCombo(id) {
+    fetch(`/api/v1/combos/${id}.json`, {
+      method: 'DELETE',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ combos: body.combos })
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  render() {
+    let userCombos = this.state.combos
+    let combos = userCombos.map(combo => {
+      let handleDelete = () => {
+        this.deleteCombo(combo.id)
+      }
+      return(
+          <ComboComponent
+            key={combo.id}
+            combo={combo}
+            handleDelete={handleDelete}
+          />
+        )
+      }
+    )
     return (
-      <div>
-        <UserInfoComponent user={this.state.user} />
-        <ComboContainer user={this.state.user}/>
+      <div className="user-info-container">
+        <div className="info-wrapper">
+          <UserInfoComponent user={this.state.user} />
+          <div className="user-combos">
+            {combos}
+          </div>
+        </div>
+        <ComboFormContainer user={this.state.user} postNewCombo={this.postNewCombo}/>
       </div>
     );
   }

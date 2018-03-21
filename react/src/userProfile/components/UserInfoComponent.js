@@ -1,18 +1,14 @@
 import React from 'react';
 
-const UserInfoComponent = props => {
+const UserInfoComponent = props => (
+  <div className="info-component">
+    <h1>{props.user.first_name} {props.user.last_name}</h1>
+    <p>{props.user.email}</p>
 
-  let apostrophe = "'"
-  //  because my linter gets angry
-  let combos
+    <button><a href="/users/edit">Edit My Stuff</a></button>
+    <button><a href="/users/<%current_user%>" data-method="delete">Delete My Stuff</a></button>
+  </div>
+)
 
-  
-  return(
-    <div>
-      <h1>{props.user.first_name + apostrophe}s Stuff</h1>
-      <p>{props.user.email}</p>
-    </div>
-  )
-}
 
 export default UserInfoComponent

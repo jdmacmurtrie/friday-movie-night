@@ -1,5 +1,5 @@
 class ComboSerializer < ActiveModel::Serializer
-  attributes :genre, :topping
+  attributes :id, :genre, :topping
 
   def genre
     object.genre.name

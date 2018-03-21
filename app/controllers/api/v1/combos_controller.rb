@@ -21,7 +21,9 @@ class Api::V1::CombosController < ApplicationController
   end
 
   def destroy
-    Combo.find(params[:id]).destroy
-    redirect_to user_path(current_user)
+    victim = Combo.find(params["id"])
+    victim.destroy
+    render json: victim.user.combos
+
   end
 end
