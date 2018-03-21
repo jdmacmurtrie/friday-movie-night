@@ -2,7 +2,7 @@ import React from 'react'
 
 import ComboFormContainer from './ComboFormContainer'
 import UserInfoComponent from '../components/UserInfoComponent'
-import ComboComponent from '../components/ComboComponent'
+import ComboTableContainer from '../components/ComboTableContainer'
 
 class UserProfileContainer extends React.Component {
   constructor (props) {
@@ -91,26 +91,15 @@ class UserProfileContainer extends React.Component {
   }
 
   render() {
-    let userCombos = this.state.combos
-    let combos = userCombos.map(combo => {
-      let handleDelete = () => {
-        this.deleteCombo(combo.id)
-      }
-      return(
-          <ComboComponent
-            key={combo.id}
-            combo={combo}
-            handleDelete={handleDelete}
-          />
-        )
-      }
-    )
     return (
       <div className="user-info-container">
         <div className="info-wrapper">
           <UserInfoComponent user={this.state.user} />
           <div className="user-combos">
-            {combos}
+            <ComboTableContainer
+              deleteCombo={this.deleteCombo}
+              userCombos={this.state.combos}
+            />
           </div>
         </div>
         <ComboFormContainer user={this.state.user} postNewCombo={this.postNewCombo}/>
