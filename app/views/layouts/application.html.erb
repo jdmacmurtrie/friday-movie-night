@@ -13,43 +13,12 @@
 </head>
 
 <body>
-  <div class="top-bar-left">
-    <div class="account-commands small-12 columns">
-    <ul>
-      <% if user_signed_in? %>
-      <li id="account-button"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <% unless current_page?(new_user_registration_path)%>
-          <li id="account-button"><%= link_to "Create Account", new_user_registration_path%></li>
-      <%end %>
-        <% unless current_page?(new_user_session_path)%>
-          <li id="account-button"><%= link_to "Sign In", new_user_session_path%></li>
-        <% end %>
-      <% end %>
-    </ul>
-  </div>
-  </div>
-  <div class="top-bar-right">
-    <div class="user-perks small-12 offset-11 columns">
-      <div class="row" id="account-button">
-      <% if current_user %>
-      <% unless current_page?(user_path(current_user)) %>
-      <%= link_to "My Stuff", user_path(current_user) %>
-      <% end %>
-      <% end %>
-  </div>
-  <div class="row" id="account-button">
-      <% unless current_page?(new_suggestion_path) %>
-      <%= link_to "Make my own combo", new_suggestion_path %>
-      <% end %>
-    </div>
-  </div>
-  </div>
-  <div class="flash-message">
+  <%= render "layouts/navbar" %>
+  <!-- <div class="flash-message">
   <% flash.each do |key, value| %>
     <%= value %>
   <% end %>
-</div>
+</div> -->
   <%= yield %>
 
 </body>

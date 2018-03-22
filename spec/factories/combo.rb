@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :suggestion do
+  factory :combo do
     genre
     topping
     user

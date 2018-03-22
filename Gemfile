@@ -1,6 +1,8 @@
 source 'https://rubygems.org/'
 
 ruby '2.3.3'
+
+gem "active_model_serializers"
 gem 'devise'
 gem 'httparty'
 gem 'jquery-rails'

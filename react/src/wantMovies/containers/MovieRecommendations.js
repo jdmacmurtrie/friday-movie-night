@@ -1,16 +1,19 @@
 import React from 'react';
-import { browserHistory } from 'react-router'
+import { browserHistory, Link } from 'react-router'
 import FinalMovie from '../components/FinalMovie'
 
 class MovieRecommendations extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      movies: []
+      movies: [],
+      genre: ''
     }
   }
+
   componentDidMount() {
     fetch(`/api/v1/toppings?params=${this.props.params.params}`, {
+      credentials: 'same-origin'
     })
     .then(response => {
       if (response.ok) {
@@ -23,7 +26,10 @@ class MovieRecommendations extends React.Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ movies: body.movies })
+      this.setState({
+        movies: body.movies,
+        genre: body.genre.name
+      })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -41,27 +47,22 @@ class MovieRecommendations extends React.Component {
 
     return (
       <div>
-      <div className="top-bar recommended">
-        Your movie recommendations
-      </div>
-
-      <div className="movie-choices">
-        <div className="movie-panal">
-          <div className="row">
-            <div className="3-small columns" id="movie">
-              <ul>
-                {finalMovies}
-              </ul>
-            </div>
+        <div className="movie-recommendations-container">
+          <div className="headline">
+            <h1>Based on your toppings, <br/> how about some {this.state.genre} movies?</h1>
           </div>
+          <div className="movie-back-buttons">
+            <span className="back-button">
+              <button><Link to='/toppings/new'>Select Different Toppings</Link></button>
+            </span>
+            <span className="back-button">
+              <button><Link to='/'>Back to the Beginning!</Link></button>
+            </span>
+          </div>
+          <ul className="movie-recommendations-wrapper">
+            {finalMovies}
+          </ul>
         </div>
-      </div>
-      <a href={'/toppings/new'} className="small-12 columns button">
-      Select Different Toppings
-      </a>
-      <a href={'/'} className="small-12 columns button">
-        Back to the Beginning!
-      </a>
       </div>
     );
   }

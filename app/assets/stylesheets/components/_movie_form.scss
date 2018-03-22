@@ -1,0 +1,92 @@
+.movie-form-page {
+  background-color: $reddish;
+  height: 100vh;
+  padding-top: 6%;
+  font-family: $movie;
+}
+
+.movie-wrapper {
+  background-color: $pale-yellow;
+  margin: 0 15%;
+  border: 4px solid $orange-red;
+  box-shadow: 2px 2px 25px $tree-black;
+
+  hr {
+    width: 60%;
+    border-color: $light-orange;
+  }
+
+  img {
+    -webkit-filter: drop-shadow(5px 5px 5px #888888);
+    filter: drop-shadow(5px 5px 5px #444444);
+  }
+}
+
+.movie-headline {
+  text-align: center;
+  padding-top: 2%;
+  display: block;
+}
+
+.radio-button-wrapper {
+  padding-left: 20%;
+  padding-right: 20%;
+
+  label {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+
+    input {
+      margin-right: 12px;
+    }
+  }
+}
+
+.movie-choice {
+  padding-bottom: 5px;
+}
+
+.dropdown-wrapper {
+  text-align: center;
+
+  select {
+    width: 80%;
+    box-shadow: 5px 5px 5px #888888;
+    border: none;
+  }
+}
+
+.movie-input-wrapper {
+  text-align: center;
+  padding-bottom: none;
+
+  input {
+    width: 80%;
+  }
+
+  input:focus {
+    border: none;
+    box-shadow: 5px 5px 5px #888888
+  }
+}
+
+.get-toppings-button {
+  text-align: center;
+  margin-top: 1%;
+
+  button {
+    width: 50%;
+    background-color: $tree-black;
+    border-color: $light-orange;
+    color: $light-orange;
+    box-shadow: 3px 3px 4px black
+  }
+
+  button:hover {
+    transform: scale(1.3);
+    border-color: $pale-yellow;
+    color: $pale-yellow;
+    box-shadow: none;
+  }
+}

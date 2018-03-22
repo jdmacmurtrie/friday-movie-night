@@ -3,21 +3,38 @@ import { browserHistory, Link } from 'react-router'
 
 const WelcomeComponent = (props) => {
   return(
-    <div className="choice-panal">
-      <div className="choice">
-        What would you like me to recommend?
-      </div>
-      <div className="choice-buttons row">
-        <div className="small-6 columns">
-          <Link to='/toppings/new' className="small-12 columns button">
-            Recommend a movie based on my pizza
-          </Link>
-        </div>
-        <div className="small-6 columns">
-          <Link to='/movies/new' className="small-12 columns button">
-            Recommend a pizza based on a movie
-          </Link>
-        </div>
+    <div>
+      <div className="choices">
+        <Link to='/toppings/new'>
+          <div className="need-movie">
+            <div className="substance-wrapper">
+              Find me a movie
+              <br/>
+              based on my toppings
+              <br/>
+              <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png'
+                   alt="film reel"
+                   height="150"
+                   width="150"
+              />
+            </div>
+          </div>
+        </Link>
+        <Link to='/movies/new'>
+          <div className="need-pizza">
+            <div className="substance-wrapper">
+              Find me pizza toppings
+              <br/>
+              based on a movie
+              <br/>
+              <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pizza-slice-combo-clipart.png'
+                   alt="pizza"
+                   height="150"
+                   width="150"
+              />
+            </div>
+          </div>
+        </Link>
       </div>
     </div>
   )

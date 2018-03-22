@@ -1,3 +1,5 @@
+@import "skeleton/skeleton";
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -11,17 +13,17 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require foundation_and_overrides
  *= require_self
 
  */
- ul {
-   list-style-type: none;
- }
+ @import "global/text";
+ @import "global/colors";
 
-.top-bar {
-  font-family: 'Luckiest Guy', cursive;
-  color: #c10000;
-  font-size: 30px;
-  text-align: center
-}
+ @import "components/welcome_page";
+ @import "components/navbar";
+ @import "components/user_form";
+ @import "components/topping_form";
+ @import "components/movie_form";
+ @import "components/movie_recommendations";
+ @import "components/topping_recommendations";
+ @import "components/user_profile";

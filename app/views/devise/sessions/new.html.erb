@@ -1,20 +1,21 @@
-<h1 class="top-bar form-header">Log In</h1>
-
-<div class="row form">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="field small-12 columns">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %>
+<div class="devise-form">
+  <div class="form-wrapper">
+    <h1 class="headline">Welcome Back</h1>
+    <hr/>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+      <br/>
+      <%= f.submit "Sign In" %>
+    <% end %>
   </div>
-
-  <div class="field small-12 columns">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="nevermind">
+    <%= button_to "Nevermind.", root_path, method: :get, class: "nevermind" %>
   </div>
-
-  <div class="actions button alert" type="submit">
-    <button class="create-button small-12 offset-6 columns">
-    Sign In
-  </button>
-<% end %>
 </div>

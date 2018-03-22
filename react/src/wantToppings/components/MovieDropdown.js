@@ -1,10 +1,10 @@
 import React from 'react';
 
 const MovieDropdown = props => {
-  // because History by itself is a no-no
 let history = "History"
+// because History by itself is a no-no
   return (
-    <div className="movie-field">
+    <div className="dropdown-wrapper">
       <select name="genres" onChange={props.handleChangeDropdown}>
         <option value="none">(select a genre)</option>
         <option value="Action">Action</option>

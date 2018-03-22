@@ -1,0 +1,72 @@
+.toppings-form-page {
+  background-color: $pale-yellow;
+  height: 100vh;
+  padding-top: 6%;
+  font-family: $topping;
+}
+
+.toppings-wrapper {
+  background-color: $light-orange;
+  margin: 0 15%;
+  border: 4px solid $orange-red;
+  box-shadow: 2px 2px 25px $tree-black;
+
+  hr {
+    width: 60%;
+    border-color: $reddish;
+  }
+
+  img {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+}
+
+.topping-headline {
+  text-align: center;
+  padding: 2%;
+  display: block;
+}
+
+.checkbox-panal {
+  text-align: center;
+  padding-bottom: 5px;
+
+  label {
+    font-size: 20px;
+  }
+}
+
+.check-box {
+  display: inline-block;
+  width: 33%;
+
+  input {
+    margin-right: 10px;
+  }
+}
+
+.check-box:last-child {
+  width: 66%;
+  text-align: center;
+}
+
+.get-movies-button {
+  text-align: center;
+  margin-top: 1.5%;
+
+  button {
+    width: 50%;
+    background-color: $tree-black;
+    border: 2px solid $orange-red;
+    color: #D0966A;
+    font-size: 25px;
+  }
+
+  button:hover {
+    transform: scale(1.3);
+    border-color: $reddish;
+    color: $pale-yellow;
+    box-shadow: none;
+  }
+}

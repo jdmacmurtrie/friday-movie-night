@@ -4,12 +4,13 @@ import { browserHistory, Link } from 'react-router'
 import MovieForm from '../components/MovieForm'
 import MovieDropdown from '../components/MovieDropdown'
 import SearchBy from '../components/SearchBy'
+import GetSuggestionsButton from '../../sharedComponents/GetSuggestionsButton'
 
 class MovieFormContainer extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      selection: 'genre',
+      selection: 'title',
       genre: 'none',
       movie: '',
       queryString: ''
@@ -55,34 +56,40 @@ jk
   }
 
   render () {
-    let movieForm;
-    let movieDropdown;
-    let button;
-    if (this.state.selection == 'title') {
+    let headline, movieForm, movieDropdown, button;
+    let selection = this.state.selection
+    let queryString = this.state.queryString
+
+    if (selection == 'genre') {
+      movieDropdown = <MovieDropdown handleChangeDropdown={this.handleChangeDropdown} />
+      headline = "What genre will you be watching?"
+    } else if (selection == 'title') {
+      headline = "What movie will you be watching?"
       movieForm = <MovieForm
                     handleChangeText={this.handleChangeText}
                     handleFormSubmit={this.handleFormSubmit}
                   />
-    } else if (this.state.selection == 'genre') {
-      movieDropdown = <MovieDropdown handleChangeDropdown={this.handleChangeDropdown} />
     }
-    if (this.state.queryString !== '' && this.state.queryString != 'none') {
-      button = <button type='submit' onClick={this.handleFormSubmit} className="small-12 columns button" id="get-topping-button">
-                Get my suggestions!
-              </button>
+
+    if (queryString !== '' && queryString != 'none') {
+      button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="get-toppings-button"/>
     }
 
     return (
-      <div>
-        <div className="top-bar select">
-          Please select a genre or a title
+      <div className="movie-form-page">
+        <div className="movie-wrapper">
+          <div className="movie-headline">
+            <h2>{headline}</h2>
+            <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png' alt="film reel" height="150" width="150"/>
+            <hr/>
+          </div>
+          <SearchBy handleChangeSearch={this.handleChangeSearch}/>
+          <div className="movie-choice">
+            {movieForm}
+            {movieDropdown}
+          </div>
         </div>
-        <div className="movie-panal">
-        <SearchBy handleChangeSearch={this.handleChangeSearch}/>
-          {movieForm}
-          {movieDropdown}
-          {button}
-        </div>
+        {button}
       </div>
     );
   }

@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170705171033) do
+ActiveRecord::Schema.define(version: 20180321001105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "combos", force: :cascade do |t|
+    t.integer  "topping_id", null: false
+    t.integer  "genre_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string "name", null: false
@@ -28,16 +36,9 @@ ActiveRecord::Schema.define(version: 20170705171033) do
     t.integer  "genre_id"
   end
 
-  create_table "suggestions", force: :cascade do |t|
-    t.integer  "topping_id", null: false
-    t.integer  "genre_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-  end
-
   create_table "toppings", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name",               null: false
+    t.string "image", default: "", null: false
   end
 
   create_table "users", force: :cascade do |t|

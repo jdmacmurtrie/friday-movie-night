@@ -1,8 +1,8 @@
 import React from 'react'
 import { browserHistory } from 'react-router'
 
-import PizzaForm from '../components/PizzaForm'
-import ChosenTopping from '../components/ChosenTopping'
+import ToppingForm from '../components/ToppingForm'
+import GetSuggestionsButton from '../../sharedComponents/GetSuggestionsButton'
 
 class ToppingFormContainer extends React.Component {
   constructor (props) {
@@ -15,22 +15,17 @@ class ToppingFormContainer extends React.Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   };
 
-
   handleChange(event) {
     let newTopping = event.target.value
-    let newToppingBox = document.getElementsByName(newTopping)
-    let newToppingIndex = this.state.toppings.indexOf(newTopping)
     if (this.state.toppings.includes(newTopping)) {
-      this.state.toppings.splice(newToppingIndex, 1)
-      this.setState({ toppings: this.state.toppings })
-      newToppingBox.checked = false
-    } else if (this.state.toppings.length < 2) {
-      this.setState({ toppings: this.state.toppings.concat(newTopping) })
+      this.removeTopping(newTopping)
     } else {
-      document.getElementsByName(newTopping)[0].checked = false
-      alert("You may only choose two toppings!")
+      let allToppings = this.state.toppings.concat(newTopping)
+      this.getQueryString(allToppings)
+      this.setState({
+        toppings: allToppings,
+      })
     }
-    this.setState({ queryString: `${this.state.toppings},${newTopping}`})
   };
 
   handleFormSubmit(event) {
@@ -39,46 +34,42 @@ class ToppingFormContainer extends React.Component {
     browserHistory.push(`/toppings/recommendations/${queryString}`)
   };
 
+  getQueryString(toppings) {
+    let newQueryString = ``
+    toppings.forEach(topping => {
+        newQueryString += `${topping},`
+    })
+    this.setState({ queryString: newQueryString })
+  }
+
+  removeTopping(newTopping) {
+    let newToppingCheckBox = document.getElementsByName(newTopping)
+    let currentlySelected = this.state.toppings
+    let newToppingIndex = currentlySelected.indexOf(newTopping)
+    currentlySelected.splice(newToppingIndex, 1)
+    this.setState({ toppings: currentlySelected })
+    newToppingCheckBox.checked = false
+    this.getQueryString(currentlySelected)
+  }
+
   render () {
     let button;
-    let chosenToppings;
+
     if (this.state.toppings.length >= 1) {
-      button = <div className="small-6 large-6 columns">
-                <div className="get-movies">
-                  <button type='submit' onClick={this.handleFormSubmit} className="small-12 columns button" id="get-movie-button">
-                    Get my suggestions!
-                  </button>
-                </div>
-              </div>
-      let chosenToppings = this.state.toppings
-      let toppings = chosenToppings.map(topping => {
-        let randomNumber = Math.floor(Math.random() * 1000)
-        let firstLetter = topping[0]
-        let toppingKey = firstLetter + randomNumber
-        return(
-          <ul>
-            <ChosenTopping
-              key={toppingKey}
-              topping={topping}
-            />
-          </ul>
-        )
-      })
+      button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="get-movies-button"/>
     }
 
-
     return (
-      <div>
-        <div className="top-bar select">
-          <p>Please select up to two toppings</p>
+      <div className="toppings-form-page">
+        <div className="toppings-wrapper">
+          <div className="topping-headline">
+            <h1>Which toppings are on your pizza?</h1>
+            <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pizza-slice-combo-clipart.png' alt="pizza" height="150" width="150"/>
+            <hr/>
+          </div>
+          <ToppingForm handleChange={this.handleChange}/>
         </div>
-        <div className="topping-form">
-        <div className="checkbox-panal">
-          <PizzaForm handleChange={this.handleChange}/>
-          {chosenToppings}
-          {button}
-        </div>
-        </div>
+        {button}
       </div>
     );
   }

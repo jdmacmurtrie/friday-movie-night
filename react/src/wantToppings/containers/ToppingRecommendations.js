@@ -1,7 +1,7 @@
 import React from 'react';
 import { browserHistory, Link } from 'react-router'
 
-import FinalToppings from '../components/FinalToppings'
+import FinalTopping from '../components/FinalTopping'
 
 class ToppingRecommendations extends React.Component {
   constructor (props) {
@@ -15,7 +15,9 @@ class ToppingRecommendations extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`/api/v1/movies?params=${this.props.params.params}`)
+    fetch(`/api/v1/movies?params=${this.props.params.params}`, {
+      credentials: 'same-origin'
+    })
     .then(response => {
       if (response.ok) {
         return response;
@@ -30,7 +32,7 @@ class ToppingRecommendations extends React.Component {
       this.setState({ toppings: body.toppings, titleResult: body.title })
       let type = this.props.params.params.split(",")[0]
       this.setState({ searchType: type })
-      if(type = 'title') {
+      if (type = 'title') {
         this.setState({ title: this.props.params.params.split(",")[1] })
       }
     })
@@ -47,28 +49,42 @@ class ToppingRecommendations extends React.Component {
   }
 
   render() {
-    let message
+    let headline
     if(this.state.searchType == 'title') {
-      message = `Your pizza recommendation, based on ${this.state.titleResult}`
+      headline = `Your topping recommendations, based on ${this.state.titleResult}`
     } else {
-      message = "Your pizza recommendations"
+      headline = "Your topping recommendations"
     }
+
+    let recommendations = this.state.toppings
+    let finalToppings = recommendations.map(topping => {
+      let randomNumber = Math.floor(Math.random() * 999)
+      let firstLetter = topping[0]
+      let toppingKey = firstLetter + randomNumber
+      return(
+        <FinalTopping
+          key={toppingKey}
+          topping={topping}
+        />
+      )
+    })
+
     return (
-      <div>
-        <div className="top-bar recommended">
-          {message}
+      <div className="topping-recommendations-container">
+        <div className="headline">
+          <h1>{headline}</h1>
         </div>
-        <div className="topping-list">
-          <div className="separation">
-          </div>
-           <FinalToppings toppings={this.state.toppings}/>
+        <div className="topping-back-buttons">
+          <span className="back-button">
+            <button><Link to='/movies/new'>Select Different Genre</Link></button>
+          </span>
+          <span className="back-button">
+            <button><Link to='/'>Back to the Beginning!</Link></button>
+          </span>
         </div>
-        <Link to='/movies/new' className="small-12 columns button">
-          Select Different Genre
-        </Link>
-        <a href={'/'} className="small-12 columns button">
-          Back to the Beginning!
-        </a>
+        <ul className="toppings-list-container">
+          {finalToppings}
+        </ul>
       </div>
     );
   }

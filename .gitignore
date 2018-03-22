@@ -22,9 +22,8 @@
 /node_modules
 /app/assets/javascripts/bundle.js
 /react/coverage
-maybe_eventually.md
 Rakefile
 /bin
 /public/assets
-foundation_basics.html
 .env
+.DS_Store
