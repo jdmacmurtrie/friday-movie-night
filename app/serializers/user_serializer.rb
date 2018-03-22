@@ -3,11 +3,11 @@ class UserSerializer < ActiveModel::Serializer
 
   def combos
     specifics = object.combos.map do |combo|
-        {
-          id: combo.id,
-          genre: combo.genre.name,
-          topping: combo.topping.name
-        }
+      {
+        id: combo.id,
+        genre: combo.genre.name,
+        topping: combo.topping.name
+      }
     end
     specifics
   end
