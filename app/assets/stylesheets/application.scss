@@ -16,7 +16,8 @@
  *= require_self
 
  */
- @import "skeleton/skeleton";
+ @import "global/text";
+ @import "global/colors";
 
  @import "components/welcome_page";
  @import "components/navbar";

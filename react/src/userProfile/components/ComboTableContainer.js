@@ -22,7 +22,7 @@ const ComboTableContainer = props => {
       <thead>
         <tr>
           <th>Genre</th>
-          <th>Topping</th>
+          <th className="topping-half">Topping</th>
           <th></th>
         </tr>
       </thead>

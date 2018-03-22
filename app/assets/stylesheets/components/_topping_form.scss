@@ -2,6 +2,7 @@
   background-color: $pale-yellow;
   height: 100vh;
   padding-top: 6%;
+  font-family: $topping;
 }
 
 .toppings-wrapper {
@@ -30,6 +31,10 @@
 .checkbox-panal {
   text-align: center;
   padding-bottom: 5px;
+
+  label {
+    font-size: 20px;
+  }
 }
 
 .check-box {
@@ -55,6 +60,7 @@
     background-color: $tree-black;
     border: 2px solid $orange-red;
     color: #D0966A;
+    font-size: 25px;
   }
 
   button:hover {

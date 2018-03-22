@@ -8,7 +8,7 @@ let history = "History"
     <div className="all-dropdowns">
       <div className="dropdown">
         <select name="genres" onChange={props.handleChangeGenre}>
-          <option value="">Genre</option>
+          <option value={props.genreValue}>Genre</option>
           <option value="Action">Action</option>
           <option value="Comedy">Comedy</option>
           <option value="Family">Family</option>
@@ -29,23 +29,8 @@ let history = "History"
         </select>
       </div>
       <div className="dropdown">
-        <select name="toppings" onChange={props.handleChangeFirstTopping}>
-          <option value="">First Topping</option>
-          <option value="Extra Cheese">Extra Cheese</option>
-          <option value="Pepperoni">Pepperoni</option>
-          <option value="Sausage">Sausage</option>
-          <option value="Ham">Ham</option>
-          <option value="Pineapple">Pineapple</option>
-          <option value="Green Pepper">Green Pepper</option>
-          <option value="Mushroom">Mushroom</option>
-          <option value="Grilled Chicken">Grilled Chicken</option>
-          <option value="Olives">Olives</option>
-          <option value="Bacon">Bacon</option>
-        </select>
-      </div>
-      <div className="dropdown">
-        <select name="toppings" onChange={props.handleChangeSecondTopping}>
-          <option value="">Second Topping (optional)</option>
+        <select name="topping" onChange={props.handleChangeTopping}>
+          <option value={props.toppingValue}>Topping</option>
           <option value="Extra Cheese">Extra Cheese</option>
           <option value="Pepperoni">Pepperoni</option>
           <option value="Sausage">Sausage</option>

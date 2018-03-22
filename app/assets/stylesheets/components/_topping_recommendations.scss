@@ -1,6 +1,7 @@
 .topping-recommendations-container {
   background-color: $reddish;
   height: 100vh;
+  font-family: $topping;
 
   .headline {
     text-align: center;
@@ -29,6 +30,7 @@
 
 .topping {
   display: inline-block;
+  font-size: 25px;
 }
 
 .topping-back-buttons {
@@ -41,6 +43,7 @@
     border: 2px solid $orange-red;
 
     a {
+      font-size: 25px;
       text-decoration: none;
       color: $orange-red;
     }

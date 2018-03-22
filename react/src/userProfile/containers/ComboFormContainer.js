@@ -6,43 +6,26 @@ class ComboFormContainer extends React.Component {
     super(props);
     this.state = {
       genre: '',
-      firstTopping: '',
-      secondTopping: '',
-      queryString: ''
+      topping: ''
     }
     this.handleChangeGenre = this.handleChangeGenre.bind(this)
-    this.handleChangeFirstTopping = this.handleChangeFirstTopping.bind(this)
-    this.handleChangeSecondTopping = this.handleChangeSecondTopping.bind(this)
+    this.handleChangeTopping = this.handleChangeTopping.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.resetForm = this.resetForm.bind(this)
   }
 
   handleChangeGenre(event) {
-    this.setState({
-      genre: event.target.value,
-      queryString: `${event.target.value},${this.state.firstTopping},${this.state.secondTopping}`
-    })
+    this.setState({ genre: event.target.value })
   }
 
-  handleChangeFirstTopping(event) {
-    this.setState({
-      firstTopping: event.target.value,
-      queryString: `${this.state.genre},${event.target.value},${this.state.secondTopping}`
-    })
-  }
-
-  handleChangeSecondTopping(event) {
-    this.setState({
-      secondTopping: event.target.value,
-      queryString: `${this.state.genre},${this.state.firstTopping},${event.target.value}`
-    })
+  handleChangeTopping(event) {
+    this.setState({ topping: event.target.value })
   }
 
   handleSubmit() {
     let formPayload = {
       genre: this.state.genre,
-      firstTopping: this.state.firstTopping,
-      secondTopping: this.state.secondTopping
+      topping: this.state.topping,
     }
     this.props.postNewCombo(formPayload)
     this.resetForm()
@@ -51,20 +34,18 @@ class ComboFormContainer extends React.Component {
   resetForm() {
     this.setState = {
       genre: '',
-      firstTopping: '',
-      secondTopping: '',
-      queryString: ''
+      topping: '',
     }
   }
 
   render () {
     let button
-    if (this.state.genre != '' && this.state.firstTopping != '') {
-      button = <div className="">
-                <button onClick={this.handleSubmit}>
-                  Submit my combo!
-                </button>
-              </div>
+    if (this.state.genre != '' && this.state.topping != '') {
+      button = <div className="new-combo-button">
+                  <button onClick={this.handleSubmit}>
+                    Submit my combo!
+                  </button>
+                </div>
     }
 
     let apostrophe = "'"
@@ -73,13 +54,14 @@ class ComboFormContainer extends React.Component {
       <div className="combo-form-wrapper">
         <div className="combo-headline">
           <h3>Not a fan of the combos you{apostrophe}re getting? Make your own!</h3>
-          <h4>They{apostrophe}ll get thrown into the algorithm</h4>
+          <h5>They{apostrophe}ll get thrown into the algorithm</h5>
         </div>
         <ComboForm
+          genreValue={this.state.genre}
+          toppingValue={this.state.topping}
           handleSubmit={this.handleSubmit}
           handleChangeGenre={this.handleChangeGenre}
-          handleChangeFirstTopping={this.handleChangeFirstTopping}
-          handleChangeSecondTopping={this.handleChangeSecondTopping}
+          handleChangeTopping={this.handleChangeTopping}
         />
         {button}
       </div>

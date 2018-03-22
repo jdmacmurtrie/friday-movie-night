@@ -3,9 +3,9 @@ import React from 'react';
 const ComboTable = props => {
   return (
     <tr>
-      <td>{props.combo.genre}</td>
-      <td>{props.combo.topping}</td>
-      <td className="delete-button">
+      <td className="genre-half">{props.combo.genre}</td>
+      <td className="topping-half">{props.combo.topping}</td>
+      <td className="delete-combo-button">
         <button onClick={props.handleDelete}>Delete</button>
       </td>
     </tr>

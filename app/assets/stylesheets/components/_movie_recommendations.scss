@@ -1,6 +1,7 @@
 .movie-recommendations-container {
   background-color: $pale-yellow;
   height: 110%;
+  font-family: $movie;
 
   .headline {
     text-align: center;
@@ -31,6 +32,7 @@
     background-color: $pale-yellow;
 
     a {
+      font-weight: bold;
       color: $tree-black
     }
   }

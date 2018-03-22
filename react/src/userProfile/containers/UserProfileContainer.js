@@ -11,10 +11,16 @@ class UserProfileContainer extends React.Component {
       user: '',
       combos: []
     }
+    this.getCombos = this.getCombos.bind(this)
     this.postNewCombo = this.postNewCombo.bind(this)
+    this.deleteCombo = this.deleteCombo.bind(this)
   }
 
   componentDidMount() {
+    this.getCombos()
+  }
+
+  getCombos() {
     let user_id = this.props.params.id
     fetch(`/api/v1/users/${user_id}`, {
       credentials: 'same-origin'
@@ -59,8 +65,9 @@ class UserProfileContainer extends React.Component {
     })
     .then(response => response.json())
     .then(body => {
-      let moreCombos = [...this.state.combos, ...body.combos]
+      let moreCombos = [...this.state.combos, ...body.combo]
       this.setState({ combos: moreCombos })
+      this.getCombos()
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
