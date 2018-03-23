@@ -25,7 +25,7 @@ group :development, :test do
   gem 'capybara'
   gem 'coveralls', require: false
   gem 'database_cleaner'
-  gem 'factory_bot_rails'
+  gem "factory_bot_rails", "~> 4.0"
   gem 'launchy', require: false
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'

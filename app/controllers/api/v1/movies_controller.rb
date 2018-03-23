@@ -8,11 +8,12 @@ class Api::V1::MoviesController < ApplicationController
 			@selected_genre = Genre.find_by(name: searched.last)
 		end
 
-		if current_user
+		if current_user && @toppings
 			pick_user_combo
 		elsif @selected_genre
 			pick_topping_suggestion
 		end
+		
 		if @toppings
 			render json: { toppings: @toppings, title: @title }
 		else
@@ -52,6 +53,7 @@ class Api::V1::MoviesController < ApplicationController
 		user_toppings = current_user.combos.map do |suggestion|
 			suggestion if suggestion.genre == @selected_genre
 		end
+
 		if user_toppings.first.nil?
 			pick_topping_suggestion
 		else
