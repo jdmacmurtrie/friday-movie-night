@@ -6,10 +6,10 @@ const SearchBy = props => {
       <form>
         <label className="title-radio">
           <input type="radio"
-          value="title"
-          name="radio"
-          onClick={props.handleChangeSearch}
-          defaultChecked
+            value="title"
+            name="radio"
+            onClick={props.handleChangeSearch}
+            defaultChecked
           />
           Title
         </label>
@@ -21,7 +21,6 @@ const SearchBy = props => {
           />
           Genre
         </label>
-
       </form>
     </div>
   );

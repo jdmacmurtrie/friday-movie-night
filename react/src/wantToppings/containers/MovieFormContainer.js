@@ -11,7 +11,7 @@ class MovieFormContainer extends React.Component {
     super(props);
     this.state = {
       selection: 'title',
-      genre: 'none',
+      genre: '',
       movie: '',
       queryString: ''
     };
@@ -29,7 +29,7 @@ class MovieFormContainer extends React.Component {
 jk
   handleSearchClear() {
     this.setState({
-      genre: 'none',
+      genre: '',
       movie: '',
       queryString: ''
      });
@@ -46,7 +46,7 @@ jk
     this.setState({
       genre: event.target.value,
       queryString: "genre," + event.target.value
-     });
+    });
   }
 
   handleFormSubmit(event) {
@@ -61,17 +61,21 @@ jk
     let queryString = this.state.queryString
 
     if (selection == 'genre') {
-      movieDropdown = <MovieDropdown handleChangeDropdown={this.handleChangeDropdown} />
+      movieDropdown = <MovieDropdown
+                        value={this.state.genre}
+                        handleChangeDropdown={this.handleChangeDropdown}
+                      />
       headline = "What genre will you be watching?"
     } else if (selection == 'title') {
       headline = "What movie will you be watching?"
       movieForm = <MovieForm
+                    value={this.state.movie}
                     handleChangeText={this.handleChangeText}
                     handleFormSubmit={this.handleFormSubmit}
                   />
     }
 
-    if (queryString !== '' && queryString != 'none') {
+    if (queryString !== '' && queryString != '') {
       button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="get-toppings-button"/>
     }
 
