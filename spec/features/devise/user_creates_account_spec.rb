@@ -6,6 +6,7 @@ feature 'user creates account' do
   scenario 'correct information is given' do
     visit root_path
     click_link 'Create Account'
+
     fill_in 'First Name', with: user.first_name
     fill_in 'Last Name', with: user.last_name
     fill_in 'Email', with: "differen@email.see"

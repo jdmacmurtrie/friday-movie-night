@@ -29,8 +29,8 @@ group :development, :test do
   gem 'launchy', require: false
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
-  gem 'shoulda'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda', "~> 3.5"
+  gem 'shoulda-matchers', "~> 2.8.0",require: false
   gem 'simplecov'
   gem 'valid_attribute'
 end

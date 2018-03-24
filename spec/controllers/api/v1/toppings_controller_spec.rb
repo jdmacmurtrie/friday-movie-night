@@ -22,7 +22,7 @@ RSpec.describe Api::V1::ToppingsController, type: :controller do
       expect(response.content_type).to eq("application/json")
       expect(Movie.all.count).to eq 12
       expect(parsed_body["movies"].count).to eq(12)
-      expect(parsed_body["genre"]["name"]).to eq("Comedy")
+      expect(parsed_body["genre"]["name"]).to eq("Comedy") | eq("Action")
     end
 
     it "returns movies according to more than one topping" do
