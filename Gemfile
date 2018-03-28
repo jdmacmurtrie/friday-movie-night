@@ -30,7 +30,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda', "~> 3.5"
-  gem 'shoulda-matchers', "~> 2.8.0",require: false
+  gem 'shoulda-matchers', "~> 2.8.0", require: false
   gem 'simplecov'
   gem 'valid_attribute'
 end
