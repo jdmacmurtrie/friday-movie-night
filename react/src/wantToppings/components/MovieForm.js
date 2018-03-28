@@ -3,8 +3,9 @@ import React from 'react';
 const MovieForm = props => {
   return (
     <div className="movie-input-wrapper">
-      <form onSubmit={props.handleFormSubmit}>
+      <form>
         <input
+          value={props.value}
           className="movie-field title"
           type="text"
           onChange={props.handleChangeText}

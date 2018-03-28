@@ -1,7 +1,6 @@
 class Api::V1::MoviesController < ApplicationController
 	def index
 		searched = params[:params].split(',')
-
 		if searched.first == 'title'
 			search_by_title(searched)
 		else
@@ -13,6 +12,7 @@ class Api::V1::MoviesController < ApplicationController
 		elsif @selected_genre
 			pick_topping_suggestion
 		end
+
 		if @toppings
 			render json: { toppings: @toppings, title: @title }
 		else
@@ -49,9 +49,10 @@ class Api::V1::MoviesController < ApplicationController
 	end
 
 	def pick_user_combo
-		user_toppings = current_user.combos.map do |suggestion|
-			suggestion if suggestion.genre == @selected_genre
+		user_toppings = current_user.combos.map do |combo|
+			combo.topping if combo.genre == @selected_genre
 		end
+
 		if user_toppings.first.nil?
 			pick_topping_suggestion
 		else
@@ -60,8 +61,8 @@ class Api::V1::MoviesController < ApplicationController
 	end
 
 	def pick_topping_suggestion
-		@toppings = @selected_genre.toppings.map do |topping|
-			topping if Combo.find_by(topping: topping).user.nil?
+		@toppings = @selected_genre.toppings.select do |topping|
+			topping if Combo.where(topping: topping, user: nil)
 		end
 	end
 end

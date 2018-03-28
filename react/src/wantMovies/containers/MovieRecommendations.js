@@ -1,5 +1,6 @@
 import React from 'react';
 import { browserHistory, Link } from 'react-router'
+
 import FinalMovie from '../components/FinalMovie'
 
 class MovieRecommendations extends React.Component {

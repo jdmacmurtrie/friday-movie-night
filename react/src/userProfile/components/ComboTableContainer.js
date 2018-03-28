@@ -2,7 +2,6 @@ import React from 'react';
 import ComboTable from './ComboTable'
 
 const ComboTableContainer = props => {
-
   let combos = props.userCombos.map(combo => {
     let handleDelete = () => {
       props.deleteCombo(combo.id)

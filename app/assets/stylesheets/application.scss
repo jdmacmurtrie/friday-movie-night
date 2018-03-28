@@ -19,8 +19,9 @@
  @import "global/text";
  @import "global/colors";
 
- @import "components/welcome_page";
  @import "components/navbar";
+ @import "components/flash_message";
+ @import "components/welcome_page";
  @import "components/user_form";
  @import "components/topping_form";
  @import "components/movie_form";

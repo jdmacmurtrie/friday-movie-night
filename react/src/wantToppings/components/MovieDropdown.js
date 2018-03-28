@@ -6,7 +6,7 @@ let history = "History"
   return (
     <div className="dropdown-wrapper">
       <select name="genres" onChange={props.handleChangeDropdown}>
-        <option value="none">(select a genre)</option>
+        <option value={props.value}>(select a genre)</option>
         <option value="Action">Action</option>
         <option value="Comedy">Comedy</option>
         <option value="Family">Family</option>

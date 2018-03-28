@@ -9,8 +9,7 @@ class ToppingRecommendations extends React.Component {
     this.state = {
       toppings: [],
       searchType: '',
-      title: '',
-      titleResult: ''
+      title: ''
     }
   }
 
@@ -29,7 +28,7 @@ class ToppingRecommendations extends React.Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ toppings: body.toppings, titleResult: body.title })
+      this.setState({ toppings: body.toppings })
       let type = this.props.params.params.split(",")[0]
       this.setState({ searchType: type })
       if (type = 'title') {
@@ -51,19 +50,16 @@ class ToppingRecommendations extends React.Component {
   render() {
     let headline
     if(this.state.searchType == 'title') {
-      headline = `Your topping recommendations, based on ${this.state.titleResult}`
+      headline = `Your topping recommendations, based on ${this.state.title}`
     } else {
       headline = "Your topping recommendations"
     }
 
     let recommendations = this.state.toppings
     let finalToppings = recommendations.map(topping => {
-      let randomNumber = Math.floor(Math.random() * 999)
-      let firstLetter = topping[0]
-      let toppingKey = firstLetter + randomNumber
       return(
         <FinalTopping
-          key={toppingKey}
+          key={topping.id}
           topping={topping}
         />
       )

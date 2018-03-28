@@ -9,7 +9,6 @@ const ComboTable = props => {
         <button onClick={props.handleDelete}>Delete</button>
       </td>
     </tr>
-
   );
 }
 

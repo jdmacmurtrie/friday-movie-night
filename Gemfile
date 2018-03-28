@@ -25,12 +25,12 @@ group :development, :test do
   gem 'capybara'
   gem 'coveralls', require: false
   gem 'database_cleaner'
-  gem 'factory_bot_rails'
+  gem "factory_bot_rails", "~> 4.0"
   gem 'launchy', require: false
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
-  gem 'shoulda'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda', "~> 3.5"
+  gem 'shoulda-matchers', "~> 2.8.0", require: false
   gem 'simplecov'
   gem 'valid_attribute'
 end
