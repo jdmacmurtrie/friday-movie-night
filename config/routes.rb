@@ -21,16 +21,12 @@ Rails.application.routes.draw do
       resources :movies, only: [:index]
       resources :toppings, only: [:index]
       resources :users, only: [:show]
-      resources :combos
+      resources :combos, only: [:create, :destroy]
     end
   end
 
-  resources :users, except: [:new, :create]
+  resources :users, except: [:new, :create, :destroy]
   resources :choices, only: [:index]
-  resources :toppings, only: [:new, :index] do
-    resources :recommendations
-  end
-  resources :movies, only: [:new, :index] do
-    resources :recommendations, only: :show
-  end
+  resources :toppings, only: [:new, :index]
+  resources :movies, only: [:new, :index]
 end

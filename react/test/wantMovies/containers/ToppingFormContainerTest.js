@@ -16,6 +16,10 @@ describe('ToppingFormContainer', () => {
     expect(wrapper.state()).toEqual({ toppings: [], queryString: '' });
   });
 
+  it('should render a form tag', () => {
+    expect(wrapper.find('form').length).toEqual(1);
+  });
+
   it('should render a ToppingForm Component', () => {
     expect(wrapper.find(ToppingForm)).toBePresent();
   });
@@ -46,9 +50,8 @@ describe('ToppingFormContainer', () => {
     expect(wrapper.find(GetSuggestionsButton)).toBePresent();
   });
 
-  it('should invoke the handleFormSubmit function when the submit button is clicked', () => {
-    wrapper.setState({toppings: ['Bacon']})
-    wrapper.find('button').simulate('click')
+  it('should invoke the handleFormSubmit function when the form is submitted', () => {
+    wrapper.find('form').at(0).simulate('submit')
 
     expect(ToppingFormContainer.prototype.handleFormSubmit).toHaveBeenCalled();
   });

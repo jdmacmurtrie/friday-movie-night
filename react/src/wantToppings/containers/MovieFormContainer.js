@@ -71,29 +71,30 @@ jk
       movieForm = <MovieForm
                     value={this.state.movie}
                     handleChangeText={this.handleChangeText}
-                    handleFormSubmit={this.handleFormSubmit}
                   />
     }
 
     if (queryString !== '' && queryString !== '') {
-      button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="get-toppings-button"/>
+      button = <GetSuggestionsButton className="get-toppings-button"/>
     }
 
     return (
       <div className="movie-form-page">
-        <div className="movie-wrapper">
-          <div className="movie-headline">
-            <h2>{headline}</h2>
-            <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png' alt="film reel" height="150" width="150"/>
-            <hr/>
+        <form onSubmit={this.handleFormSubmit}>
+          <div className="movie-wrapper">
+            <div className="movie-headline">
+              <h2>{headline}</h2>
+              <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png' alt="film reel" height="150" width="150"/>
+              <hr/>
+            </div>
+            <SearchBy handleChangeSearch={this.handleChangeSearch}/>
+            <div className="movie-choice">
+              {movieForm}
+              {movieDropdown}
+            </div>
           </div>
-          <SearchBy handleChangeSearch={this.handleChangeSearch}/>
-          <div className="movie-choice">
-            {movieForm}
-            {movieDropdown}
-          </div>
-        </div>
-        {button}
+          {button}
+        </form>
       </div>
     );
   }

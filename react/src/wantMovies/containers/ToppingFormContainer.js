@@ -56,20 +56,22 @@ class ToppingFormContainer extends React.Component {
     let button;
 
     if (this.state.toppings.length >= 1) {
-      button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="get-movies-button"/>
+      button = <GetSuggestionsButton className="get-movies-button"/>
     }
 
     return (
       <div className="toppings-form-page">
-        <div className="toppings-wrapper">
-          <div className="topping-headline">
-            <h1>Which toppings are on your pizza?</h1>
-            <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pizza-slice-combo-clipart.png' alt="pizza" height="150" width="150"/>
-            <hr/>
+        <form onSubmit={this.handleFormSubmit}>
+          <div className="toppings-wrapper">
+            <div className="topping-headline">
+              <h1>Which toppings are on your pizza?</h1>
+              <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pizza-slice-combo-clipart.png' alt="pizza" height="150" width="150"/>
+              <hr/>
+            </div>
+            <ToppingForm handleChange={this.handleChange}/>
           </div>
-          <ToppingForm handleChange={this.handleChange}/>
-        </div>
-        {button}
+          {button}
+        </form>
       </div>
     );
   }

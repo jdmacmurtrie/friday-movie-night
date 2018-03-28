@@ -29,7 +29,7 @@ $ npm -v
 
 To install all your gem and npm dependencies, run the following commands:
 
-```
+```sh
 $ bundle
 $ npm install
 ```
@@ -40,13 +40,13 @@ In order to get the application running in a development server, you will need t
 
 Create your database from the `config/database.yml` file:
 
-```
+```sh
 $ rake db:create
 ```
 
 Run the migrations located in the `db/migrate` folder to setup your schema with the following command:
 
-```
+```sh
 $ rake db:migrate
 ```
 
@@ -56,13 +56,13 @@ You should be able to open up your Rails console and have access to your Rails m
 
 In order to run the Rails app in a development server, run the following command in your terminal:
 
-```
+```sh
 $ rails s
 ```
 
 Then, in a separate terminal window, run the following command to start the webpack server:
 
-```
+```sh
 $ npm start
 ```
 
@@ -72,14 +72,14 @@ Capybara and RSpec are used to test the Rails application, while Jasmine and Enz
 
 To run the Rails spec tests, use the following commands:
 
-```
+```sh
 $ rake db:test:prepare
 $ rake
 ```
 
-To execute the enzyme tests, run the following command (preferably in a separate terminal window):
+To execute the enzyme tests, run the following command in a separate terminal window:
 
-```
+```sh
 $ npm test
 ```
 
@@ -99,4 +99,4 @@ This project is licensed under the MIT License - see the This project is license
 
 ## Acknowledgments
 
-* Hundreds of Launch Academy Alumni who endured Group Projects
+* Thanks to my family, for keeping our tradition alive for as long as we have.  And for forever arguing about it.

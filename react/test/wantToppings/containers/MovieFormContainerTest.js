@@ -26,6 +26,10 @@ describe('MovieFormContainer', () => {
     });
   });
 
+  it('should render a SearchBy form and a MovieForm form', () => {
+    expect(wrapper.find('form').length).toEqual(2);
+  });
+
   it('should render a SearchBy Component', () => {
     expect(wrapper.find(SearchBy)).toBePresent();
   });
@@ -49,8 +53,7 @@ describe('MovieFormContainer', () => {
   it('should render the MovieForm Component an onChange function', () => {
     expect(wrapper.find(MovieForm).props()).toEqual({
       value: '',
-      handleChangeText: jasmine.any(Function),
-      handleFormSubmit: jasmine.any(Function)
+      handleChangeText: jasmine.any(Function)
     });
   });
 
@@ -90,18 +93,17 @@ describe('MovieFormContainer', () => {
     expect(MovieFormContainer.prototype.handleChangeText).toHaveBeenCalled();
   });
 
-  it('should invoke the handleFormSubmit function when a box is checked', () => {
-    wrapper.find(MovieForm).find('input').simulate('change', {target: { value : 'Pirates of the Caribbean'}});
-    wrapper.find('button').simulate('click')
-
-    expect(MovieFormContainer.prototype.handleFormSubmit).toHaveBeenCalled();
-  });
-
   it('should invoke the handleChangeDropdown function and change the state when a box is checked', () => {
     wrapper.setState({ selection: 'genre' });
     wrapper.find('select').simulate('change', {target: { value : 'Action'}});
 
     expect(wrapper.state().genre).toEqual('Action')
     expect(MovieFormContainer.prototype.handleChangeDropdown).toHaveBeenCalled();
+  });
+
+  it('should invoke the handleFormSubmit function when the form is submitted', () => {
+    wrapper.find('form').at(0).simulate('submit')
+
+    expect(MovieFormContainer.prototype.handleFormSubmit).toHaveBeenCalled();
   });
 });
