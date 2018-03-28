@@ -6,11 +6,9 @@ describe('GetSuggestionsButton', () => {
       handleFormSubmit
 
   beforeEach(() => {
-    handleFormSubmit = jasmine.createSpy('handleFormSubmit spy')
     wrapper = mount(
       <GetSuggestionsButton
         className="get-toppings-button"
-        handleFormSubmit={handleFormSubmit}
       />
     );
   });
@@ -26,11 +24,5 @@ describe('GetSuggestionsButton', () => {
 
   it('should render a button with the text property value', () => {
     expect(wrapper.find('button').text()).toBe('Get my suggestions!');
-  });
-
-  it('should invoke the handleFormSubmit when the button is clicked', () => {
-    wrapper.find('button').simulate('click')
-
-    expect(handleFormSubmit).toHaveBeenCalled();
   });
 });

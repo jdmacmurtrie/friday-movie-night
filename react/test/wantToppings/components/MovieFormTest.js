@@ -19,10 +19,6 @@ describe('MovieForm', () => {
     expect(wrapper.props().value).toEqual('');
   });
 
-  it('should render a form', () => {
-    expect(wrapper.find('form').length).toEqual(1);
-  });
-
   it('should render an input field', () => {
     expect(wrapper.find('input').length).toEqual(1);
   });
