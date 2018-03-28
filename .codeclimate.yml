@@ -12,6 +12,14 @@ engines:
     checks:
       max_line_length:
         enabled: false
+      Rubocop%2FLint%2FUselessAssignment:
+        enabled: false
+      Rubocop/Metrics/BlockLength:
+        enabled: false
+      Rubocop/Metrics/LineLength:
+        enabled: false
+      Rubocop/Layout/Tab:
+        enabled: false
   duplication:
     enabled: true
     exclude_paths:

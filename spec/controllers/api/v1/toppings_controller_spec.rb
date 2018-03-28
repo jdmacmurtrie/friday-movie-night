@@ -36,7 +36,7 @@ RSpec.describe Api::V1::ToppingsController, type: :controller do
     end
 
     it "returns a movie a user has combos" do
-      sign_in(action_combo.user)
+      allow(controller).to receive_messages(current_user: action_combo.user)
 
       topping_query = "Ham"
 

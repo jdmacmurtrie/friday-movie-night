@@ -7,8 +7,8 @@ const UserInfoComponent = props => (
     <p>{props.user.email}</p>
 
     <div className="profile-buttons">
-      <button><Link to="/users/edit">Edit My Stuff</Link></button>
-      <button><Link to="/">Back to start</Link></button>
+      <button><a href="/users/edit">Edit My Stuff</a></button>
+      <button><a href="/">Back to start</a></button>
     </div>
   </div>
 )

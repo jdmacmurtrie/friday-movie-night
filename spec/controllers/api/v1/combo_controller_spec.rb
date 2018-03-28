@@ -5,7 +5,9 @@ RSpec.describe Api::V1::CombosController, type: :controller do
   let!(:topping) { FactoryBot.create(:topping) }
   let!(:genre) { FactoryBot.create(:genre) }
 
-  before(:each) { sign_in(user) }
+  before do
+    allow(controller).to receive_messages(current_user: user)
+  end
 
   describe "POST#create" do
     it "creates and returns a newly created combo" do

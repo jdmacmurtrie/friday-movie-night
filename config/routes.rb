@@ -27,10 +27,10 @@ Rails.application.routes.draw do
 
   resources :users, except: [:new, :create]
   resources :choices, only: [:index]
-  resources :toppings, only: [:new, :show] do
+  resources :toppings, only: [:new, :index] do
     resources :recommendations
   end
-  resources :movies, only: [:new, :show] do
+  resources :movies, only: [:new, :index] do
     resources :recommendations, only: :show
   end
 end

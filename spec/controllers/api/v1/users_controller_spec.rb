@@ -5,7 +5,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
   describe "GET#show" do
     it "renders the current user" do
-      sign_in(user)
+      allow(controller).to receive_messages(current_user: user)
 
       get :show, params: { id: user.id }
 
