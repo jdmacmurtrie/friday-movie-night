@@ -75,7 +75,7 @@ jk
                   />
     }
 
-    if (queryString !== '' && queryString != '') {
+    if (queryString !== '' && queryString !== '') {
       button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="get-toppings-button"/>
     }
 

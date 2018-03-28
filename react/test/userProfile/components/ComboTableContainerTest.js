@@ -3,7 +3,7 @@ import ComboTable from '../../../src/userProfile/components/ComboTable';
 
 describe('ComboTableContainer', () => {
   let wrapper
-  let userCombos =[
+  let userCombos = [
     {
       id: 1,
       genre: "Mystery",

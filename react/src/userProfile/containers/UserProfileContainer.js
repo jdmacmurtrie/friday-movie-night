@@ -8,7 +8,7 @@ class UserProfileContainer extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      user: '',
+      user: {},
       combos: []
     }
     this.getCombos = this.getCombos.bind(this)

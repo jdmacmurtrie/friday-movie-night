@@ -1,7 +1,6 @@
 class Api::V1::MoviesController < ApplicationController
 	def index
 		searched = params[:params].split(',')
-
 		if searched.first == 'title'
 			search_by_title(searched)
 		else
@@ -62,8 +61,8 @@ class Api::V1::MoviesController < ApplicationController
 	end
 
 	def pick_topping_suggestion
-		@toppings = @selected_genre.toppings.map do |topping|
-			topping if Combo.find_by(topping: topping).user.nil?
+		@toppings = @selected_genre.toppings.select do |topping|
+				topping if Combo.where(topping: topping, user: nil)
 		end
 	end
 end
