@@ -3,7 +3,6 @@ import React from 'react';
 const MovieForm = props => {
   return (
     <div className="movie-input-wrapper">
-      <form>
         <input
           value={props.value}
           className="movie-field title"
@@ -12,7 +11,6 @@ const MovieForm = props => {
           autoFocus
           placeholder="How about Pirates of the Caribbean?"
         />
-      </form>
     </div>
   );
 }

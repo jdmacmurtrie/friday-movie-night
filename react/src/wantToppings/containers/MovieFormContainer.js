@@ -71,16 +71,16 @@ jk
       movieForm = <MovieForm
                     value={this.state.movie}
                     handleChangeText={this.handleChangeText}
-                    handleFormSubmit={this.handleFormSubmit}
                   />
     }
 
     if (queryString !== '' && queryString !== '') {
-      button = <GetSuggestionsButton handleFormSubmit={this.handleFormSubmit} className="get-toppings-button"/>
+      button = <GetSuggestionsButton className="get-toppings-button"/>
     }
 
     return (
       <div className="movie-form-page">
+        <form onSubmit={this.handleFormSubmit}>
         <div className="movie-wrapper">
           <div className="movie-headline">
             <h2>{headline}</h2>
@@ -94,6 +94,7 @@ jk
           </div>
         </div>
         {button}
+        </form>
       </div>
     );
   }
