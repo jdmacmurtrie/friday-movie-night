@@ -1,0 +1,30 @@
+@import "skeleton/skeleton";
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+ */
+ @import "global/text";
+ @import "global/colors";
+
+ @import "components/navbar";
+ @import "components/flash_message";
+ @import "components/welcome_page";
+ @import "components/user_form";
+ @import "components/topping_form";
+ @import "components/movie_form";
+ @import "components/movie_recommendations";
+ @import "components/topping_recommendations";
+ @import "components/user_profile";

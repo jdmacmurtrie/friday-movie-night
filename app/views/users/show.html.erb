@@ -1,0 +1,19 @@
+
+<!-- <div class="top-bar">
+  <%= @user.first_name %>'s Stuff
+</div>
+<div class="profile-panal">
+  <div class="choice">
+    <%= @user.email %>
+  </div>
+  <h3>Your Combos:</h3>
+  <ul>
+    <% @user.suggestions.each do |sugg| %>
+    <div class="row">
+      <li class="small-6 columns">
+        <%= sugg.genre.name %> -> <%= sugg.topping.name %></li>
+      <%= link_to 'Delete This Combo', suggestion_path(sugg), method: :delete %>
+    </div>
+    <% end %>
+  </ul>
+</div>

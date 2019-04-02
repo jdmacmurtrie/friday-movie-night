@@ -1,0 +1,131 @@
+.user-info-container {
+  background-color: $pale-yellow;
+  height: 100vh;
+  font-family: $movie;
+}
+
+.info-wrapper {
+  display: inline-block;
+  background-color: $tree-black;
+  width: 90%;
+  margin: 2% 5%;
+  border: 2px solid $reddish;
+  border-radius: 9px;
+  box-shadow: 4px 4px 40px $tree-black;
+}
+
+.info-component {
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+  width: 45%;
+  padding: 3% 5% 3% 2%;
+  color: $pale-yellow;
+
+  .profile-buttons {
+    display: inline-grid;
+
+    button {
+      background-color: $orange-red;
+
+      a {
+        text-decoration: none;
+        color: #E1E1E1;
+      }
+    }
+  }
+}
+
+.user-combos {
+  display: inline-block;
+  width: 45%;
+  color: $pale-yellow;
+  position: relative;
+  padding-right: 2%;
+
+  table {
+    width: 80%;
+  }
+
+  th {
+    font-size: 20px;
+    color: $light-orange;
+  }
+
+  th:first-child, td:first-child {
+    border-right: 1px solid #E1E1E1;
+    text-align: right;
+  }
+
+  td {
+    padding: 0 ;
+    margin: 0;
+  }
+
+
+  .genre-half {
+    padding: 0 3%;
+  }
+
+  .topping-half {
+    padding: 0 3%;
+    font-family: $topping;
+  }
+}
+
+.delete-combo-button {
+  button {
+    font-size: 10px;
+    color: $reddish;
+    border: none;
+    padding: 0px;
+  }
+}
+
+.combo-form-wrapper {
+  background-color: $tree-black;
+  margin: 3% 25%;
+  margin-top: 0;
+  padding: 4% 0;
+  border: 2px solid $reddish;
+  border-radius: 9px;
+  box-shadow: 5px 5px 50px $tree-black;
+  color: $pale-yellow;
+
+  .combo-headline {
+    text-align: center;
+    margin-bottom: 6%;
+  }
+
+  .dropdown {
+    width: 100%;
+    text-align: center;
+    margin-top: 3%;
+
+    select {
+      width: 50%;
+      color: $tree-black;
+      border-color: $whitish;
+      background-color: $light-orange;
+    }
+
+    select:focus {
+      border-color: $whitish;
+      box-shadow: 2px 2px 10px $tree-black;
+    }
+  }
+
+  .new-combo-button {
+    text-align: center;
+
+    button {
+      color: $pale-yellow;
+      border-color: $orange-red;
+    }
+
+    button:hover {
+      color: $whitish;
+      border-color: $whitish;
+    }
+  }
+}
