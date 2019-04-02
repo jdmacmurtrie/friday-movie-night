@@ -28,3 +28,4 @@ Rakefile
 .env
 .DS_Store
 package-lock.json
+.eslintrc.js

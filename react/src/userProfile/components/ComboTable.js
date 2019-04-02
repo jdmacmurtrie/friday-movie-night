@@ -1,6 +1,4 @@
-import React from 'react';
-
-const ComboTable = props => {
+export const ComboTable = props => {
   return (
     <tr>
       <td className="genre-half">{props.combo.genre}</td>
@@ -10,6 +8,4 @@ const ComboTable = props => {
       </td>
     </tr>
   );
-}
-
-export default ComboTable
+};

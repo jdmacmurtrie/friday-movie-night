@@ -1,35 +1,23 @@
-import React from 'react';
-import ComboTable from './ComboTable'
-
-const ComboTableContainer = props => {
+export const ComboTableContainer = props => {
   let combos = props.userCombos.map(combo => {
     let handleDelete = () => {
-      props.deleteCombo(combo.id)
-    }
-    return(
-        <ComboTable
-          key={combo.id}
-          combo={combo}
-          handleDelete={handleDelete}
-        />
-      )
-    }
-  )
+      props.deleteCombo(combo.id);
+    };
+    return (
+      <ComboTable key={combo.id} combo={combo} handleDelete={handleDelete} />
+    );
+  });
 
-  return(
+  return (
     <table>
       <thead>
         <tr>
           <th>Genre</th>
           <th className="topping-half">Topping</th>
-          <th></th>
+          <th />
         </tr>
       </thead>
-      <tbody>
-        { combos }
-      </tbody>
+      <tbody>{combos}</tbody>
     </table>
   );
-}
-
-export default ComboTableContainer;
+};

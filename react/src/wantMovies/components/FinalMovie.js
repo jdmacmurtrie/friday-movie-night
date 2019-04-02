@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const FinalMovie = props => {
-  let altText = `${props.movie.title}: ${props.movie.description}`
+export const FinalMovie = props => {
   return (
     <li className="movie-poster">
-      <img src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${props.movie.poster}`}
-        title={altText}
+      <img
+        src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${
+          props.movie.poster
+        }`}
+        title={`${props.movie.title}: ${props.movie.description}`}
       />
     </li>
   );
-}
-
-export default FinalMovie
+};

@@ -1,41 +1,43 @@
-import React from 'react';
-import { browserHistory, Link } from 'react-router'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const WelcomeComponent = (props) => (
-  <div>
+export const WelcomeComponent = () => {
+  console.log("not getting here");
+
+  return (
     <div className="choices">
-      <Link to='/toppings/new'>
+      <Link to="/toppings/new">
         <div className="need-movie">
           <div className="substance-wrapper">
             Find me a movie
-            <br/>
+            <br />
             based on my toppings
-            <br/>
-            <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png'
-                 alt="film reel"
-                 height="150"
-                 width="150"
+            <br />
+            <img
+              src="https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png"
+              alt="film reel"
+              height="150"
+              width="150"
             />
           </div>
         </div>
       </Link>
-      <Link to='/movies/new'>
+      <Link to="/movies/new">
         <div className="need-pizza">
           <div className="substance-wrapper">
             Find me pizza toppings
-            <br/>
+            <br />
             based on a movie
-            <br/>
-            <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pizza-slice-combo-clipart.png'
-                 alt="pizza"
-                 height="150"
-                 width="150"
+            <br />
+            <img
+              src="https://s3.us-east-2.amazonaws.com/friday-movie-night-images/pizza-slice-combo-clipart.png"
+              alt="pizza"
+              height="150"
+              width="150"
             />
           </div>
         </div>
       </Link>
     </div>
-  </div>
-)
-
-export default WelcomeComponent
+  );
+};

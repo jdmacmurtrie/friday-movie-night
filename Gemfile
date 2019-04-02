@@ -3,7 +3,7 @@ source 'https://rubygems.org/'
 ruby '2.3.3'
 
 gem "active_model_serializers"
-gem 'devise'
+gem "devise", ">= 4.6.0"
 gem 'httparty'
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'
@@ -33,6 +33,8 @@ group :development, :test do
   gem 'shoulda-matchers', "~> 2.8.0", require: false
   gem 'simplecov'
   gem 'valid_attribute'
+  gem "nokogiri", ">= 1.8.5"
+  gem "rack", ">= 2.0.6"
 end
 
 group :production do

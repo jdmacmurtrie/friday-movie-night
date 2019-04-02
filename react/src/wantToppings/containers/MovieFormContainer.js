@@ -1,19 +1,19 @@
-import React from 'react';
-import { browserHistory, Link } from 'react-router'
+import React from "react";
+// import { browserHistory } from "react-router";
 
-import MovieForm from '../components/MovieForm'
-import MovieDropdown from '../components/MovieDropdown'
-import SearchBy from '../components/SearchBy'
-import GetSuggestionsButton from '../../sharedComponents/GetSuggestionsButton'
+import MovieForm from "../components/MovieForm";
+import MovieDropdown from "../components/MovieDropdown";
+import SearchBy from "../components/SearchBy";
+import GetSuggestionsButton from "../../sharedComponents/GetSuggestionsButton";
 
 class MovieFormContainer extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
-      selection: 'title',
-      genre: '',
-      movie: '',
-      queryString: ''
+      selection: "title",
+      genre: "",
+      movie: "",
+      queryString: ""
     };
     this.handleChangeText = this.handleChangeText.bind(this);
     this.handleChangeDropdown = this.handleChangeDropdown.bind(this);
@@ -23,22 +23,28 @@ class MovieFormContainer extends React.Component {
   }
 
   handleChangeSearch(event) {
-    this.setState({ selection: event.target.value });
+    this.setState({
+      selection: event.target.value
+    });
     this.handleSearchClear();
   }
-jk
+
   handleSearchClear() {
     this.setState({
-      genre: '',
-      movie: '',
-      queryString: ''
-     });
+      genre: "",
+      movie: "",
+      queryString: ""
+    });
   }
 
   handleChangeText(event) {
-    this.setState({ movie: event.target.value });
-    if (event.target.value.trim() !== '') {
-      this.setState({ queryString: "title," + event.target.value })
+    this.setState({
+      movie: event.target.value
+    });
+    if (event.target.value.trim() !== "") {
+      this.setState({
+        queryString: "title," + event.target.value
+      });
     }
   }
 
@@ -50,54 +56,54 @@ jk
   }
 
   handleFormSubmit(event) {
-    event.preventDefault()
-    let queryString = this.state.queryString
-    browserHistory.push(`/movies/recommendations/${queryString}`)
+    event.preventDefault();
+    // const { queryString } = this.state;
+    // browserHistory.push(`/movies/recommendations/${queryString}`);
   }
 
-  render () {
-    let headline, movieForm, movieDropdown, button;
-    let selection = this.state.selection
-    let queryString = this.state.queryString
-
-    if (selection == 'genre') {
-      movieDropdown = <MovieDropdown
-                        value={this.state.genre}
-                        handleChangeDropdown={this.handleChangeDropdown}
-                      />
-      headline = "What genre will you be watching?"
-    } else if (selection == 'title') {
-      headline = "What movie will you be watching?"
-      movieForm = <MovieForm
-                    value={this.state.movie}
-                    handleChangeText={this.handleChangeText}
-                  />
-    }
-
-    if (queryString !== '' && queryString !== '') {
-      button = <GetSuggestionsButton className="get-toppings-button"/>
-    }
+  render() {
+    const { queryString, genre, movie, selection } = this.state;
 
     return (
       <div className="movie-form-page">
         <form onSubmit={this.handleFormSubmit}>
           <div className="movie-wrapper">
             <div className="movie-headline">
-              <h2>{headline}</h2>
-              <img src='https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png' alt="film reel" height="150" width="150"/>
-              <hr/>
+              <h2>What {selection} will you be watching?</h2>
+              <img
+                src="https://s3.us-east-2.amazonaws.com/friday-movie-night-images/icons8-film-reel-filled-100.png"
+                alt="film reel"
+                height="150"
+                width="150"
+              />
+              <hr />
             </div>
-            <SearchBy handleChangeSearch={this.handleChangeSearch}/>
+            <SearchBy handleChangeSearch={this.handleChangeSearch} />
             <div className="movie-choice">
-              {movieForm}
-              {movieDropdown}
+              {selection === "genre" ? (
+                <div className="dropdown-wrapper">
+                  <MovieDropdown
+                    value={genre}
+                    handleChangeDropdown={this.handleChangeDropdown}
+                  />
+                </div>
+              ) : selection === "title" ? (
+                <MovieForm
+                  value={movie}
+                  handleChangeText={this.handleChangeText}
+                />
+              ) : (
+                undefined
+              )}
             </div>
           </div>
-          {button}
+          {queryString && (
+            <GetSuggestionsButton className="get-toppings-button" />
+          )}
         </form>
       </div>
     );
   }
 }
 
-export default MovieFormContainer
+export default MovieFormContainer;
