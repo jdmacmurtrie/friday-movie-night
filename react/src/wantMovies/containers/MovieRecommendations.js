@@ -1,7 +1,7 @@
 import React from "react";
 import { FinalMovie } from "../components/FinalMovie";
 
-class MovieRecommendations extends React.Component {
+export class MovieRecommendations extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,5 +63,3 @@ class MovieRecommendations extends React.Component {
     );
   }
 }
-
-export default MovieRecommendations;

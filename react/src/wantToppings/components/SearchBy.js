@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+import React from "react";
+
 export const SearchBy = props => {
   return (
     <div className="radio-button-wrapper">
@@ -24,4 +27,8 @@ export const SearchBy = props => {
       </form>
     </div>
   );
+};
+
+SearchBy.propTypes = {
+  handleChangeSearch: PropTypes.func
 };

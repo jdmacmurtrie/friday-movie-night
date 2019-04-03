@@ -1,12 +1,12 @@
 import React from "react";
 // import { browserHistory } from "react-router";
 
-import MovieForm from "../components/MovieForm";
-import MovieDropdown from "../components/MovieDropdown";
-import SearchBy from "../components/SearchBy";
-import GetSuggestionsButton from "../../sharedComponents/GetSuggestionsButton";
+import { MovieForm } from "../components/MovieForm";
+import { MovieDropdown } from "../components/MovieDropdown";
+import { SearchBy } from "../components/SearchBy";
+import { GetSuggestionsButton } from "../../sharedComponents/GetSuggestionsButton";
 
-class MovieFormContainer extends React.Component {
+export class MovieFormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -105,5 +105,3 @@ class MovieFormContainer extends React.Component {
     );
   }
 }
-
-export default MovieFormContainer;

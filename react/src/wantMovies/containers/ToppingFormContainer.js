@@ -3,7 +3,7 @@ import React from "react";
 import { GetSuggestionsButton } from "../../sharedComponents/GetSuggestionsButton";
 import { ToppingForm } from "../components/ToppingForm";
 
-class ToppingFormContainer extends React.Component {
+export class ToppingFormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -76,5 +76,3 @@ class ToppingFormContainer extends React.Component {
     );
   }
 }
-
-export default ToppingFormContainer;

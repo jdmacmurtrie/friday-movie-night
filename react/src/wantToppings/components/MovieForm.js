@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+import React from "react";
+
 export const MovieForm = props => {
   return (
     <div className="movie-input-wrapper">
@@ -11,4 +14,9 @@ export const MovieForm = props => {
       />
     </div>
   );
+};
+
+MovieForm.propTypes = {
+  value: PropTypes.string,
+  handleChangeText: PropTypes.func
 };

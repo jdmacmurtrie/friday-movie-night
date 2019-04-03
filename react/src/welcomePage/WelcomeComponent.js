@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const WelcomeComponent = () => {
-  console.log("not getting here");
-
   return (
     <div className="choices">
       <Link to="/toppings/new">

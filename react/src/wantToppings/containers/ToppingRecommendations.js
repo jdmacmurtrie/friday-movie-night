@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FinalTopping } from "../components/FinalTopping";
 
-class ToppingRecommendations extends React.Component {
+export class ToppingRecommendations extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -75,5 +75,3 @@ class ToppingRecommendations extends React.Component {
     );
   }
 }
-
-export default ToppingRecommendations;
