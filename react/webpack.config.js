@@ -11,14 +11,7 @@ var config = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel",
-        query: {
-          stage: 0,
-          optional: ["runtime"],
-          plugins: [
-            "react-require" // <-- THIS IS YOUR AMENDMENT
-          ]
-        }
+        loader: "babel"
       }
     ]
   },
@@ -33,4 +26,4 @@ if (process.env.NODE_ENV === "production") {
   ];
 }
 
-export default config;
+module.exports = config;

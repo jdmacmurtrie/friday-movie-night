@@ -1,54 +1,27 @@
 import React from "react";
-// import { browserHistory } from "react-router";
+import { connect } from "react-redux";
+import { actions } from "../../actions";
 import { GetSuggestionsButton } from "../../sharedComponents/GetSuggestionsButton";
 import { ToppingForm } from "../components/ToppingForm";
 
-export class ToppingFormContainer extends React.Component {
+class ToppingFormContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      toppings: [],
-      queryString: ""
-    };
     this.handleChange = this.handleChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
   handleChange(event) {
     let newTopping = event.target.value;
-    if (this.state.toppings.includes(newTopping)) {
-      this.removeTopping(newTopping);
+    if (this.props.toppings.includes(newTopping)) {
+      this.props.removeTopping(newTopping);
     } else {
-      let allToppings = this.state.toppings.concat(newTopping);
-      this.getQueryString(allToppings);
-      this.setState({
-        toppings: allToppings
-      });
+      this.props.addTopping(newTopping);
     }
   }
 
-  handleFormSubmit(event) {
-    event.preventDefault();
-    // let queryString = this.state.queryString;
-    // browserHistory.push(`/toppings/recommendations/${queryString}`);
-  }
-
-  getQueryString(toppings) {
-    let newQueryString = ``;
-    toppings.forEach(topping => {
-      newQueryString += `${topping},`;
-    });
-    this.setState({ queryString: newQueryString });
-  }
-
-  removeTopping(newTopping) {
-    let newToppingCheckBox = document.getElementsByName(newTopping);
-    let currentlySelected = this.state.toppings;
-    let newToppingIndex = currentlySelected.indexOf(newTopping);
-    currentlySelected.splice(newToppingIndex, 1);
-    this.setState({ toppings: currentlySelected });
-    newToppingCheckBox.checked = false;
-    this.getQueryString(currentlySelected);
+  handleFormSubmit() {
+    this.props.history.push("/toppings/recommendations");
   }
 
   render() {
@@ -66,9 +39,12 @@ export class ToppingFormContainer extends React.Component {
               />
               <hr />
             </div>
-            <ToppingForm handleChange={this.handleChange} />
+            <ToppingForm
+              handleChange={this.handleChange}
+              chosenToppings={this.props.toppings}
+            />
           </div>
-          {this.state.toppings.length && (
+          {this.props.toppings.length && (
             <GetSuggestionsButton className="get-movies-button" />
           )}
         </form>
@@ -76,3 +52,21 @@ export class ToppingFormContainer extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    toppings: state.toppings
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addTopping: topping => dispatch(actions.addToppings(topping)),
+    removeTopping: topping => dispatch(actions.removeTopping(topping))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToppingFormContainer);

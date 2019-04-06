@@ -1,5 +1,6 @@
 import React from "react";
 import { FinalMovie } from "../components/FinalMovie";
+import { Link } from "react-router";
 
 export class MovieRecommendations extends React.Component {
   constructor(props) {

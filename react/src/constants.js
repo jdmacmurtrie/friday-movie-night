@@ -18,7 +18,7 @@ export const genres = [
   "History"
 ];
 
-export const toppings = [
+export const toppingsList = [
   "Extra Cheese",
   "Pepperoni",
   "Sausage",

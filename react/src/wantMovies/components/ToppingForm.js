@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { toppings } from "../../constants";
+import { toppingsList } from "../../constants";
 
 export const ToppingForm = props => {
-  const checkboxes = toppings.map(topping => (
+  const checkboxes = toppingsList.map(topping => (
     <label className="check-box" key={topping}>
       <input
         type="checkbox"
         value={topping}
         name={topping}
+        checked={props.chosenToppings.includes(topping)}
         onChange={props.handleChange}
       />
       <span>{topping}</span>
