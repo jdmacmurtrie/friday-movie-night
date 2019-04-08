@@ -1,8 +1,10 @@
 import React from "react";
 import { FinalMovie } from "../components/FinalMovie";
 import { Link } from "react-router";
+import { connect } from "react-redux";
+import { actions } from "../../actions";
 
-export class MovieRecommendations extends React.Component {
+class MovieRecommendations extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,39 +14,17 @@ export class MovieRecommendations extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`/api/v1/toppings?params=${this.props.params.params}`, {
-      credentials: "same-origin"
-    })
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        this.setState({
-          movies: body.movies,
-          genre: body.genre.name
-        });
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`));
+    this.props.getMovies(`/api/v1/toppings?params=${this.props.toppings.toppings.join(",")}`);
   }
 
   render() {
-    const finalMovies = this.state.movies.map(movie => {
-      return <FinalMovie key={movie.id} movie={movie} />;
-    });
+    const finalMovies = this.props.movies.map(movie => <FinalMovie key={movie.id} movie={movie} />);
 
     return (
       <div className="movie-recommendations-container">
         <div className="headline">
           <h1>
-            Based on your toppings, <br /> how about some {this.state.genre}{" "}
-            movies?
+            Based on your toppings, <br /> how about some {this.props.genre} movies?
           </h1>
         </div>
         <div className="movie-back-buttons">
@@ -64,3 +44,22 @@ export class MovieRecommendations extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    toppings: state.toppings,
+    movies: state.movieRecommendations.movies,
+    genre: state.movieRecommendations.genre
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getMovies: url => dispatch(actions.fetchMovieRecommendationRequest(url))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MovieRecommendations);

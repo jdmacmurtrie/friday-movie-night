@@ -39,14 +39,9 @@ class ToppingFormContainer extends React.Component {
               />
               <hr />
             </div>
-            <ToppingForm
-              handleChange={this.handleChange}
-              chosenToppings={this.props.toppings}
-            />
+            <ToppingForm handleChange={this.handleChange} chosenToppings={this.props.toppings} />
           </div>
-          {this.props.toppings.length && (
-            <GetSuggestionsButton className="get-movies-button" />
-          )}
+          {this.props.toppings.length && <GetSuggestionsButton className="get-movies-button" />}
         </form>
       </div>
     );
@@ -55,7 +50,7 @@ class ToppingFormContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    toppings: state.toppings
+    toppings: state.toppings.toppings
   };
 };
 

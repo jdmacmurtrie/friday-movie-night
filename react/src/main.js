@@ -3,11 +3,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Routes } from "./routes";
-import { toppings } from "./reducers";
-import { createStore } from "redux";
-// import { combineReducers, createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import createSagaMiddleware from "redux-saga";
+import { watchFetchMovieRecommendations } from "./sagas";
+import { reducers } from "./reducers";
 
-const store = createStore(toppings);
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(watchFetchMovieRecommendations);
 
 $(function() {
   let goReact = document.getElementById("react-app");
