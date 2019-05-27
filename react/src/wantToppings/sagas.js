@@ -2,7 +2,7 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchRecommendations } from "../utils/api";
 import { ActionKeys } from "./actions";
 
-function* fetchMovieRecommendations(action) {
+function* fetchToppingRecommendations(action) {
   try {
     const movies = yield call(fetchRecommendations, action.url);
     yield put({
@@ -14,6 +14,6 @@ function* fetchMovieRecommendations(action) {
   }
 }
 
-export function* watchFetchMovieRecommendations() {
-  yield takeLatest(ActionKeys.FETCH_MOVIE_RECOMMENDATIONS_REQUEST, fetchMovieRecommendations);
+export function* watchFetchToppingRecommendations() {
+  yield takeLatest(ActionKeys.FETCH_MOVIE_RECOMMENDATIONS_REQUEST, fetchToppingRecommendations);
 }

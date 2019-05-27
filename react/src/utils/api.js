@@ -1,4 +1,4 @@
-export function fetchMovies(url) {
+export function fetchRecommendations(url) {
   return fetch(url, {
     credentials: "same-origin"
   })
