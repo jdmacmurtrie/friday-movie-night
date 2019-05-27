@@ -12,10 +12,6 @@ export function fetchMovies(url) {
       }
     })
     .then(response => response.json())
-    .then(body => {
-      console.log("body", body);
-
-      return body;
-    })
+    .then(body => body)
     .catch(error => console.error(`Error in fetch: ${error.message}`));
 }

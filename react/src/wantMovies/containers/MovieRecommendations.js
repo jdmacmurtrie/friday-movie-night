@@ -1,8 +1,8 @@
 import React from "react";
-import { FinalMovie } from "../components/FinalMovie";
-import { Link } from "react-router";
 import { connect } from "react-redux";
-import { actions } from "../../actions";
+import { Link } from "react-router-dom";
+import { actions } from "../actions";
+import { FinalMovie } from "../components/FinalMovie";
 
 class MovieRecommendations extends React.Component {
   constructor(props) {
@@ -11,10 +11,16 @@ class MovieRecommendations extends React.Component {
       movies: [],
       genre: ""
     };
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     this.props.getMovies(`/api/v1/toppings?params=${this.props.toppings.toppings.join(",")}`);
+  }
+
+  handleClick() {
+    this.props.clearMovieRecommendations();
   }
 
   render() {
@@ -29,12 +35,12 @@ class MovieRecommendations extends React.Component {
         </div>
         <div className="movie-back-buttons">
           <span className="back-button">
-            <button>
+            <button onClick={this.handleClick}>
               <Link to="/toppings/new">Select Different Toppings</Link>
             </button>
           </span>
           <span className="back-button">
-            <button>
+            <button onClick={this.handleClick}>
               <Link to="/">Back to the Beginning!</Link>
             </button>
           </span>
@@ -47,15 +53,16 @@ class MovieRecommendations extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    toppings: state.toppings,
-    movies: state.movieRecommendations.movies,
-    genre: state.movieRecommendations.genre
+    toppings: state.getMovies.toppings,
+    movies: state.getMovies.movieRecommendations.movies,
+    genre: state.getMovies.movieRecommendations.genre
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    getMovies: url => dispatch(actions.fetchMovieRecommendationRequest(url))
+    getMovies: url => dispatch(actions.fetchMovieRecommendationRequest(url)),
+    clearMovieRecommendations: () => dispatch(actions.clearMovieRecommendations())
   };
 };
 

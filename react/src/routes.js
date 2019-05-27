@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { UserProfileContainer } from "./userProfile/containers/UserProfileContainer";
 import MovieRecommendations from "./wantMovies/containers/MovieRecommendations";
 import ToppingFormContainer from "./wantMovies/containers/ToppingFormContainer";
@@ -10,14 +10,14 @@ import { WelcomeComponent } from "./welcomePage/WelcomeComponent";
 export const Routes = () => {
   return (
     <Router>
-      <div>
+      <Switch>
         <Route exact path="/" component={WelcomeComponent} />
-        <Route path="/toppings/new" component={ToppingFormContainer} />
-        <Route path="/toppings/recommendations" component={MovieRecommendations} />
-        <Route path="/movies/new" component={MovieFormContainer} />
-        <Route path="/movies/recommendations" component={ToppingRecommendations} />
-        <Route path="/users/:id" component={UserProfileContainer} />
-      </div>
+        <Route exact path="/toppings/new" component={ToppingFormContainer} />
+        <Route exact path="/toppings/recommendations" component={MovieRecommendations} />
+        <Route exact path="/movies/new" component={MovieFormContainer} />
+        <Route exact path="/movies/recommendations" component={ToppingRecommendations} />
+        <Route exact path="/users/:id" component={UserProfileContainer} />
+      </Switch>
     </Router>
   );
 };
