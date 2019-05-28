@@ -7,11 +7,6 @@ import { FinalMovie } from "../components/FinalMovie";
 class MovieRecommendations extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      movies: [],
-      genre: ""
-    };
-
     this.handleClick = this.handleClick.bind(this);
   }
 

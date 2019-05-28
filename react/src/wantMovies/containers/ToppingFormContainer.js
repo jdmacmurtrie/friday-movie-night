@@ -1,10 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GetSuggestionsButton } from "../../sharedComponents/GetSuggestionsButton";
 import { actions } from "../actions";
 import { ToppingForm } from "../components/ToppingForm";
-import MovieRecommendations from "./MovieRecommendations";
 
 class ToppingFormContainer extends React.Component {
   constructor(props) {
@@ -28,7 +27,6 @@ class ToppingFormContainer extends React.Component {
   render() {
     return (
       <div className="toppings-form-page">
-        <Route exact path="/toppings/recommendations" component={MovieRecommendations} />
         <div className="toppings-wrapper">
           <div className="topping-headline">
             <h1>Which toppings are on your pizza?</h1>

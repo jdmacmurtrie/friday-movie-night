@@ -4,16 +4,16 @@ import { ActionKeys } from "./actions";
 
 function* fetchToppingRecommendations(action) {
   try {
-    const movies = yield call(fetchRecommendations, action.url);
+    const toppings = yield call(fetchRecommendations, action.url);
     yield put({
-      type: ActionKeys.FETCH_MOVIE_RECOMMENDATIONS_SUCCESS,
-      movies
+      type: ActionKeys.FETCH_TOPPING_RECOMMENDATIONS_SUCCESS,
+      toppings
     });
   } catch (error) {
-    yield put({ type: ActionKeys.FETCH_MOVIE_RECOMMENDATIONS_FAILURE, error });
+    yield put({ type: ActionKeys.FETCH_TOPPING_RECOMMENDATIONS_FAILURE, error });
   }
 }
 
 export function* watchFetchToppingRecommendations() {
-  yield takeLatest(ActionKeys.FETCH_MOVIE_RECOMMENDATIONS_REQUEST, fetchToppingRecommendations);
+  yield takeLatest(ActionKeys.FETCH_TOPPING_RECOMMENDATIONS_REQUEST, fetchToppingRecommendations);
 }

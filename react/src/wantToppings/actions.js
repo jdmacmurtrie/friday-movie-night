@@ -1,6 +1,8 @@
 export const ActionKeys = {
-  SELECT_MOVIE_GENRE: "SELECT_MOVIE_GENRE",
-  CLEAR_MOVIE_GENRE: "CLEAR_MOVIE_GENRE",
+  ADD_TITLE: "ADD_TITLE",
+  ADD_GENRE: "ADD_GENRE",
+  CHOOSE_BY_GENRE: "CHOOSE_BY_GENRE",
+  CLEAR_TITLE_GENRE: "CLEAR_TITLE_GENRE",
   FETCH_TOPPING_RECOMMENDATIONS_REQUEST: "FETCH_TOPPING_RECOMMENDATIONS_REQUEST",
   FETCH_TOPPING_RECOMMENDATIONS_SUCCESS: "FETCH_TOPPING_RECOMMENDATIONS_SUCCESS",
   FETCH_TOPPING_RECOMMENDATIONS_FAILURE: "FETCH_TOPPING_RECOMMENDATIONS_FAILURE",
@@ -8,24 +10,36 @@ export const ActionKeys = {
 };
 
 export const actions = {
-  selectMovieGenre: function selectMovieGenre(topping) {
+  addTitle: function addTitle(title) {
     return {
-      type: ActionKeys.SELECT_MOVIE_GENRE,
-      topping
+      type: ActionKeys.ADD_TITLE,
+      title
     };
   },
-  clearMovieGenre: function clearMovieGenre() {
+  addGenre: function addGenre(genre) {
     return {
-      type: ActionKeys.CLEAR_MOVIE_GENRE
+      type: ActionKeys.ADD_GENRE,
+      genre
+    };
+  },
+  chooseByGenre: function chooseByGenre(chooseByGenre) {
+    return {
+      type: ActionKeys.CHOOSE_BY_GENRE,
+      chooseByGenre
+    };
+  },
+  clearTitleGenre: function clearTitleGenre() {
+    return {
+      type: ActionKeys.CLEAR_TITLE_GENRE
     };
   },
   fetchToppingRecommendationRequest: function fetchToppingRecommendationRequest(url) {
     return { type: ActionKeys.FETCH_TOPPING_RECOMMENDATIONS_REQUEST, url };
   },
-  fetchToppingRecommendationSuccess: function fetchToppingRecommendationSuccess(movies) {
+  fetchToppingRecommendationSuccess: function fetchToppingRecommendationSuccess(toppings) {
     return {
       type: ActionKeys.FETCH_TOPPING_RECOMMENDATIONS_SUCCESS,
-      payload: movies
+      payload: toppings
     };
   },
   fetchToppingRecommendationFailure: function fetchToppingRecommendationFailure(error) {

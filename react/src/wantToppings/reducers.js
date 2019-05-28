@@ -1,18 +1,28 @@
 import { ActionKeys } from "./actions";
 import { combineReducers } from "redux";
 
-const initialMovieGenre = {
-  movieGenre: ""
+const initialTitleGenre = {
+  title: "",
+  genre: "Genre",
+  chooseByGenre: false
 };
 
-export const movieGenre = (state = initialMovieGenre, action) => {
+export const titleGenre = (state = initialTitleGenre, action) => {
   switch (action.type) {
-    case ActionKeys.SELECT_MOVIE_GENRE:
+    case ActionKeys.ADD_TITLE:
       return Object.assign({}, state, {
-        movieGenre: [...state.movieGenre, action.movieGenre]
+        title: action.title
       });
-    case ActionKeys.CLEAR_MOVIE_GENRE:
-      return Object.assign({}, state, initialMovieGenre);
+    case ActionKeys.ADD_GENRE:
+      return Object.assign({}, state, {
+        genre: action.genre
+      });
+    case ActionKeys.CHOOSE_BY_GENRE:
+      return Object.assign({}, state, {
+        chooseByGenre: action.chooseByGenre
+      });
+    case ActionKeys.CLEAR_TITLE_GENRE:
+      return Object.assign({}, state, initialTitleGenre);
     default:
       return state;
   }
@@ -41,6 +51,6 @@ export const toppingRecommendations = (state = initialToppingRecommendations, ac
 };
 
 export const getToppings = combineReducers({
-  movieGenre,
+  titleGenre,
   toppingRecommendations
 });

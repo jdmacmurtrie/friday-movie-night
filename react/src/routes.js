@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { UserProfileContainer } from "./userProfile/containers/UserProfileContainer";
 import MovieRecommendations from "./wantMovies/containers/MovieRecommendations";
 import ToppingFormContainer from "./wantMovies/containers/ToppingFormContainer";
-import { MovieFormContainer } from "./wantToppings/containers/MovieFormContainer";
-import { ToppingRecommendations } from "./wantToppings/containers/ToppingRecommendations";
+import MovieFormContainer from "./wantToppings/containers/MovieFormContainer";
+import ToppingRecommendations from "./wantToppings/containers/ToppingRecommendations";
 import { WelcomeComponent } from "./welcomePage/WelcomeComponent";
 
 export const Routes = () => {

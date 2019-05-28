@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-export const MovieForm = props => {
+export const MovieForm = ({ value, handleChangeText }) => {
   return (
     <div className="movie-input-wrapper">
       <input
-        value={props.value}
+        value={value}
         className="movie-field title"
         type="text"
-        onChange={props.handleChangeText}
+        onChange={handleChangeText}
         autoFocus
         placeholder="How about Pirates of the Caribbean?"
       />
