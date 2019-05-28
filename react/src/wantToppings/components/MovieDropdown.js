@@ -1,5 +1,6 @@
 import React from "react";
 import { genres } from "../../constants";
+import PropTypes from "prop-types";
 
 export const MovieDropdown = props => {
   const genreOptions = genres.map(genre => (
@@ -14,4 +15,9 @@ export const MovieDropdown = props => {
       {genreOptions}
     </select>
   );
+};
+
+MovieDropdown.propTypes = {
+  genreValue: PropTypes.string,
+  handleChangeGenre: PropTypes.func
 };

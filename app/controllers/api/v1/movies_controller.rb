@@ -14,7 +14,7 @@ class Api::V1::MoviesController < ApplicationController
 		end
 
 		if @toppings
-			render json: { toppings: @toppings, title: @title }
+			render json: { toppings: @toppings }
 		else
 			render status: 422, json: { error: "Not a real movie!" }.as_json
 		end
@@ -30,7 +30,6 @@ class Api::V1::MoviesController < ApplicationController
 		if bad_search(movies)
 			return
 		else
-			@title = movies.parsed_response['results'].first['title']
 			genre_id = movies.parsed_response['results'].first['genre_ids'].sample
 			genres = HTTParty.get(
 				"https://api.themoviedb.org/3/genre/movie/list?api_key=#{key}"

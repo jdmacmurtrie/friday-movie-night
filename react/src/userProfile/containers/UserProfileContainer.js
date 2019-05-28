@@ -3,7 +3,7 @@ import ComboTableContainer from "../components/ComboTableContainer";
 import UserInfoComponent from "../components/UserInfoComponent";
 import ComboFormContainer from "./ComboFormContainer";
 
-class UserProfileContainer extends React.Component {
+export class UserProfileContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -116,5 +116,3 @@ class UserProfileContainer extends React.Component {
     );
   }
 }
-
-export default UserProfileContainer;

@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   get 'movies/new' => "static_pages#index"
   get 'toppings/new' => "static_pages#index"
   get 'users/sign_out' => "devise/sessions#destroy"
-  get 'movies/recommendations/:params' => "movies#index"
-  get 'toppings/recommendations/:params' => "toppings#index"
+  # get 'movies/recommendations' => "movies#index"
   get "/users/sign_in" => "users/sessions#new"
   get "/users/:id" => "static_pages#index"
 

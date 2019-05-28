@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-const GetSuggestionsButton = props =>  (
+export const GetSuggestionsButton = props => (
   <div className={props.className}>
-    <button type='submit'>
-      Get my suggestions!
-    </button>
+    <button>Get my suggestions!</button>
   </div>
 );
 
-export default GetSuggestionsButton
+GetSuggestionsButton.propTypes = {
+  className: PropTypes.string
+};
